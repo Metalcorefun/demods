@@ -144,6 +144,10 @@ public:
 			BaseObject.push_back(temp);
 		}
 	}
+	vector <DSClass> get_classes()
+	{
+		return Classes;
+	}
 	void classify()
 	{
 		ModuleAccess& access = ModuleAccess::Instance(); //выуживаем ссылку на фасад и вызываем сам классификатор
@@ -188,11 +192,21 @@ public:
 	{
 		Classes.push_back(iCl);
 	}
-	void add_classifier(DSClassifier iClsf)
+	void init_results_table(DSClassifier iClsf)
 	{
-		DSResults temp;
-		temp.current = &iClsf;
-		ClsResults.push_back(temp);
+		DSResults Rtemp;
+		Rtemp.current = &iClsf;
+		vector<DSClass> Ctemp = iClsf.get_classes();
+
+		for (int i = 0; i < Ctemp.size(); i++)
+		{
+			ClsPr temp;
+			temp.Cls = &Ctemp[i];
+			temp.probability = 0;
+			Rtemp.result.push_back(temp);
+		}
+		Ctemp.clear();
+		
 	}
 	void load() //функции импорта/экспорта я не трогаю, пока не будет готовы все классы, включая иерархию
 	{
@@ -208,7 +222,7 @@ private:
 	DSHierarchy(DSHierarchy const&) = delete;
 	DSHierarchy& operator = (DSHierarchy const&) = delete;
 
-	vector <DSResults> ClsResults;
+	vector <vector <DSResults>> ResultsTable;
 	vector <DSAttribute> Attributes;
 	vector <DSClass> Classes;
 };
