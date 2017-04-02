@@ -1,7 +1,6 @@
 ﻿  main.cpp
-c:\users\user\documents\visual studio 2015\projects\dscore\dscore\main.cpp(76): warning C4018: <: несоответствие типов со знаком и без знака
 c:\users\user\documents\visual studio 2015\projects\dscore\dscore\main.cpp(83): warning C4018: <: несоответствие типов со знаком и без знака
-c:\users\user\documents\visual studio 2015\projects\dscore\dscore\main.cpp(92): warning C4018: <: несоответствие типов со знаком и без знака
-c:\users\user\documents\visual studio 2015\projects\dscore\dscore\main.cpp(97): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\user\documents\visual studio 2015\projects\dscore\dscore\main.cpp(90): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\user\documents\visual studio 2015\projects\dscore\dscore\main.cpp(133): warning C4018: <: несоответствие типов со знаком и без знака
   DSCore.vcxproj -> C:\Users\User\documents\visual studio 2015\Projects\DSCore\Debug\DSCore.exe
   DSCore.vcxproj -> C:\Users\User\documents\visual studio 2015\Projects\DSCore\Debug\DSCore.pdb (Partial PDB)

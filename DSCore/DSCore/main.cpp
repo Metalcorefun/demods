@@ -6,7 +6,23 @@ using namespace std;
 
 int AttrCnt = 0, ClsCnt = 0, ClsfCnt = 0; //используются для генерации ID-шников
 
+class ModuleAccess  //фасад
+{	//пока оставлю так
+public:
+	static ModuleAccess& Instance()
+	{
+		static ModuleAccess access;
+		return access;
+	}
+	void FuzzyAC_Call() {};
+private:
+	ModuleAccess() {};
+	~ModuleAccess() {};
+	ModuleAccess(ModuleAccess const&) = delete;
+	ModuleAccess& operator = (ModuleAccess const&) = delete;
+};
 
+//компоненты иерархии
 
 class DSAttribute  //признак
 {
@@ -99,6 +115,11 @@ public:
 		id = "clsf_" + to_string(ClsfCnt);
 		name = iname;
 	}
+	int get_level()
+	{
+		return level;
+	}
+	
 	void add_attrib(DSAttribute iAt)
 	{
 		Attributes.push_back(iAt);
@@ -123,7 +144,12 @@ public:
 			BaseObject.push_back(temp);
 		}
 	}
-	DSClassifier *next; //указатель на следующий классификатор иерархии(уровнем выше)
+	void classify()
+	{
+		ModuleAccess& access = ModuleAccess::Instance(); //выуживаем ссылку на фасад и вызываем сам классификатор
+		access.FuzzyAC_Call();
+	}
+	vector <DSClassifier*> ptr_prev;
 	~DSClassifier()
 	{
 		id.clear(); name.clear();
@@ -134,30 +160,65 @@ public:
 	}
 private:
 	string id, name;
+	int level;
 	vector <DSAttribute> Attributes;
 	vector <DSClass> Classes;
 	vector <DSProbe> TrainingSet;
 	vector <AttrVal> BaseObject;
 };
 
-class DSHierarchy //над реализацией еще надо подумать
+class DSHierarchy //реализация посредством паттерна "Одиночка", так как в проекте может быть лишь одна иерархия
 {
 public:
-	DSHierarchy();
+	static DSHierarchy& Instance()
+	{
+		static DSHierarchy h;
+		return h;
+	}
+	struct DSResults
+	{
+		DSClassifier* current;
+		vector <ClsPr> result;
+	};
+	void add_attribute(DSAttribute iAt)
+	{
+		Attributes.push_back(iAt);
+	}
+	void add_class(DSClass iCl)
+	{
+		Classes.push_back(iCl);
+	}
+	void add_classifier(DSClassifier iClsf)
+	{
+		DSResults temp;
+		temp.current = &iClsf;
+		ClsResults.push_back(temp);
+	}
 	void load() //функции импорта/экспорта я не трогаю, пока не будет готовы все классы, включая иерархию
 	{
 
 	}
 	void save()
 	{
-
+		
 	}
 private:
-	vector<DSClassifier> Classifiers;
+	DSHierarchy() {};
+	~DSHierarchy() {};
+	DSHierarchy(DSHierarchy const&) = delete;
+	DSHierarchy& operator = (DSHierarchy const&) = delete;
+
+	vector <DSResults> ClsResults;
+	vector <DSAttribute> Attributes;
+	vector <DSClass> Classes;
 };
+
+
 
 int main() 
 {	
+	DSHierarchy& hierarchy = DSHierarchy::Instance();
+	hierarchy.load();
 	system("pause");
 	return 0;
 }
