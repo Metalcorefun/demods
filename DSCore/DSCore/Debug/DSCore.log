@@ -1,6 +1,13 @@
-﻿  main.cpp
-c:\users\user\documents\visual studio 2015\projects\dscore\dscore\main.cpp(83): warning C4018: <: несоответствие типов со знаком и без знака
-c:\users\user\documents\visual studio 2015\projects\dscore\dscore\main.cpp(90): warning C4018: <: несоответствие типов со знаком и без знака
-c:\users\user\documents\visual studio 2015\projects\dscore\dscore\main.cpp(133): warning C4018: <: несоответствие типов со знаком и без знака
-  DSCore.vcxproj -> C:\Users\User\documents\visual studio 2015\Projects\DSCore\Debug\DSCore.exe
-  DSCore.vcxproj -> C:\Users\User\documents\visual studio 2015\Projects\DSCore\Debug\DSCore.pdb (Partial PDB)
+﻿  DSCore.cpp
+c:\users\антон\documents\visual studio 2017\projects\dscore\dscore\dscore.cpp(65): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\антон\documents\visual studio 2017\projects\dscore\dscore\dscore.cpp(72): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\антон\documents\visual studio 2017\projects\dscore\dscore\dscore.cpp(127): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\антон\documents\visual studio 2017\projects\dscore\dscore\dscore.cpp(272): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\антон\documents\visual studio 2017\projects\dscore\dscore\dscore.cpp(283): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\антон\documents\visual studio 2017\projects\dscore\dscore\dscore.cpp(294): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\антон\documents\visual studio 2017\projects\dscore\dscore\dscore.cpp(308): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\антон\documents\visual studio 2017\projects\dscore\dscore\dscore.cpp(277): warning C4172: возвращение адреса локальной или временной переменной : A
+c:\users\антон\documents\visual studio 2017\projects\dscore\dscore\dscore.cpp(288): warning C4172: возвращение адреса локальной или временной переменной : C
+c:\users\антон\documents\visual studio 2017\projects\dscore\dscore\dscore.cpp(299): warning C4172: возвращение адреса локальной или временной переменной : C
+  DSCore.vcxproj -> C:\Users\Антон\Documents\Visual Studio 2017\Projects\DSCore\Debug\DSCore.exe
+  DSCore.vcxproj -> C:\Users\Антон\Documents\Visual Studio 2017\Projects\DSCore\Debug\DSCore.pdb (Partial PDB)
