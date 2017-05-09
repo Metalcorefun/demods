@@ -1,0 +1,23 @@
+﻿  DSCore.cpp
+c:\users\антон\documents\visual studio 2017\projects\dscore\dscore\dscore.cpp(77): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\антон\documents\visual studio 2017\projects\dscore\dscore\dscore.cpp(84): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\антон\documents\visual studio 2017\projects\dscore\dscore\dscore.cpp(162): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\антон\documents\visual studio 2017\projects\dscore\dscore\dscore.cpp(310): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\антон\documents\visual studio 2017\projects\dscore\dscore\dscore.cpp(321): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\антон\documents\visual studio 2017\projects\dscore\dscore\dscore.cpp(330): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\антон\documents\visual studio 2017\projects\dscore\dscore\dscore.cpp(341): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\антон\documents\visual studio 2017\projects\dscore\dscore\dscore.cpp(346): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\антон\documents\visual studio 2017\projects\dscore\dscore\dscore.cpp(351): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\антон\documents\visual studio 2017\projects\dscore\dscore\dscore.cpp(354): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\антон\documents\visual studio 2017\projects\dscore\dscore\dscore.cpp(362): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\антон\documents\visual studio 2017\projects\dscore\dscore\dscore.cpp(371): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\антон\documents\visual studio 2017\projects\dscore\dscore\dscore.cpp(379): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\антон\documents\visual studio 2017\projects\dscore\dscore\dscore.cpp(408): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\антон\documents\visual studio 2017\projects\dscore\dscore\dscore.cpp(419): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\антон\documents\visual studio 2017\projects\dscore\dscore\dscore.cpp(430): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\антон\documents\visual studio 2017\projects\dscore\dscore\dscore.cpp(444): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\антон\documents\visual studio 2017\projects\dscore\dscore\dscore.cpp(413): warning C4172: возвращение адреса локальной или временной переменной : A
+c:\users\антон\documents\visual studio 2017\projects\dscore\dscore\dscore.cpp(424): warning C4172: возвращение адреса локальной или временной переменной : C
+c:\users\антон\documents\visual studio 2017\projects\dscore\dscore\dscore.cpp(435): warning C4172: возвращение адреса локальной или временной переменной : C
+  DSCore.vcxproj -> C:\Users\Антон\Documents\Visual Studio 2017\Projects\DSCore\Debug\DSCore.exe
+  DSCore.vcxproj -> C:\Users\Антон\Documents\Visual Studio 2017\Projects\DSCore\Debug\DSCore.pdb (Partial PDB)
