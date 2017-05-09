@@ -21,7 +21,7 @@
     <ClCompile Include="DSCore.cpp">
       <Filter>Файлы исходного кода</Filter>
     </ClCompile>
-    <ClCompile Include="tinyxml2.cpp">
+    <ClCompile Include="Resources\TinyXML2\tinyxml2.cpp">
       <Filter>Файлы исходного кода</Filter>
     </ClCompile>
   </ItemGroup>
@@ -29,7 +29,7 @@
     <ClInclude Include="DSCore.h">
       <Filter>Заголовочные файлы</Filter>
     </ClInclude>
-    <ClInclude Include="tinyxml2.h">
+    <ClInclude Include="Resources\TinyXML2\tinyxml2.h">
       <Filter>Заголовочные файлы</Filter>
     </ClInclude>
   </ItemGroup>

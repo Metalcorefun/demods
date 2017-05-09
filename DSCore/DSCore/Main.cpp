@@ -2,7 +2,9 @@
 #include <iostream>
 #include <string>
 #include <vector>
+
 #include "DSCore.h"
+
 using namespace std;
 
 
@@ -11,8 +13,8 @@ using namespace std;
 int main()
 {
 	DSHierarchy& hierarchy = DSHierarchy::Instance();
-	hierarchy.load("codebeautify.xml");
-	hierarchy.save("savior.xml");
-	system("pause");
+	hierarchy.load("XMLFiles\\codebeautify.xml");
+	hierarchy.save("XMLFiles\\savior.xml");
+
 	return 0;
 }

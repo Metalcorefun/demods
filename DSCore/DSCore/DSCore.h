@@ -27,6 +27,8 @@ public:
 	DSAttribute(string name, string type);
 	~DSAttribute();
 	string getID();
+	string getName();
+	string getType();
 private:
 	string id_, name_, type_;
 };
@@ -39,6 +41,7 @@ public:
 	DSClass(string name);
 	~DSClass();
 	string getID();
+	string getName();
 private:
 	string id_, name_;
 };
@@ -48,6 +51,7 @@ struct AttribValue
 	DSAttribute* attribPtr;
 	int value;
 };
+
 
 struct ClassMemFunc
 {
@@ -61,9 +65,11 @@ class DSProbe //один опыт из обучающей выборки
 public:
 	DSProbe(vector<reference_wrapper<DSAttribute>> attributes, vector<reference_wrapper<DSClass>> classes, int* attribValues, int* classValues);
 	~DSProbe();
+	vector <AttribValue> getAttribValues();
+	vector <ClassMemFunc> getClassMemFuncs();
 private:
-	vector <AttribValue> attribValues;
-	vector <ClassMemFunc> classMemFuncs;
+	vector <AttribValue> attribValues_;
+	vector <ClassMemFunc> classMemFuncs_;
 };
 
 class DSClassifier
@@ -78,8 +84,12 @@ public:
 	void addChild(DSClassifier& classifier);
 	int getLevel();
 	string getID();
+	string getName();
 	vector <reference_wrapper<DSAttribute>> getAttributes();
 	vector <reference_wrapper<DSClass>> getClasses();
+	vector <reference_wrapper<DSClassifier>> getChilds();
+	vector <DSProbe> getTrainingSet();
+	vector <AttribValue> getBaseObject();
 	void setBaseObject(int* values_a);
 	void toTrainingSet(int* values_a, int* values_c);
 	void classify();
@@ -115,8 +125,8 @@ public:
 	DSClassifier& findClassifier(string id);
 	void initResultsTable(DSClassifier classifier);
 private:
-	DSHierarchy() {};
-	~DSHierarchy() {};
+	DSHierarchy();
+	~DSHierarchy();
 	DSHierarchy(DSHierarchy const&) = delete;
 	DSHierarchy& operator = (DSHierarchy const&) = delete;
 
