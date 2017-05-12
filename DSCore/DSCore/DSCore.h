@@ -52,21 +52,21 @@ struct AttribValue
 	int value;
 };
 
-
 struct ClassMemFunc
 {
 	DSClass* classPtr;
 	int mem_func;
 };
 
-
 class DSProbe //один опыт из обучающей выборки
 {
 public:
 	DSProbe(vector<reference_wrapper<DSAttribute>> attributes, vector<reference_wrapper<DSClass>> classes, int* attribValues, int* classValues);
 	~DSProbe();
-	vector <AttribValue> getAttribValues();
-	vector <ClassMemFunc> getClassMemFuncs();
+	void removeAttribute(DSAttribute& attribute);
+	void removeClass(DSClass& Class);
+	vector <AttribValue>& getAttribValues();
+	vector <ClassMemFunc>& getClassMemFuncs();
 private:
 	vector <AttribValue> attribValues_;
 	vector <ClassMemFunc> classMemFuncs_;
@@ -79,19 +79,30 @@ public:
 	DSClassifier() {};
 	DSClassifier(string name);
 	~DSClassifier();
+	//add
 	void addAttribute(DSAttribute& attribute);
 	void addClass(DSClass& Class);
 	void addChild(DSClassifier& classifier);
+	void setBaseObject(int* values_a);
+	void toTrainingSet(int* values_a, int* values_c);
+	//remove
+	void removeAttribute(string id);
+	void removeClass(string id);
+	void removeChild(string id);
+	//get
 	int getLevel();
 	string getID();
 	string getName();
 	vector <reference_wrapper<DSAttribute>> getAttributes();
 	vector <reference_wrapper<DSClass>> getClasses();
 	vector <reference_wrapper<DSClassifier>> getChilds();
-	vector <DSProbe> getTrainingSet();
-	vector <AttribValue> getBaseObject();
-	void setBaseObject(int* values_a);
-	void toTrainingSet(int* values_a, int* values_c);
+	vector <DSProbe>& getTrainingSet();
+	vector <AttribValue>& getBaseObject();
+	//update addresses
+	void updateAttributesAddresses(vector <DSAttribute> &attributes, int index);
+	void updateClassesAddresses(vector <DSClass> &classes, int index);
+	void updateClassifiersAddresses(vector <DSClassifier> &classifiers, int index);
+	
 	void classify();
 private:
 	string id_, name_;
@@ -110,20 +121,27 @@ struct DSResults
 	vector <ClassMemFunc> result;
 };
 
-
 class DSHierarchy
 {
 public:
+	//singleton
 	static DSHierarchy& Instance();
+	//save/load
 	void load(char* fileName);
 	void save(char* fileName);
+	//add
 	void addAttribute(DSAttribute attribute);
 	void addClass(DSClass Class);
 	void addClassifier(DSClassifier classifier);
+	void initResultsTable(DSClassifier& classifier);
+	//remove
+	void removeAttribute(string id);
+	void removeClass(string id);
+	void removeClassifier(string id);
+	//find
 	DSAttribute& findAttribute(string id);
 	DSClass& findClass(string id);
 	DSClassifier& findClassifier(string id);
-	void initResultsTable(DSClassifier classifier);
 private:
 	DSHierarchy();
 	~DSHierarchy();
@@ -133,5 +151,5 @@ private:
 	vector <DSAttribute> attributes_;
 	vector <DSClass> classes_;
 	vector <DSClassifier> classifiers_;
-	vector <vector <DSResults>> resultsTable_;
+	vector  <DSResults> resultsTable_;
 };

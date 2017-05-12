@@ -15,7 +15,6 @@ DSModules& DSModules::Instance()
 };
 
 //---------------DSATTRIBUTE-------------------//
-
 DSAttribute::DSAttribute(string name, string type)
 {
 	attribCount++;
@@ -23,14 +22,12 @@ DSAttribute::DSAttribute(string name, string type)
 	name_ = name;
 	type_ = type;
 };
-
 DSAttribute::~DSAttribute()
 {
 	id_.clear();
 	name_.clear();
 	type_.clear();
 };
-
 string DSAttribute::getID()
 {
 	return id_;
@@ -45,20 +42,17 @@ string DSAttribute::getType()
 }
 
 //---------------DSCLASS-------------------//
-
 DSClass::DSClass(string name)
 {
 	classCount++;
 	id_ = "c" + to_string(classCount);
 	name_ = name;
 };
-
 DSClass::~DSClass()
 {
 	id_.clear();
 	name_.clear();
 };
-
 string DSClass::getID()
 {
 	return id_;
@@ -93,26 +87,43 @@ DSProbe::~DSProbe()
 	attribValues_.clear();
 	classMemFuncs_.clear();
 }
-
-vector <AttribValue> DSProbe::getAttribValues()
+void DSProbe::removeAttribute(DSAttribute& attribute)
+{
+	for (int i = 0; i < attribValues_.size(); i++)
+	{
+		if (attribValues_[i].attribPtr == &attribute)
+		{
+			attribValues_.erase(attribValues_.begin() + i);
+		}
+	}
+}
+void DSProbe::removeClass(DSClass& Class)
+{
+	for (int i = 0; i < classMemFuncs_.size(); i++)
+	{
+		if (classMemFuncs_[i].classPtr == &Class)
+		{
+			classMemFuncs_.erase(classMemFuncs_.begin() + i);
+		}
+	}
+}
+vector <AttribValue>& DSProbe::getAttribValues()
 {
 	return attribValues_;
 }
-
-vector <ClassMemFunc> DSProbe::getClassMemFuncs()
+vector <ClassMemFunc>& DSProbe::getClassMemFuncs()
 {
 	return classMemFuncs_;
 }
 
 //---------------DSCLASSIFIER-------------------//
-
+//init
 DSClassifier::DSClassifier(string name)
 {
 	classifierCount++;
 	id_ = "cl" + to_string(classifierCount);
 	name_ = name;	
 }
-
 DSClassifier::~DSClassifier()
 {
 	id_.clear(); name_.clear();
@@ -121,12 +132,11 @@ DSClassifier::~DSClassifier()
 	trainingSet_.clear();
 	baseObject_.clear();
 }
-
+//get
 int DSClassifier::getLevel()
 {
 	return level_;
 }
-
 string DSClassifier::getID()
 {
 	return id_;
@@ -135,27 +145,44 @@ string DSClassifier::getName()
 {
 	return name_;
 }
+vector <reference_wrapper<DSAttribute>> DSClassifier::getAttributes()
+{
+	return attributes_;
+}
+vector <reference_wrapper<DSClass>> DSClassifier::getClasses()
+{
+	return classes_;
+}
+vector <reference_wrapper<DSClassifier>> DSClassifier::getChilds()
+{
+	return childs_;
+}
+vector <DSProbe>& DSClassifier::getTrainingSet()
+{
+	return trainingSet_;
+}
+vector <AttribValue>& DSClassifier::getBaseObject()
+{
+	return baseObject_;
+}
+//add
 void DSClassifier::addAttribute(DSAttribute& attribute)
 {
 	attributes_.push_back(attribute);
 }
-
 void DSClassifier::addClass(DSClass& Class)
 {
 	classes_.push_back(Class);
 }
-
 void DSClassifier::addChild(DSClassifier& classifier)
 {
 	childs_.push_back(classifier);
 }
-
 void DSClassifier::toTrainingSet(int* values_a, int* values_c)
 {
 	DSProbe p(attributes_, classes_, values_a, values_c);
 	trainingSet_.push_back(p);
 }
-
 void DSClassifier::setBaseObject(int* values_a)
 {
 	AttribValue a;
@@ -166,47 +193,113 @@ void DSClassifier::setBaseObject(int* values_a)
 		baseObject_.push_back(a);
 	}
 }
-
-vector <reference_wrapper<DSAttribute>> DSClassifier::getAttributes()
+//remove
+void DSClassifier::removeAttribute(string id)
 {
-	return attributes_;
+	for (int i = 0; i < attributes_.size(); i++)
+	{
+		if (attributes_[i].get().getID() == id)
+		{
+			for (int j = 0; j < trainingSet_.size(); j++)
+			{
+				trainingSet_[j].removeAttribute(attributes_[i]);
+			}
+			for (int j = 0; j < baseObject_.size(); j++)
+			{
+				if(baseObject_[j].attribPtr->getID() == id)
+				{
+					baseObject_.erase(baseObject_.begin() + j);
+				}
+			}
+			attributes_.erase(attributes_.begin() + i);
+		}		
+	}
 }
-
-vector <reference_wrapper<DSClass>> DSClassifier::getClasses()
+void DSClassifier::removeClass(string id)
 {
-	return classes_;
+	for (int i = 0; i < classes_.size(); i++)
+	{
+		if (classes_[i].get().getID() == id)
+		{
+			for (int j = 0; j < trainingSet_.size(); j++)
+			{
+				trainingSet_[j].removeClass(classes_[i]);
+			}
+			classes_.erase(classes_.begin() + i);
+		}
+	}
 }
-
-vector <reference_wrapper<DSClassifier>> DSClassifier::getChilds()
+void DSClassifier::removeChild(string id)
 {
-	return childs_;
+	for (int i = 0; i < childs_.size(); i++)
+	{
+		if (childs_[i].get().getID() == id)
+		{
+			childs_.erase(childs_.begin() + i);
+		}
+	}
 }
-
-vector <DSProbe> DSClassifier::getTrainingSet()
+//update links
+void DSClassifier::updateAttributesAddresses(vector <DSAttribute> &attributes, int index)
 {
-	return trainingSet_;
+	for (int i = index + 1; i < attributes.size(); i++)
+	{
+		for (int j = 0; j < attributes_.size(); j++)
+		{
+			if (attributes[i].getID() == attributes_[j].get().getID())
+			{
+				attributes_[j] = attributes[i - 1];
+				for (int k = 0; k < trainingSet_.size(); k++)
+				{
+					getTrainingSet()[k].getAttribValues()[j].attribPtr = &(attributes[i - 1]);
+				}
+				baseObject_[j].attribPtr = &(attributes_[j].get());
+			}		
+		}
+	}
 }
-
-vector <AttribValue> DSClassifier::getBaseObject()
+void DSClassifier::updateClassesAddresses(vector <DSClass> &classes, int index)
 {
-	return baseObject_;
+	for (int i = index + 1; i < classes.size(); i++)
+	{
+		for (int j = 0; j < classes_.size(); j++)
+		{
+			if (classes[i].getID() == classes_[j].get().getID())
+			{
+				classes_[j] = classes[i - 1];
+				for (int k = 0; k < trainingSet_.size(); k++)
+				{
+					getTrainingSet()[k].getClassMemFuncs()[j].classPtr = &(classes[i - 1]);
+				}
+			}
+		}
+	}
 }
-
+void DSClassifier::updateClassifiersAddresses(vector <DSClassifier> &classifiers, int index)
+{
+	for (int i = index + 1; i < classifiers.size(); i++)
+	{
+		for (int j = 0; j < childs_.size(); j++)
+		{
+			if (classifiers[i].getID() == childs_[j].get().getID())
+				childs_[j] = classifiers[i - 1];
+		}
+	}
+}
 void DSClassifier::classify()
 {
 	DSModules& modules = DSModules::Instance(); //выуживаем ссылку на фасад и вызываем сам классификатор
 	modules.AC_ClassifyCall();
 }
 
-
-
 //---------------DSHIERARCHY-------------------//
+//singleton
 DSHierarchy& DSHierarchy::Instance()
 {
 	static DSHierarchy instance;
 	return instance;
 }
-
+//init
 DSHierarchy::DSHierarchy()
 {
 	attributes_.reserve(50);
@@ -219,13 +312,14 @@ DSHierarchy::~DSHierarchy()
 	classes_.clear();
 	classifiers_.clear();
 }
+//save/load
 void DSHierarchy::load(char* fileName)
 {
 	XMLDocument doc;
 	doc.LoadFile(fileName);
 	if (!doc.Error())
 	{	
-		XMLElement *levelElement = doc.FirstChildElement("hierarchy")->FirstChildElement("attributes");
+		XMLElement *levelElement = doc.FirstChildElement("hierarchy")->FirstChildElement("attributes");//LEAK HERE!
 		for (XMLElement* child = levelElement->FirstChildElement("attribute"); child != NULL; child = child->NextSiblingElement())
 		{
 			DSAttribute a(child->FirstChildElement("attr_name")->GetText(), child->FirstChildElement("attr_type")->GetText());
@@ -293,13 +387,13 @@ void DSHierarchy::load(char* fileName)
 			}
 			addClassifier(cl);
 		}
+		doc.DeleteNode(levelElement);
 	}
 	else
 	{
 		throw "ERROR_READING_XML_FILE()";
 	}
 }
-
 void DSHierarchy::save(char* fileName)
 {
 	XMLDocument *doc = new XMLDocument();
@@ -386,22 +480,80 @@ void DSHierarchy::save(char* fileName)
 	doc->SaveFile(fileName);
 	delete doc;
 }
-
+//add
 void DSHierarchy::addAttribute(DSAttribute attribute)
 {
 	attributes_.push_back(attribute);
 }
-
 void DSHierarchy::addClass(DSClass Class)
 {
 	classes_.push_back(Class);
 }
-
 void DSHierarchy::addClassifier(DSClassifier classifier)
 {
 	classifiers_.emplace_back(classifier);
+	initResultsTable(findClassifier(classifier.getID()));
 }
-
+void DSHierarchy::initResultsTable(DSClassifier& classifier)
+{
+	DSResults result_temp;
+	result_temp.classifier = &classifier;
+	for (int i = 0; i < classifier.getClasses().size(); i++)
+	{
+		ClassMemFunc class_temp;
+		class_temp.classPtr = &(classifier.getClasses()[i].get());
+		class_temp.mem_func = 0;
+		result_temp.result.push_back(class_temp);
+	}
+	resultsTable_.emplace_back(result_temp);
+}
+//remove
+void DSHierarchy::removeAttribute(string id)
+{
+	for (int i = 0; i < attributes_.size(); i++)
+	{
+		if (attributes_[i].getID() == id)
+		{
+			for (int j = 0; j < classifiers_.size(); j++)
+			{
+				classifiers_[j].removeAttribute(id);
+				classifiers_[j].updateAttributesAddresses(attributes_,i);
+			}
+			attributes_.erase(attributes_.begin() + i);
+		}
+	}
+}
+void DSHierarchy::removeClass(string id)
+{
+	for (int i = 0; i < classes_.size(); i++)
+	{
+		if (classes_[i].getID() == id)
+		{
+			for (int j = 0; j < classifiers_.size(); j++)
+			{
+				classifiers_[j].removeClass(id);
+				classifiers_[j].updateClassesAddresses(classes_, i);
+			}
+			classes_.erase(classes_.begin() + i);
+		}
+	}
+}
+void DSHierarchy::removeClassifier(string id)
+{
+	for (int i = 0; i < classifiers_.size(); i++)
+	{
+		if (classifiers_[i].getID() == id)
+		{
+			for (int j = 0; j < classifiers_.size(); j++)
+			{
+				classifiers_[j].removeChild(id);
+				classifiers_[j].updateClassifiersAddresses(classifiers_, i);
+			}
+			classifiers_.erase(classifiers_.begin() + i);
+		}
+	}
+}
+//find
 DSAttribute& DSHierarchy::findAttribute(string id)
 {
 	DSAttribute A;
@@ -412,7 +564,6 @@ DSAttribute& DSHierarchy::findAttribute(string id)
 	}
 	return A;
 }
-
 DSClass& DSHierarchy::findClass(string id)
 {
 	DSClass C;
@@ -423,7 +574,6 @@ DSClass& DSHierarchy::findClass(string id)
 	}
 	return C;
 }
-
 DSClassifier& DSHierarchy::findClassifier(string id)
 {
 	DSClassifier C;
@@ -435,22 +585,8 @@ DSClassifier& DSHierarchy::findClassifier(string id)
 	return C;
 }
 
-void DSHierarchy::initResultsTable(DSClassifier classifier)
-{
-	DSResults result_temp;
-	result_temp.classifier = &classifier;
-	vector<reference_wrapper<DSClass>> classes_temp = classifier.getClasses();
 
-	for (int i = 0; i < classes_temp.size(); i++)
-	{
-		ClassMemFunc class_temp;
-		class_temp.classPtr = &(classes_temp[i].get());
-		class_temp.mem_func = 0;
-		result_temp.result.push_back(class_temp);
-	}
-	classes_temp.clear();
-}
-
+//--------------counters---------------//
 int DSAttribute::attribCount = 0;
 int DSClass::classCount = 0;
 int DSClassifier::classifierCount = 0;
