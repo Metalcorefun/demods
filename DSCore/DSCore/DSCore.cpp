@@ -1,3 +1,4 @@
+#pragma once
 #include <iostream>
 #include <string>
 #include <vector>
@@ -5,7 +6,7 @@
 #include "Resources/TinyXML2/tinyxml2.h"
 
 using namespace std;
-using namespace tinyxml2;
+
 
 //---------------DSMODULES(FACADE)-------------------//
 DSModules& DSModules::Instance()
@@ -239,7 +240,7 @@ void DSClassifier::removeChild(string id)
 		}
 	}
 }
-//update links
+//update references
 void DSClassifier::updateAttributesAddresses(vector <DSAttribute> &attributes, int index)
 {
 	for (int i = index + 1; i < attributes.size(); i++)
@@ -315,39 +316,39 @@ DSHierarchy::~DSHierarchy()
 //save/load
 void DSHierarchy::load(char* fileName)
 {
-	XMLDocument doc;
+	tinyxml2::XMLDocument doc;
 	doc.LoadFile(fileName);
 	if (!doc.Error())
 	{	
-		XMLElement *levelElement = doc.FirstChildElement("hierarchy")->FirstChildElement("attributes");//LEAK HERE!
-		for (XMLElement* child = levelElement->FirstChildElement("attribute"); child != NULL; child = child->NextSiblingElement())
+		tinyxml2::XMLElement *levelElement = doc.FirstChildElement("hierarchy")->FirstChildElement("attributes");//LEAK HERE!
+		for (tinyxml2::XMLElement* child = levelElement->FirstChildElement("attribute"); child != NULL; child = child->NextSiblingElement())
 		{
 			DSAttribute a(child->FirstChildElement("attr_name")->GetText(), child->FirstChildElement("attr_type")->GetText());
 			addAttribute(a);
 		}
 		levelElement = levelElement->NextSiblingElement();
-		for (XMLElement* child = levelElement->FirstChildElement("class"); child != NULL; child = child->NextSiblingElement())
+		for (tinyxml2::XMLElement* child = levelElement->FirstChildElement("class"); child != NULL; child = child->NextSiblingElement())
 		{
 			DSClass c(child->FirstChildElement("class_title")->GetText());
 			addClass(c);
 		}
 		levelElement = levelElement->NextSiblingElement();
-		for (XMLElement* child = levelElement->FirstChildElement("classifier"); child != NULL; child = child->NextSiblingElement())
+		for (tinyxml2::XMLElement* child = levelElement->FirstChildElement("classifier"); child != NULL; child = child->NextSiblingElement())
 		{
 			DSClassifier cl(child->FirstChildElement("classifier_title")->GetText());
-			for (XMLElement* child1 = child->FirstChildElement("classifier_attr_list")->FirstChildElement("attr_id"); child1 != NULL; child1 = child1->NextSiblingElement())
+			for (tinyxml2::XMLElement* child1 = child->FirstChildElement("classifier_attr_list")->FirstChildElement("attr_id"); child1 != NULL; child1 = child1->NextSiblingElement())
 			{
 				cl.addAttribute(findAttribute(child1->GetText()));
 			}
-			for (XMLElement* child1 = child->FirstChildElement("classifier_class_list")->FirstChildElement("class_id"); child1 != NULL; child1 = child1->NextSiblingElement())
+			for (tinyxml2::XMLElement* child1 = child->FirstChildElement("classifier_class_list")->FirstChildElement("class_id"); child1 != NULL; child1 = child1->NextSiblingElement())
 			{
 				cl.addClass(findClass(child1->GetText()));
 			}
-			for (XMLElement* child1 = child->FirstChildElement("training_set")->FirstChildElement("probe"); child1 != NULL; child1 = child1->NextSiblingElement())
+			for (tinyxml2::XMLElement* child1 = child->FirstChildElement("training_set")->FirstChildElement("probe"); child1 != NULL; child1 = child1->NextSiblingElement())
 			{
 				int i = 0;
 				int* values_a = new int[cl.getAttributes().size()], *values_c = new int[cl.getClasses().size()];
-				for (XMLElement* child2 = child1->FirstChildElement("attr_val"); child2 != NULL; child2 = child2->NextSiblingElement("attr_val"))
+				for (tinyxml2::XMLElement* child2 = child1->FirstChildElement("attr_val"); child2 != NULL; child2 = child2->NextSiblingElement("attr_val"))
 				{
 					if (cl.getAttributes()[i].get().getID() == child2->FirstChildElement("attr_id")->GetText())
 					{
@@ -356,7 +357,7 @@ void DSHierarchy::load(char* fileName)
 					i++;
 				}
 				i = 0;
-				for (XMLElement* child2 = child1->FirstChildElement("cls_pr"); child2 != NULL; child2 = child2->NextSiblingElement("cls_pr"))
+				for (tinyxml2::XMLElement* child2 = child1->FirstChildElement("cls_pr"); child2 != NULL; child2 = child2->NextSiblingElement("cls_pr"))
 				{
 					if (cl.getClasses()[i].get().getID() == child2->FirstChildElement("class_id")->GetText())
 					{
@@ -370,7 +371,7 @@ void DSHierarchy::load(char* fileName)
 
 			int i = 0;
 			int* values_a = new int[cl.getAttributes().size()];
-			for (XMLElement* child1 = child->FirstChildElement("base_object")->FirstChildElement("attr_val"); child1 != NULL; child1 = child1->NextSiblingElement())
+			for (tinyxml2::XMLElement* child1 = child->FirstChildElement("base_object")->FirstChildElement("attr_val"); child1 != NULL; child1 = child1->NextSiblingElement())
 			{
 				if (cl.getAttributes()[i].get().getID() == child1->FirstChildElement("attr_id")->GetText())
 				{
@@ -381,7 +382,7 @@ void DSHierarchy::load(char* fileName)
 			cl.setBaseObject(values_a);
 			delete[] values_a;
 
-			for (XMLElement* child1 = child->FirstChildElement("childs")->FirstChildElement("clsfr_id"); child1 != NULL; child1 = child1->NextSiblingElement())
+			for (tinyxml2::XMLElement* child1 = child->FirstChildElement("childs")->FirstChildElement("clsfr_id"); child1 != NULL; child1 = child1->NextSiblingElement())
 			{
 				cl.addChild(findClassifier(child1->GetText()));
 			}
@@ -396,11 +397,11 @@ void DSHierarchy::load(char* fileName)
 }
 void DSHierarchy::save(char* fileName)
 {
-	XMLDocument *doc = new XMLDocument();
+	tinyxml2::XMLDocument *doc = new tinyxml2::XMLDocument();
 	doc->Parse("<?xml version=\"1.0\" encoding = \"UTF-8\"?>");
-	XMLNode *root = doc->InsertEndChild(doc->NewElement("hierarchy"));
+	tinyxml2::XMLNode *root = doc->InsertEndChild(doc->NewElement("hierarchy"));
 	doc->FirstChildElement("hierarchy")->InsertEndChild(doc->NewElement("attributes"));
-	XMLElement* insert;
+	tinyxml2::XMLElement* insert;
 	for (int i = 0; i < attributes_.size(); i++)
 	{
 		insert = doc->NewElement("attribute");
@@ -507,6 +508,20 @@ void DSHierarchy::initResultsTable(DSClassifier& classifier)
 	}
 	resultsTable_.emplace_back(result_temp);
 }
+//get
+vector <DSAttribute>& DSHierarchy::getAttributes()
+{
+	return attributes_;
+}
+vector <DSClass>& DSHierarchy::getClasses()
+{
+	return classes_;
+}
+vector <DSClassifier>& DSHierarchy::getClassifiers()
+{
+	return classifiers_;
+}
+//можно запилить set-функции, которые залпом будут кидать с вектора в массив...
 //remove
 void DSHierarchy::removeAttribute(string id)
 {

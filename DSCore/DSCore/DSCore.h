@@ -134,6 +134,10 @@ public:
 	void addClass(DSClass Class);
 	void addClassifier(DSClassifier classifier);
 	void initResultsTable(DSClassifier& classifier);
+	//get
+	vector <DSAttribute>& getAttributes();
+	vector <DSClass>& getClasses();
+	vector <DSClassifier>& getClassifiers();
 	//remove
 	void removeAttribute(string id);
 	void removeClass(string id);
