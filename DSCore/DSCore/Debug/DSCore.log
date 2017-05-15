@@ -38,8 +38,12 @@ c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscore\dsco
 c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscore\dscore\dscore.cpp(575): warning C4018: <: несоответствие типов со знаком и без знака
 c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscore\dscore\dscore.cpp(585): warning C4018: <: несоответствие типов со знаком и без знака
 c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscore\dscore\dscore.cpp(595): warning C4018: <: несоответствие типов со знаком и без знака
-c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscore\dscore\dscore.cpp(580): warning C4172: возвращение адреса локальной или временной переменной : A
+  Создание кода...
 c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscore\dscore\dscore.cpp(590): warning C4172: возвращение адреса локальной или временной переменной : C
 c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscore\dscore\dscore.cpp(600): warning C4172: возвращение адреса локальной или временной переменной : C
+c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscore\dscore\dscore.cpp(580): warning C4172: возвращение адреса локальной или временной переменной : A
+  Компиляция...
+  Main.cpp
+  Создание кода...
   DSCore.vcxproj -> C:\Users\Антон\Documents\Visual Studio 2017\Projects\AquariusDS\DSCore\Debug\DSCore.exe
   DSCore.vcxproj -> C:\Users\Антон\Documents\Visual Studio 2017\Projects\AquariusDS\DSCore\Debug\DSCore.pdb (Partial PDB)

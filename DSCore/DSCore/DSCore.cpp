@@ -68,7 +68,7 @@ DSProbe::DSProbe(vector <reference_wrapper<DSAttribute>> attributes, vector<refe
 {
 
 	AttribValue a;
-	ClassMemFunc c;
+	ClassMemFunc<int> c;
 	for (int i = 0; i < attributes.size(); i++)
 	{
 		a.attribPtr = &(attributes[i].get());
@@ -112,7 +112,7 @@ vector <AttribValue>& DSProbe::getAttribValues()
 {
 	return attribValues_;
 }
-vector <ClassMemFunc>& DSProbe::getClassMemFuncs()
+vector <ClassMemFunc<int>>& DSProbe::getClassMemFuncs()
 {
 	return classMemFuncs_;
 }
@@ -241,7 +241,7 @@ void DSClassifier::removeChild(string id)
 	}
 }
 //update references
-void DSClassifier::updateAttributesAddresses(vector <DSAttribute> &attributes, int index)
+void DSClassifier::updateAttributesReferences(vector <DSAttribute> &attributes, int index)
 {
 	for (int i = index + 1; i < attributes.size(); i++)
 	{
@@ -259,7 +259,7 @@ void DSClassifier::updateAttributesAddresses(vector <DSAttribute> &attributes, i
 		}
 	}
 }
-void DSClassifier::updateClassesAddresses(vector <DSClass> &classes, int index)
+void DSClassifier::updateClassesReferences(vector <DSClass> &classes, int index)
 {
 	for (int i = index + 1; i < classes.size(); i++)
 	{
@@ -276,7 +276,7 @@ void DSClassifier::updateClassesAddresses(vector <DSClass> &classes, int index)
 		}
 	}
 }
-void DSClassifier::updateClassifiersAddresses(vector <DSClassifier> &classifiers, int index)
+void DSClassifier::updateClassifiersReferences(vector <DSClassifier> &classifiers, int index)
 {
 	for (int i = index + 1; i < classifiers.size(); i++)
 	{
@@ -314,10 +314,10 @@ DSHierarchy::~DSHierarchy()
 	classifiers_.clear();
 }
 //save/load
-void DSHierarchy::load(char* fileName)
+void DSHierarchy::load(string fileName)
 {
 	tinyxml2::XMLDocument doc;
-	doc.LoadFile(fileName);
+	doc.LoadFile(fileName.c_str());
 	if (!doc.Error())
 	{	
 		tinyxml2::XMLElement *levelElement = doc.FirstChildElement("hierarchy")->FirstChildElement("attributes");//LEAK HERE!
@@ -395,7 +395,7 @@ void DSHierarchy::load(char* fileName)
 		throw "ERROR_READING_XML_FILE()";
 	}
 }
-void DSHierarchy::save(char* fileName)
+void DSHierarchy::save(string fileName)
 {
 	tinyxml2::XMLDocument *doc = new tinyxml2::XMLDocument();
 	doc->Parse("<?xml version=\"1.0\" encoding = \"UTF-8\"?>");
@@ -478,7 +478,7 @@ void DSHierarchy::save(char* fileName)
 		}
 		doc->FirstChildElement("hierarchy")->FirstChildElement("classifiers")->InsertEndChild(insert);
 	}
-	doc->SaveFile(fileName);
+	doc->SaveFile(fileName.c_str());
 	delete doc;
 }
 //add
@@ -501,7 +501,7 @@ void DSHierarchy::initResultsTable(DSClassifier& classifier)
 	result_temp.classifier = &classifier;
 	for (int i = 0; i < classifier.getClasses().size(); i++)
 	{
-		ClassMemFunc class_temp;
+		ClassMemFunc<double> class_temp;
 		class_temp.classPtr = &(classifier.getClasses()[i].get());
 		class_temp.mem_func = 0;
 		result_temp.result.push_back(class_temp);
@@ -532,7 +532,7 @@ void DSHierarchy::removeAttribute(string id)
 			for (int j = 0; j < classifiers_.size(); j++)
 			{
 				classifiers_[j].removeAttribute(id);
-				classifiers_[j].updateAttributesAddresses(attributes_,i);
+				classifiers_[j].updateAttributesReferences(attributes_,i);
 			}
 			attributes_.erase(attributes_.begin() + i);
 		}
@@ -547,7 +547,7 @@ void DSHierarchy::removeClass(string id)
 			for (int j = 0; j < classifiers_.size(); j++)
 			{
 				classifiers_[j].removeClass(id);
-				classifiers_[j].updateClassesAddresses(classes_, i);
+				classifiers_[j].updateClassesReferences(classes_, i);
 			}
 			classes_.erase(classes_.begin() + i);
 		}
@@ -562,7 +562,7 @@ void DSHierarchy::removeClassifier(string id)
 			for (int j = 0; j < classifiers_.size(); j++)
 			{
 				classifiers_[j].removeChild(id);
-				classifiers_[j].updateClassifiersAddresses(classifiers_, i);
+				classifiers_[j].updateClassifiersReferences(classifiers_, i);
 			}
 			classifiers_.erase(classifiers_.begin() + i);
 		}

@@ -7,6 +7,8 @@
 #include <msclr/marshal.h>
 using namespace System;
 using namespace System::Configuration;
+using namespace System::Runtime::InteropServices;
+using namespace System::Collections::Generic;
 
 
 namespace DSCoreWrapper {
@@ -15,14 +17,15 @@ namespace DSCoreWrapper {
 	{
 	public:
 		// TODO: здесь следует добавить свои методы для этого класса.
+		DSAttributeWrapper();
 		DSAttributeWrapper(System::String^ name, System::String^ type);
 		~DSAttributeWrapper();
 		System::String^ getID();
 		System::String^ getName();
 		System::String^ getType();
-	private:
 		DSAttribute* getInstance();
-		void setInstance(DSAttribute& attribute);
+		void setInstance(DSAttribute* attribute);
+	private:
 		DSAttribute* attribute_;
 	};
 
@@ -34,54 +37,81 @@ namespace DSCoreWrapper {
 		~DSClassWrapper();
 		System::String^ getID();
 		System::String^ getName();
-	private:
 		DSClass* getInstance();
-		void setInstance(DSClass& Class);
+		void setInstance(DSClass* Class);
+	private:
 		DSClass* class_;
 	};
 
-	//public ref struct AttribValueWrapper
-	//{
-	//	AttribValue* attribValue_;
-	//};
+	public ref class AttribValueWrapper
+	{
+	public:
+		AttribValueWrapper();
+		AttribValueWrapper(DSAttributeWrapper^ attribute, int value);
+		void setAttributeReference(DSAttributeWrapper^ attribute);
+		void setValue(int value);
+		void getAttributeReference() {};
+		void getValue() {};
+		~AttribValueWrapper();
+		
+	private:
+		AttribValue* attribValue_;
+	};
 
-	//public ref struct ClassMemFuncWrapper
-	//{
-	//	ClassMemFunc* classMemFunc_;
-	//};
+	public ref class ClassMemFuncWrapper
+	{
+	public:
+		ClassMemFuncWrapper();
+		ClassMemFuncWrapper(DSClassWrapper^ Class, double value);
+		~ClassMemFuncWrapper();
+		void setClassReference(DSClassWrapper^ Class);
+		void setMembershipFunction(double value);
+		void getAttributeReference() {};
+		void getValue() {};
+	private:
+		ClassMemFunc<double>* classMemFunc_;
+	};
 
-	//public ref class DSProbeWrapper
-	//{
-	//public:
-	//	DSProbeWrapper() {};
-	//	~DSProbeWrapper() {};
-	//private:
-	//	DSProbe *probe_;
-	//};
+	public ref class DSProbeWrapper
+	{
+	public:
+		DSProbeWrapper() {};
+		~DSProbeWrapper() {};
+	private:
+		DSProbe *probe_;
+	};
 
-	//public ref class DSClassifierWrapper
-	//{
-	//public:
-	//	DSClassifierWrapper(string name);
-	//	~DSClassifierWrapper();
-	//	DSClassifier* getInstance();
-	//	void addAttribute(DSAttributeWrapper attribute);
-	//	void addClass(DSClassWrapper Class);
-	//	void addChild(DSClassifierWrapper classifier);
-	//private:
-	//	DSClassifier* classifier_;
-	//};
+	public ref class DSClassifierWrapper
+	{
+	public:
+		DSClassifierWrapper();
+		DSClassifierWrapper(string name);
+		~DSClassifierWrapper();
+		System::String^ getID();
+		System::String^ getName();
+		DSClassifier* getInstance();
+		void setInstance(DSClassifier* classifier);
+		void addAttribute(DSAttributeWrapper^ attribute);
+		void addClass(DSClassWrapper^ Class);
+		void addChild(DSClassifierWrapper^ classifier);
+	private:
+		DSClassifier* classifier_;
+	};
 
-	//public ref class DSHierarchyWrapper
-	//{
-	//public:
-	//	DSHierarchyWrapper() {};
-	//	~DSHierarchyWrapper() {};
-	//	void addAttribute(DSAttributeWrapper attribute);
-	//	void addClass(DSClassWrapper Class);
-	//	void addClassifier(DSClassifierWrapper classifier);
-	//	vector <DSAttributeWrapper> getAttributes();
-	//private:
-	//	DSHierarchy& hierarchy_ = DSHierarchy::Instance();
-	//};
+	public ref class DSHierarchyWrapper
+	{
+	public:
+		DSHierarchyWrapper() {};
+		~DSHierarchyWrapper() {};	
+		void load(System::String^ fileName);
+		void save(System::String^ fileName);
+		void addAttribute(DSAttributeWrapper^ attribute);
+		void addClass(DSClassWrapper^ Class);
+		void addClassifier(DSClassifierWrapper^ classifier);
+		List <DSAttributeWrapper^>^ getAttributes();
+		List <DSClassWrapper^>^ getClasses();
+		List <DSClassifierWrapper^>^ getClassifiers();
+	private:
+		DSHierarchy& hierarchy_ = DSHierarchy::Instance();
+	};
 }

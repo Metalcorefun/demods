@@ -1,6 +1,4 @@
-﻿  Stdafx.cpp
-  AssemblyInfo.cpp
-  DSCoreWrapper.cpp
+﻿  DSCoreWrapper.cpp
 C:\Users\Антон\Documents\Visual Studio 2017\Projects\AquariusDS\DSCore\DSCore\DSCore.cpp(72): warning C4018: <: несоответствие типов со знаком и без знака
 C:\Users\Антон\Documents\Visual Studio 2017\Projects\AquariusDS\DSCore\DSCore\DSCore.cpp(79): warning C4018: <: несоответствие типов со знаком и без знака
 C:\Users\Антон\Documents\Visual Studio 2017\Projects\AquariusDS\DSCore\DSCore\DSCore.cpp(93): warning C4018: <: несоответствие типов со знаком и без знака
@@ -40,7 +38,9 @@ C:\Users\Антон\Documents\Visual Studio 2017\Projects\AquariusDS\DSCore\DSCo
 C:\Users\Антон\Documents\Visual Studio 2017\Projects\AquariusDS\DSCore\DSCore\DSCore.cpp(575): warning C4018: <: несоответствие типов со знаком и без знака
 C:\Users\Антон\Documents\Visual Studio 2017\Projects\AquariusDS\DSCore\DSCore\DSCore.cpp(585): warning C4018: <: несоответствие типов со знаком и без знака
 C:\Users\Антон\Documents\Visual Studio 2017\Projects\AquariusDS\DSCore\DSCore\DSCore.cpp(595): warning C4018: <: несоответствие типов со знаком и без знака
-  Создание кода...
+DSCoreWrapper.cpp(182): warning C4018: <: несоответствие типов со знаком и без знака
+DSCoreWrapper.cpp(195): warning C4018: <: несоответствие типов со знаком и без знака
+DSCoreWrapper.cpp(208): warning C4018: <: несоответствие типов со знаком и без знака
 c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscore\dscore\resources\tinyxml2\tinyxml2.cpp(2326): warning C4793: tinyxml2::XMLPrinter::Print: функция скомпилирована как машинная:
   	varargs не поддерживаются в /clr
 c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscore\dscore\resources\tinyxml2\tinyxml2.cpp(2328): warning C4793: tinyxml2::XMLPrinter::Print: функция скомпилирована как машинная:

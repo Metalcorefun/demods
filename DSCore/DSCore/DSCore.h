@@ -52,10 +52,11 @@ struct AttribValue
 	int value;
 };
 
+template <typename T>
 struct ClassMemFunc
 {
 	DSClass* classPtr;
-	int mem_func;
+	T mem_func;
 };
 
 class DSProbe //один опыт из обучающей выборки
@@ -66,10 +67,10 @@ public:
 	void removeAttribute(DSAttribute& attribute);
 	void removeClass(DSClass& Class);
 	vector <AttribValue>& getAttribValues();
-	vector <ClassMemFunc>& getClassMemFuncs();
+	vector <ClassMemFunc<int>>& getClassMemFuncs();
 private:
 	vector <AttribValue> attribValues_;
-	vector <ClassMemFunc> classMemFuncs_;
+	vector <ClassMemFunc<int>> classMemFuncs_;
 };
 
 class DSClassifier
@@ -99,9 +100,9 @@ public:
 	vector <DSProbe>& getTrainingSet();
 	vector <AttribValue>& getBaseObject();
 	//update addresses
-	void updateAttributesAddresses(vector <DSAttribute> &attributes, int index);
-	void updateClassesAddresses(vector <DSClass> &classes, int index);
-	void updateClassifiersAddresses(vector <DSClassifier> &classifiers, int index);
+	void updateAttributesReferences(vector <DSAttribute> &attributes, int index);
+	void updateClassesReferences(vector <DSClass> &classes, int index);
+	void updateClassifiersReferences(vector <DSClassifier> &classifiers, int index);
 	
 	void classify();
 private:
@@ -118,7 +119,7 @@ private:
 struct DSResults
 {
 	DSClassifier* classifier;
-	vector <ClassMemFunc> result;
+	vector <ClassMemFunc<double>> result;
 };
 
 class DSHierarchy
@@ -127,8 +128,8 @@ public:
 	//singleton
 	static DSHierarchy& Instance();
 	//save/load
-	void load(char* fileName);
-	void save(char* fileName);
+	void load(string fileName);
+	void save(string fileName);
 	//add
 	void addAttribute(DSAttribute attribute);
 	void addClass(DSClass Class);
