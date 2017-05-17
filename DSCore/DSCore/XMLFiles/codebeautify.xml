@@ -36,7 +36,7 @@
 		</class>
 	</classes>
 	<classifiers>
-		<classifier id="cl1">
+		<classifier id="cl1" level="1" type="Fuzzy">
 			<classifier_title>Classifier01</classifier_title>
 			<classifier_attr_list>
 				<attr_id>attr1</attr_id>
@@ -104,8 +104,10 @@
 				</attr_val>
 			</base_object>
 			<childs></childs>
+			<type>Fuzzy</type>
+			<level>1</level>
 		</classifier>
-		<classifier id="cl2">
+		<classifier id="cl2" level="2" type="Regressive">
 			<classifier_title>Classifier02</classifier_title>
 			<classifier_attr_list>
 				<attr_id>attr2</attr_id>
@@ -164,7 +166,7 @@
 				</attr_val>
 			</base_object>
 			<childs>
-			    <clsfr_id>cl1</clsfr_id>
+				<clsfr_id>cl1</clsfr_id>
 			</childs>
 		</classifier>
 	</classifiers>

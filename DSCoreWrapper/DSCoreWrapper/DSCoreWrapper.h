@@ -69,7 +69,7 @@ namespace DSCoreWrapper {
 		void getAttributeReference() {};
 		void getValue() {};
 	private:
-		ClassMemFunc<double>* classMemFunc_;
+		ClassMemFunc* classMemFunc_;
 	};
 
 	public ref class DSProbeWrapper
@@ -105,6 +105,7 @@ namespace DSCoreWrapper {
 		~DSHierarchyWrapper() {};	
 		void load(System::String^ fileName);
 		void save(System::String^ fileName);
+		void clear();
 		void addAttribute(DSAttributeWrapper^ attribute);
 		void addClass(DSClassWrapper^ Class);
 		void addClassifier(DSClassifierWrapper^ classifier);

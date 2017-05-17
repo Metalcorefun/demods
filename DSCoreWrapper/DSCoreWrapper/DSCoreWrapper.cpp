@@ -91,11 +91,11 @@ void DSCoreWrapper::AttribValueWrapper::setValue(int value)
 
 DSCoreWrapper::ClassMemFuncWrapper::ClassMemFuncWrapper()
 {
-	classMemFunc_ = new ClassMemFunc<double>;
+	classMemFunc_ = new ClassMemFunc;
 }
 DSCoreWrapper::ClassMemFuncWrapper::ClassMemFuncWrapper(DSClassWrapper^ Class, double value)
 {
-	classMemFunc_ = new ClassMemFunc<double>;
+	classMemFunc_ = new ClassMemFunc;
 	classMemFunc_->classPtr = Class->getInstance();
 	classMemFunc_->mem_func = value;
 }
@@ -156,11 +156,22 @@ void DSCoreWrapper::DSClassifierWrapper::addChild(DSClassifierWrapper^ classifie
 
 void DSCoreWrapper::DSHierarchyWrapper::load(System::String^ fileName)
 {
-	hierarchy_.load(msclr::interop::marshal_as <std::string>(fileName));
+	try
+	{
+		hierarchy_.load(msclr::interop::marshal_as <std::string>(fileName));
+	}
+	catch(...)
+	{
+		throw gcnew System::Exception("ERROR_OPEN_XML_FILE");
+	}
 }
 void DSCoreWrapper::DSHierarchyWrapper::save(System::String^ fileName)
 {
 	hierarchy_.save(msclr::interop::marshal_as <std::string>(fileName));
+}
+void DSCoreWrapper::DSHierarchyWrapper::clear()
+{
+	hierarchy_.clear();
 }
 void DSCoreWrapper::DSHierarchyWrapper::addAttribute(DSAttributeWrapper^ attribute)
 {

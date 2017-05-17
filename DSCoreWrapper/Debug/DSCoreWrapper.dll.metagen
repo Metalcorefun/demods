@@ -81,6 +81,7 @@ Class DSCoreWrapper.DSHierarchyWrapper: AutoLayout, AnsiClass, Class, Public, Be
   Methods:
     load(String): PrivateScope, Public, HideBySig
     save(String): PrivateScope, Public, HideBySig
+    clear(): PrivateScope, Public, HideBySig
     addAttribute(DSAttributeWrapper): PrivateScope, Public, HideBySig
     addClass(DSClassWrapper): PrivateScope, Public, HideBySig
     addClassifier(DSClassifierWrapper): PrivateScope, Public, HideBySig

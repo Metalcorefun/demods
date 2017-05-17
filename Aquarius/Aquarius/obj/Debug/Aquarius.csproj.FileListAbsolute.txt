@@ -1,0 +1,13 @@
+c:\users\антон\documents\visual studio 2017\Projects\Aquarius\Aquarius\bin\Debug\Aquarius.exe.config
+c:\users\антон\documents\visual studio 2017\Projects\Aquarius\Aquarius\bin\Debug\Aquarius.exe
+c:\users\антон\documents\visual studio 2017\Projects\Aquarius\Aquarius\bin\Debug\Aquarius.pdb
+c:\users\антон\documents\visual studio 2017\Projects\Aquarius\Aquarius\bin\Debug\DSCoreWrapper.dll
+c:\users\антон\documents\visual studio 2017\Projects\Aquarius\Aquarius\bin\Debug\DSCoreWrapper.pdb
+c:\users\антон\documents\visual studio 2017\Projects\Aquarius\Aquarius\obj\Debug\Aquarius.csprojResolveAssemblyReference.cache
+c:\users\антон\documents\visual studio 2017\Projects\Aquarius\Aquarius\obj\Debug\Aquarius.Form1.resources
+c:\users\антон\documents\visual studio 2017\Projects\Aquarius\Aquarius\obj\Debug\Aquarius.Properties.Resources.resources
+c:\users\антон\documents\visual studio 2017\Projects\Aquarius\Aquarius\obj\Debug\Aquarius.csproj.GenerateResource.Cache
+c:\users\антон\documents\visual studio 2017\Projects\Aquarius\Aquarius\obj\Debug\Aquarius.exe
+c:\users\антон\documents\visual studio 2017\Projects\Aquarius\Aquarius\obj\Debug\Aquarius.pdb
+c:\users\антон\documents\visual studio 2017\Projects\Aquarius\Aquarius\obj\Debug\Aquarius.Attributes.resources
+C:\Users\Антон\Documents\Visual Studio 2017\Projects\Aquarius\Aquarius\obj\Debug\Aquarius.Classes.resources

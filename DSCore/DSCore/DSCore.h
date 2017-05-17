@@ -52,11 +52,10 @@ struct AttribValue
 	int value;
 };
 
-template <typename T>
 struct ClassMemFunc
 {
 	DSClass* classPtr;
-	T mem_func;
+	double mem_func;
 };
 
 class DSProbe //один опыт из обучающей выборки
@@ -67,17 +66,17 @@ public:
 	void removeAttribute(DSAttribute& attribute);
 	void removeClass(DSClass& Class);
 	vector <AttribValue>& getAttribValues();
-	vector <ClassMemFunc<int>>& getClassMemFuncs();
+	vector <ClassMemFunc>& getClassMemFuncs();
 private:
 	vector <AttribValue> attribValues_;
-	vector <ClassMemFunc<int>> classMemFuncs_;
+	vector <ClassMemFunc> classMemFuncs_;
 };
 
 class DSClassifier
 {
 public:
 	static int classifierCount;
-	DSClassifier() {};
+	DSClassifier();
 	DSClassifier(string name);
 	~DSClassifier();
 	//add
@@ -86,6 +85,9 @@ public:
 	void addChild(DSClassifier& classifier);
 	void setBaseObject(int* values_a);
 	void toTrainingSet(int* values_a, int* values_c);
+	void setApex(bool value);
+	void setType(string type);
+	void setLevel(int level);
 	//remove
 	void removeAttribute(string id);
 	void removeClass(string id);
@@ -94,11 +96,13 @@ public:
 	int getLevel();
 	string getID();
 	string getName();
+	string getType();
 	vector <reference_wrapper<DSAttribute>> getAttributes();
 	vector <reference_wrapper<DSClass>> getClasses();
 	vector <reference_wrapper<DSClassifier>> getChilds();
 	vector <DSProbe>& getTrainingSet();
 	vector <AttribValue>& getBaseObject();
+	bool isApexPoint();
 	//update addresses
 	void updateAttributesReferences(vector <DSAttribute> &attributes, int index);
 	void updateClassesReferences(vector <DSClass> &classes, int index);
@@ -106,8 +110,9 @@ public:
 	
 	void classify();
 private:
-	string id_, name_;
+	string id_, name_, type_;
 	int level_;
+	bool apex_ = false;
 	vector <reference_wrapper<DSAttribute>> attributes_;
 	vector <reference_wrapper<DSClass>> classes_;
 	vector <reference_wrapper<DSClassifier>> childs_;
@@ -119,7 +124,11 @@ private:
 struct DSResults
 {
 	DSClassifier* classifier;
-	vector <ClassMemFunc<double>> result;
+	vector <ClassMemFunc> result;
+	~DSResults()
+	{
+		result.clear();
+	}
 };
 
 class DSHierarchy
@@ -127,6 +136,8 @@ class DSHierarchy
 public:
 	//singleton
 	static DSHierarchy& Instance();
+	//
+	void clear();
 	//save/load
 	void load(string fileName);
 	void save(string fileName);
@@ -147,6 +158,12 @@ public:
 	DSAttribute& findAttribute(string id);
 	DSClass& findClass(string id);
 	DSClassifier& findClassifier(string id);
+	//apex(entry) point
+	bool apexPointExists();
+	int getApexPoint();
+	void setApexPoint(string id, bool value);
+	//classify
+	void classify();
 private:
 	DSHierarchy();
 	~DSHierarchy();
