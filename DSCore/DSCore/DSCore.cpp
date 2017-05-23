@@ -221,6 +221,23 @@ string DSClassifier::getType()
 {
 	return type_;
 }
+//set
+void DSClassifier::setName(string name)
+{
+	name_ = name;
+}
+void DSClassifier::setType(string type)
+{
+	type_ = type;
+}
+void DSClassifier::setLevel(int level)
+{
+	level_ = level;
+}
+void DSClassifier::setApex(bool value)
+{
+	apex_ = value;
+}
 
 //add
 void DSClassifier::addAttribute(DSAttribute& attribute)
@@ -249,18 +266,6 @@ void DSClassifier::setBaseObject(int* values_a)
 		a.value = values_a[i];
 		baseObject_.push_back(a);
 	}
-}
-void DSClassifier::setApex(bool value)
-{
-	apex_ = value;
-}
-void DSClassifier::setType(string type)
-{
-	type_ = type;
-}
-void DSClassifier::setLevel(int level)
-{
-	level_ = level;
 }
 //remove
 void DSClassifier::removeAttribute(string id)

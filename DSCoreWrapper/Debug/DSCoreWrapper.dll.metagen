@@ -68,18 +68,25 @@ Class DSCoreWrapper.DSProbeWrapper: AutoLayout, AnsiClass, Class, Public, Before
   Methods:
     Dispose(): PrivateScope, Public, Final, Virtual, HideBySig
 Class DSCoreWrapper.DSClassifierWrapper: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
-    Void .ctor(std.basic_string<char\,std::char_traits<char>\,std::allocator<char> >*): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Interfaces:
     System.IDisposable
   Methods:
     getID(): PrivateScope, Public, HideBySig
     getName(): PrivateScope, Public, HideBySig
-    getInstance(): PrivateScope, Public, HideBySig
-    setInstance(DSClassifier*): PrivateScope, Public, HideBySig
+    getType(): PrivateScope, Public, HideBySig
+    setName(String): PrivateScope, Public, HideBySig
+    setType(String): PrivateScope, Public, HideBySig
+    setLevel(Int32): PrivateScope, Public, HideBySig
     addAttribute(DSAttributeWrapper): PrivateScope, Public, HideBySig
     addClass(DSClassWrapper): PrivateScope, Public, HideBySig
     addChild(DSClassifierWrapper): PrivateScope, Public, HideBySig
+    removeAttribute(String): PrivateScope, Public, HideBySig
+    removeClass(String): PrivateScope, Public, HideBySig
+    removeChild(String): PrivateScope, Public, HideBySig
+    getInstance(): PrivateScope, Public, HideBySig
+    setInstance(DSClassifier*): PrivateScope, Public, HideBySig
     Dispose(): PrivateScope, Public, Final, Virtual, HideBySig
 Class DSCoreWrapper.DSHierarchyWrapper: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName

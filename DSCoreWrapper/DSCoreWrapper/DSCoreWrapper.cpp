@@ -144,9 +144,9 @@ DSCoreWrapper::DSClassifierWrapper::DSClassifierWrapper()
 {
 	classifier_ = new DSClassifier;
 }
-DSCoreWrapper::DSClassifierWrapper::DSClassifierWrapper(string name)
+DSCoreWrapper::DSClassifierWrapper::DSClassifierWrapper(System::String^ name)
 {
-	classifier_ = new DSClassifier(name);
+	classifier_ = new DSClassifier(msclr::interop::marshal_as<std::string>(name));
 }
 DSCoreWrapper::DSClassifierWrapper::~DSClassifierWrapper()
 {
@@ -160,13 +160,21 @@ System::String^ DSCoreWrapper::DSClassifierWrapper::getName()
 {
 	return msclr::interop::marshal_as<System::String^>(classifier_->getName());
 }
-DSClassifier* DSCoreWrapper::DSClassifierWrapper::getInstance()
+System::String^ DSCoreWrapper::DSClassifierWrapper::getType()
 {
-	return classifier_;
+	return msclr::interop::marshal_as<System::String^>(classifier_->getType());
 }
-void DSCoreWrapper::DSClassifierWrapper::setInstance(DSClassifier* classifier)
+void DSCoreWrapper::DSClassifierWrapper::setName(System::String^ name)
 {
-	classifier_ = classifier;
+	classifier_->setName(msclr::interop::marshal_as <std::string>(name));
+}
+void DSCoreWrapper::DSClassifierWrapper::setType(System::String^ type)
+{
+	classifier_->setType(msclr::interop::marshal_as <std::string>(type));
+}
+void DSCoreWrapper::DSClassifierWrapper::setLevel(int level)
+{
+	classifier_->setLevel(level);
 }
 void DSCoreWrapper::DSClassifierWrapper::addAttribute(DSAttributeWrapper^ attribute)
 {
@@ -179,6 +187,26 @@ void DSCoreWrapper::DSClassifierWrapper::addClass(DSClassWrapper^ Class)
 void DSCoreWrapper::DSClassifierWrapper::addChild(DSClassifierWrapper^ classifier)
 {
 	classifier_->addChild(*classifier->getInstance());
+}
+void DSCoreWrapper::DSClassifierWrapper::removeAttribute(System::String^ id)
+{
+	classifier_->removeAttribute(msclr::interop::marshal_as <std::string>(id));
+}
+void DSCoreWrapper::DSClassifierWrapper::removeClass(System::String^ id)
+{
+	classifier_->removeClass(msclr::interop::marshal_as <std::string>(id));
+}
+void DSCoreWrapper::DSClassifierWrapper::removeChild(System::String^ id)
+{
+	classifier_->removeChild(msclr::interop::marshal_as <std::string>(id));
+}
+DSClassifier* DSCoreWrapper::DSClassifierWrapper::getInstance()
+{
+	return classifier_;
+}
+void DSCoreWrapper::DSClassifierWrapper::setInstance(DSClassifier* classifier)
+{
+	classifier_ = classifier;
 }
 
 

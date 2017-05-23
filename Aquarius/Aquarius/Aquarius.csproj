@@ -61,11 +61,23 @@
     <Compile Include="Classes.Designer.cs">
       <DependentUpon>Classes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Classifier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Classifier.Designer.cs">
+      <DependentUpon>Classifier.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HierarchyComponents.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HierarchyComponents.Designer.cs">
+      <DependentUpon>HierarchyComponents.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -75,8 +87,14 @@
     <EmbeddedResource Include="Classes.resx">
       <DependentUpon>Classes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Classifier.resx">
+      <DependentUpon>Classifier.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HierarchyComponents.resx">
+      <DependentUpon>HierarchyComponents.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

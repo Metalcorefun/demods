@@ -94,9 +94,6 @@ public:
 	void addChild(DSClassifier& classifier);
 	void setBaseObject(int* values_a);
 	void toTrainingSet(int* values_a, int* values_c);
-	void setApex(bool value);
-	void setType(string type);
-	void setLevel(int level);
 	//remove
 	void removeAttribute(string id);
 	void removeClass(string id);
@@ -112,6 +109,11 @@ public:
 	vector <DSProbe>& getTrainingSet();
 	vector <AttribValue>& getBaseObject();
 	bool isApexPoint();
+	//set
+	void setName(string name);
+	void setType(string type);
+	void setLevel(int level);
+	void setApex(bool value);
 	//update addresses
 	void updateAttributesReferences(vector <DSAttribute> &attributes, int index);
 	void updateClassesReferences(vector <DSClass> &classes, int index);

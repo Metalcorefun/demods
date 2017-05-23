@@ -92,15 +92,22 @@ namespace DSCoreWrapper {
 	{
 	public:
 		DSClassifierWrapper();
-		DSClassifierWrapper(string name);
+		DSClassifierWrapper(System::String^ name);
 		~DSClassifierWrapper();
 		System::String^ getID();
 		System::String^ getName();
-		DSClassifier* getInstance();
-		void setInstance(DSClassifier* classifier);
+		System::String^ getType();
+		void setName(System::String^ name);
+		void setType(System::String^ type);
+		void setLevel(int level);
 		void addAttribute(DSAttributeWrapper^ attribute);
 		void addClass(DSClassWrapper^ Class);
 		void addChild(DSClassifierWrapper^ classifier);
+		void removeAttribute(System::String^ id);
+		void removeClass(System::String^ id);
+		void removeChild(System::String^ id);
+		DSClassifier* getInstance();
+		void setInstance(DSClassifier* classifier);
 	private:
 		DSClassifier* classifier_;
 	};

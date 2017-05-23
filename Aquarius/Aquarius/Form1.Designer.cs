@@ -40,6 +40,8 @@
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.иерархияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.списокКомпонентовИерархииToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,7 +49,8 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.файлToolStripMenuItem,
-            this.словарьToolStripMenuItem});
+            this.словарьToolStripMenuItem,
+            this.иерархияToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1008, 24);
@@ -132,6 +135,21 @@
             this.statusStrip1.TabIndex = 1;
             this.statusStrip1.Text = "statusStrip1";
             // 
+            // иерархияToolStripMenuItem
+            // 
+            this.иерархияToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.списокКомпонентовИерархииToolStripMenuItem});
+            this.иерархияToolStripMenuItem.Name = "иерархияToolStripMenuItem";
+            this.иерархияToolStripMenuItem.Size = new System.Drawing.Size(72, 20);
+            this.иерархияToolStripMenuItem.Text = "Иерархия";
+            // 
+            // списокКомпонентовИерархииToolStripMenuItem
+            // 
+            this.списокКомпонентовИерархииToolStripMenuItem.Name = "списокКомпонентовИерархииToolStripMenuItem";
+            this.списокКомпонентовИерархииToolStripMenuItem.Size = new System.Drawing.Size(247, 22);
+            this.списокКомпонентовИерархииToolStripMenuItem.Text = "Список компонентов иерархии";
+            this.списокКомпонентовИерархииToolStripMenuItem.Click += new System.EventHandler(this.списокКомпонентовИерархииToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -164,6 +182,8 @@
         private System.Windows.Forms.ToolStripMenuItem признакиToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem классыToolStripMenuItem;
         private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripMenuItem иерархияToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem списокКомпонентовИерархииToolStripMenuItem;
     }
 }
 

@@ -70,5 +70,11 @@ namespace Aquarius
             Form f = new Classes(hierarchy_);
             f.Show();
         }
+
+        private void списокКомпонентовИерархииToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form f = new HierarchyComponents(hierarchy_);
+            f.Show();
+        }
     }
 }
