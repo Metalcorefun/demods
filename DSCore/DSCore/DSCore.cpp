@@ -23,6 +23,14 @@ DSAttribute::DSAttribute(string name, string type)
 	name_ = name;
 	type_ = type;
 };
+DSAttribute::DSAttribute(string name, string type, string description)
+{
+	attribCount++;
+	id_ = "attr" + to_string(attribCount);
+	name_ = name;
+	type_ = type;
+	description_ = description;
+};
 DSAttribute::~DSAttribute()
 {
 	id_.clear();
@@ -41,6 +49,22 @@ string DSAttribute::getType()
 {
 	return type_;
 }
+string DSAttribute::getDescription()
+{
+	return description_;
+}
+void DSAttribute::setName(string name)
+{
+	name_ = name;
+}
+void DSAttribute::setType(string type)
+{
+	type_ = type;
+}
+void DSAttribute::setDescription(string description)
+{
+	description_ = description;
+}
 
 //---------------DSCLASS-------------------//
 DSClass::DSClass(string name)
@@ -48,6 +72,13 @@ DSClass::DSClass(string name)
 	classCount++;
 	id_ = "c" + to_string(classCount);
 	name_ = name;
+};
+DSClass::DSClass(string name, string description)
+{
+	classCount++;
+	id_ = "c" + to_string(classCount);
+	name_ = name;
+	description_ = description_;
 };
 DSClass::~DSClass()
 {
@@ -62,7 +93,18 @@ string DSClass::getName()
 {
 	return name_;
 }
-
+string DSClass::getDescription()
+{
+	return description_;
+}
+void DSClass::setName(string name)
+{
+	name_ = name;
+}
+void DSClass::setDescription(string description)
+{
+	description_ = description;
+}
 //---------------DSPROBE-------------------//
 DSProbe::DSProbe(vector <reference_wrapper<DSAttribute>> attributes, vector<reference_wrapper<DSClass>> classes, int* values_a, int* values_c)
 {

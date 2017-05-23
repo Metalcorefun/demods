@@ -12,9 +12,9 @@ DSCoreWrapper::DSAttributeWrapper::DSAttributeWrapper()
 {
 	attribute_ = new DSAttribute();
 }
-DSCoreWrapper::DSAttributeWrapper::DSAttributeWrapper(System::String^ name, System::String^ type)
+DSCoreWrapper::DSAttributeWrapper::DSAttributeWrapper(System::String^ name, System::String^ type, System::String^ description)
 {
-	attribute_ = new DSAttribute(msclr::interop::marshal_as<std::string>(name), msclr::interop::marshal_as<std::string>(type));
+	attribute_ = new DSAttribute(msclr::interop::marshal_as<std::string>(name), msclr::interop::marshal_as<std::string>(type), msclr::interop::marshal_as<std::string>(description));
 }
 DSCoreWrapper::DSAttributeWrapper::~DSAttributeWrapper()
 {
@@ -32,6 +32,22 @@ System::String^ DSCoreWrapper::DSAttributeWrapper::getType()
 {
 	return msclr::interop::marshal_as<System::String^>(attribute_->getType());
 }
+System::String^ DSCoreWrapper::DSAttributeWrapper::getDescription()
+{
+	return msclr::interop::marshal_as<System::String^>(attribute_->getDescription());
+}
+void DSCoreWrapper::DSAttributeWrapper::setName(System::String^ name)
+{
+	attribute_->setName(msclr::interop::marshal_as<std::string>(name));
+}
+void DSCoreWrapper::DSAttributeWrapper::setType(System::String^ type)
+{
+	attribute_->setType(msclr::interop::marshal_as<std::string>(type));
+}
+void DSCoreWrapper::DSAttributeWrapper::setDescription(System::String^ description)
+{
+	attribute_->setDescription(msclr::interop::marshal_as<std::string>(description));
+}
 DSAttribute* DSCoreWrapper::DSAttributeWrapper::getInstance()
 {
 	return attribute_;
@@ -41,9 +57,9 @@ void DSCoreWrapper::DSAttributeWrapper::setInstance(DSAttribute* attribute)
 	attribute_ = attribute;
 }
 
-DSCoreWrapper::DSClassWrapper::DSClassWrapper(System::String^ name)
+DSCoreWrapper::DSClassWrapper::DSClassWrapper(System::String^ name, System::String^ description)
 {
-	class_ = new DSClass(msclr::interop::marshal_as<std::string>(name));
+	class_ = new DSClass(msclr::interop::marshal_as<std::string>(name), msclr::interop::marshal_as<std::string>(description));
 }
 DSCoreWrapper::DSClassWrapper::~DSClassWrapper()
 {
@@ -56,6 +72,18 @@ System::String^ DSCoreWrapper::DSClassWrapper::getID()
 System::String^ DSCoreWrapper::DSClassWrapper::getName()
 {
 	return msclr::interop::marshal_as<System::String^>(class_->getName());
+}
+System::String^ DSCoreWrapper::DSClassWrapper::getDescription()
+{
+	return msclr::interop::marshal_as<System::String^>(class_->getDescription());
+}
+void DSCoreWrapper::DSClassWrapper::setName(System::String^ name)
+{
+	class_->setName(msclr::interop::marshal_as<std::string>(name));
+}
+void DSCoreWrapper::DSClassWrapper::setDescription(System::String^ description)
+{
+	class_->setDescription(msclr::interop::marshal_as<std::string>(description));
 }
 DSClass* DSCoreWrapper::DSClassWrapper::getInstance()
 {
@@ -184,6 +212,18 @@ void DSCoreWrapper::DSHierarchyWrapper::addClass(DSClassWrapper^ Class)
 void DSCoreWrapper::DSHierarchyWrapper::addClassifier(DSClassifierWrapper^ classifier)
 {
 	hierarchy_.addClassifier(*classifier->getInstance());
+}
+void DSCoreWrapper::DSHierarchyWrapper::removeAttribute(System::String^ id)
+{
+	hierarchy_.removeAttribute(msclr::interop::marshal_as<std::string>(id));
+}
+void DSCoreWrapper::DSHierarchyWrapper::removeClass(System::String^ id)
+{
+	hierarchy_.removeClass(msclr::interop::marshal_as<std::string>(id));
+}
+void DSCoreWrapper::DSHierarchyWrapper::removeClassifier(System::String^ id)
+{
+	hierarchy_.removeClassifier(msclr::interop::marshal_as<std::string>(id));
 }
 List <DSCoreWrapper::DSAttributeWrapper^>^ DSCoreWrapper::DSHierarchyWrapper::getAttributes()
 {

@@ -10,7 +10,7 @@ Assembly System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e0
 Assembly System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
 	hash=None, flags=None
 Class DSCoreWrapper.DSAttributeWrapper: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
-    Void .ctor(System.String, System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.String, System.String, System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Interfaces:
     System.IDisposable
@@ -18,17 +18,24 @@ Class DSCoreWrapper.DSAttributeWrapper: AutoLayout, AnsiClass, Class, Public, Be
     getID(): PrivateScope, Public, HideBySig
     getName(): PrivateScope, Public, HideBySig
     getType(): PrivateScope, Public, HideBySig
+    getDescription(): PrivateScope, Public, HideBySig
+    setName(String): PrivateScope, Public, HideBySig
+    setType(String): PrivateScope, Public, HideBySig
+    setDescription(String): PrivateScope, Public, HideBySig
     getInstance(): PrivateScope, Public, HideBySig
     setInstance(DSAttribute*): PrivateScope, Public, HideBySig
     Dispose(): PrivateScope, Public, Final, Virtual, HideBySig
 Class DSCoreWrapper.DSClassWrapper: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
-    Void .ctor(System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.String, System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Interfaces:
     System.IDisposable
   Methods:
     getID(): PrivateScope, Public, HideBySig
     getName(): PrivateScope, Public, HideBySig
+    getDescription(): PrivateScope, Public, HideBySig
+    setName(String): PrivateScope, Public, HideBySig
+    setDescription(String): PrivateScope, Public, HideBySig
     getInstance(): PrivateScope, Public, HideBySig
     setInstance(DSClass*): PrivateScope, Public, HideBySig
     Dispose(): PrivateScope, Public, Final, Virtual, HideBySig
@@ -85,6 +92,9 @@ Class DSCoreWrapper.DSHierarchyWrapper: AutoLayout, AnsiClass, Class, Public, Be
     addAttribute(DSAttributeWrapper): PrivateScope, Public, HideBySig
     addClass(DSClassWrapper): PrivateScope, Public, HideBySig
     addClassifier(DSClassifierWrapper): PrivateScope, Public, HideBySig
+    removeAttribute(String): PrivateScope, Public, HideBySig
+    removeClass(String): PrivateScope, Public, HideBySig
+    removeClassifier(String): PrivateScope, Public, HideBySig
     getAttributes(): PrivateScope, Public, HideBySig
     getClasses(): PrivateScope, Public, HideBySig
     getClassifiers(): PrivateScope, Public, HideBySig

@@ -39,6 +39,7 @@
             this.классыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -104,14 +105,14 @@
             // признакиToolStripMenuItem
             // 
             this.признакиToolStripMenuItem.Name = "признакиToolStripMenuItem";
-            this.признакиToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.признакиToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
             this.признакиToolStripMenuItem.Text = "Признаки";
             this.признакиToolStripMenuItem.Click += new System.EventHandler(this.признакиToolStripMenuItem_Click);
             // 
             // классыToolStripMenuItem
             // 
             this.классыToolStripMenuItem.Name = "классыToolStripMenuItem";
-            this.классыToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.классыToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
             this.классыToolStripMenuItem.Text = "Классы";
             this.классыToolStripMenuItem.Click += new System.EventHandler(this.классыToolStripMenuItem_Click);
             // 
@@ -123,11 +124,20 @@
             // 
             this.saveFileDialog1.Filter = "XML files (*.xml) | *.xml";
             // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Location = new System.Drawing.Point(0, 659);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(1008, 22);
+            this.statusStrip1.TabIndex = 1;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 681);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
@@ -153,6 +163,7 @@
         private System.Windows.Forms.ToolStripMenuItem словарьToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem признакиToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem классыToolStripMenuItem;
+        private System.Windows.Forms.StatusStrip statusStrip1;
     }
 }
 

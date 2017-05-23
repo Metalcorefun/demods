@@ -18,11 +18,15 @@ namespace DSCoreWrapper {
 	public:
 		// TODO: здесь следует добавить свои методы для этого класса.
 		DSAttributeWrapper();
-		DSAttributeWrapper(System::String^ name, System::String^ type);
+		DSAttributeWrapper(System::String^ name, System::String^ type, System::String^ description);
 		~DSAttributeWrapper();
 		System::String^ getID();
 		System::String^ getName();
 		System::String^ getType();
+		System::String^ getDescription();
+		void setName(System::String^ name);
+		void setType(System::String^ type);
+		void setDescription(System::String^ description);
 		DSAttribute* getInstance();
 		void setInstance(DSAttribute* attribute);
 	private:
@@ -33,10 +37,13 @@ namespace DSCoreWrapper {
 	{
 	public:
 		DSClassWrapper() {};
-		DSClassWrapper(System::String^ name);
+		DSClassWrapper(System::String^ name, System::String^ description);
 		~DSClassWrapper();
 		System::String^ getID();
 		System::String^ getName();
+		System::String^ getDescription();
+		void setName(System::String^ name);
+		void setDescription(System::String^ description);
 		DSClass* getInstance();
 		void setInstance(DSClass* Class);
 	private:
@@ -109,6 +116,9 @@ namespace DSCoreWrapper {
 		void addAttribute(DSAttributeWrapper^ attribute);
 		void addClass(DSClassWrapper^ Class);
 		void addClassifier(DSClassifierWrapper^ classifier);
+		void removeAttribute(System::String^ id);
+		void removeClass(System::String^ id);
+		void removeClassifier(System::String^ id);
 		List <DSAttributeWrapper^>^ getAttributes();
 		List <DSClassWrapper^>^ getClasses();
 		List <DSClassifierWrapper^>^ getClassifiers();

@@ -25,12 +25,17 @@ public:
 	static int attribCount;
 	DSAttribute() {};
 	DSAttribute(string name, string type);
+	DSAttribute(string name, string type, string description);
 	~DSAttribute();
 	string getID();
 	string getName();
 	string getType();
+	string getDescription();
+	void setName(string name);
+	void setType(string type);
+	void setDescription(string description);
 private:
-	string id_, name_, type_;
+	string id_, name_, type_, description_;
 };
 
 class DSClass
@@ -39,11 +44,15 @@ public:
 	static int classCount;
 	DSClass() {};
 	DSClass(string name);
+	DSClass(string name, string description);
 	~DSClass();
 	string getID();
 	string getName();
+	string getDescription();
+	void setName(string name);
+	void setDescription(string description);
 private:
-	string id_, name_;
+	string id_, name_, description_;
 };
 
 struct AttribValue

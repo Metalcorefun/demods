@@ -32,8 +32,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DSCoreWrapper">
-      <HintPath>..\..\AquariusDS\DSCoreWrapper\Debug\DSCoreWrapper.dll</HintPath>
+    <Reference Include="DSCoreWrapper, Version=1.0.6346.3374, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\DSCoreWrapper\Debug\DSCoreWrapper.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
