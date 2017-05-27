@@ -56,6 +56,10 @@ void DSCoreWrapper::DSAttributeWrapper::setInstance(DSAttribute* attribute)
 {
 	attribute_ = attribute;
 }
+void DSCoreWrapper::DSAttributeWrapper::setInstance(reference_wrapper<DSAttribute> attribute)
+{
+	attribute_ = &attribute.get();
+}
 
 DSCoreWrapper::DSClassWrapper::DSClassWrapper(System::String^ name, System::String^ description)
 {
@@ -92,6 +96,10 @@ DSClass* DSCoreWrapper::DSClassWrapper::getInstance()
 void DSCoreWrapper::DSClassWrapper::setInstance(DSClass* Class)
 {
 	class_ = Class;
+}
+void DSCoreWrapper::DSClassWrapper::setInstance(reference_wrapper<DSClass> Class)
+{
+	class_ = &Class.get();
 }
 
 DSCoreWrapper::AttribValueWrapper::AttribValueWrapper()
@@ -164,6 +172,49 @@ System::String^ DSCoreWrapper::DSClassifierWrapper::getType()
 {
 	return msclr::interop::marshal_as<System::String^>(classifier_->getType());
 }
+int DSCoreWrapper::DSClassifierWrapper::getLevel()
+{
+	return classifier_->getLevel();
+}
+List <DSCoreWrapper::DSAttributeWrapper^>^ DSCoreWrapper::DSClassifierWrapper::getAttributes()
+{
+	List <DSAttributeWrapper^>^ attributes = gcnew List<DSAttributeWrapper^>;
+	vector <reference_wrapper<DSAttribute>> attr_ = classifier_->getAttributes();
+
+	for (int i = 0; i < attr_.size(); i++)
+	{
+		DSAttributeWrapper^ a = gcnew DSAttributeWrapper();
+		a->setInstance(attr_[i]);
+		attributes->Add(a);
+	}
+	return attributes;
+}
+List <DSCoreWrapper::DSClassWrapper^>^ DSCoreWrapper::DSClassifierWrapper::getClasses()
+{
+	List <DSClassWrapper^>^ classes = gcnew List<DSClassWrapper^>;
+	vector <reference_wrapper<DSClass>> classes_ = classifier_->getClasses();
+
+	for (int i = 0; i < classes_.size(); i++)
+	{
+		DSClassWrapper^ c = gcnew DSClassWrapper();
+		c->setInstance(classes_[i]);
+		classes->Add(c);
+	}
+	return classes;
+}
+List <DSCoreWrapper::DSClassifierWrapper^>^ DSCoreWrapper::DSClassifierWrapper::getChilds()
+{
+	List <DSClassifierWrapper^>^ childs = gcnew List<DSClassifierWrapper^>;
+	vector <reference_wrapper<DSClassifier>> childs_ = classifier_->getChilds();
+
+	for (int i = 0; i < childs_.size(); i++)
+	{
+		DSClassifierWrapper^ c = gcnew DSClassifierWrapper();
+		c->setInstance(childs_[i]);
+		childs->Add(c);
+	}
+	return childs;
+}
 void DSCoreWrapper::DSClassifierWrapper::setName(System::String^ name)
 {
 	classifier_->setName(msclr::interop::marshal_as <std::string>(name));
@@ -207,6 +258,10 @@ DSClassifier* DSCoreWrapper::DSClassifierWrapper::getInstance()
 void DSCoreWrapper::DSClassifierWrapper::setInstance(DSClassifier* classifier)
 {
 	classifier_ = classifier;
+}
+void DSCoreWrapper::DSClassifierWrapper::setInstance(reference_wrapper<DSClassifier> classifier)
+{
+	classifier_ = &classifier.get();
 }
 
 

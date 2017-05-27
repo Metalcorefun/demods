@@ -29,6 +29,7 @@ namespace DSCoreWrapper {
 		void setDescription(System::String^ description);
 		DSAttribute* getInstance();
 		void setInstance(DSAttribute* attribute);
+		void setInstance(reference_wrapper<DSAttribute> attribute);
 	private:
 		DSAttribute* attribute_;
 	};
@@ -46,6 +47,7 @@ namespace DSCoreWrapper {
 		void setDescription(System::String^ description);
 		DSClass* getInstance();
 		void setInstance(DSClass* Class);
+		void setInstance(reference_wrapper<DSClass> Class);
 	private:
 		DSClass* class_;
 	};
@@ -97,6 +99,10 @@ namespace DSCoreWrapper {
 		System::String^ getID();
 		System::String^ getName();
 		System::String^ getType();
+		int getLevel();
+		List<DSAttributeWrapper^>^ getAttributes();
+		List<DSClassWrapper^>^ getClasses();
+		List<DSClassifierWrapper^>^ getChilds();
 		void setName(System::String^ name);
 		void setType(System::String^ type);
 		void setLevel(int level);
@@ -108,6 +114,7 @@ namespace DSCoreWrapper {
 		void removeChild(System::String^ id);
 		DSClassifier* getInstance();
 		void setInstance(DSClassifier* classifier);
+		void setInstance(reference_wrapper<DSClassifier> classifier);
 	private:
 		DSClassifier* classifier_;
 	};

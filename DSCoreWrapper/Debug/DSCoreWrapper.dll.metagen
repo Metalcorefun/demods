@@ -23,6 +23,7 @@ Class DSCoreWrapper.DSAttributeWrapper: AutoLayout, AnsiClass, Class, Public, Be
     setType(String): PrivateScope, Public, HideBySig
     setDescription(String): PrivateScope, Public, HideBySig
     getInstance(): PrivateScope, Public, HideBySig
+    setInstance(reference_wrapper<DSAttribute>): PrivateScope, Public, HideBySig
     setInstance(DSAttribute*): PrivateScope, Public, HideBySig
     Dispose(): PrivateScope, Public, Final, Virtual, HideBySig
 Class DSCoreWrapper.DSClassWrapper: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
@@ -37,6 +38,7 @@ Class DSCoreWrapper.DSClassWrapper: AutoLayout, AnsiClass, Class, Public, Before
     setName(String): PrivateScope, Public, HideBySig
     setDescription(String): PrivateScope, Public, HideBySig
     getInstance(): PrivateScope, Public, HideBySig
+    setInstance(reference_wrapper<DSClass>): PrivateScope, Public, HideBySig
     setInstance(DSClass*): PrivateScope, Public, HideBySig
     Dispose(): PrivateScope, Public, Final, Virtual, HideBySig
 Class DSCoreWrapper.AttribValueWrapper: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
@@ -76,6 +78,10 @@ Class DSCoreWrapper.DSClassifierWrapper: AutoLayout, AnsiClass, Class, Public, B
     getID(): PrivateScope, Public, HideBySig
     getName(): PrivateScope, Public, HideBySig
     getType(): PrivateScope, Public, HideBySig
+    getLevel(): PrivateScope, Public, HideBySig
+    getAttributes(): PrivateScope, Public, HideBySig
+    getClasses(): PrivateScope, Public, HideBySig
+    getChilds(): PrivateScope, Public, HideBySig
     setName(String): PrivateScope, Public, HideBySig
     setType(String): PrivateScope, Public, HideBySig
     setLevel(Int32): PrivateScope, Public, HideBySig
@@ -86,6 +92,7 @@ Class DSCoreWrapper.DSClassifierWrapper: AutoLayout, AnsiClass, Class, Public, B
     removeClass(String): PrivateScope, Public, HideBySig
     removeChild(String): PrivateScope, Public, HideBySig
     getInstance(): PrivateScope, Public, HideBySig
+    setInstance(reference_wrapper<DSClassifier>): PrivateScope, Public, HideBySig
     setInstance(DSClassifier*): PrivateScope, Public, HideBySig
     Dispose(): PrivateScope, Public, Final, Virtual, HideBySig
 Class DSCoreWrapper.DSHierarchyWrapper: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit

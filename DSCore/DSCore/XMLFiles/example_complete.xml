@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding = "UTF-8"?>
+<hierarchy>
+    <attributes/>
+    <classes/>
+    <classifiers>
+        <classifier id="cl1" type="Fuzzy" level="1">
+            <classifier_title>Classifier01</classifier_title>
+            <classifier_attr_list/>
+            <classifier_class_list/>
+            <training_set/>
+            <base_object/>
+            <childs/>
+        </classifier>
+        <classifier id="cl2" type="Fuzzy" level="1">
+            <classifier_title>Classifier02</classifier_title>
+            <classifier_attr_list/>
+            <classifier_class_list/>
+            <training_set/>
+            <base_object/>
+            <childs/>
+        </classifier>
+        <classifier id="cl3" type="Fuzzy" level="2">
+            <classifier_title>Classifier03</classifier_title>
+            <classifier_attr_list/>
+            <classifier_class_list/>
+            <training_set/>
+            <base_object/>
+            <childs>
+                <clsfr_id>cl1</clsfr_id>
+                <clsfr_id>cl2</clsfr_id>
+            </childs>
+        </classifier>
+        <classifier id="cl4" type="Regressive" level="1">
+            <classifier_title>Classifier04</classifier_title>
+            <classifier_attr_list/>
+            <classifier_class_list/>
+            <training_set/>
+            <base_object/>
+            <childs/>
+        </classifier>
+        <classifier id="cl5" type="Regressive" level="2">
+            <classifier_title>Classifier05</classifier_title>
+            <classifier_attr_list/>
+            <classifier_class_list/>
+            <training_set/>
+            <base_object/>
+            <childs>
+                <clsfr_id>cl1</clsfr_id>
+                <clsfr_id>cl4</clsfr_id>
+            </childs>
+        </classifier>
+        <classifier id="cl6" type="Fuzzy" level="3">
+            <classifier_title>Classifier06</classifier_title>
+            <classifier_attr_list/>
+            <classifier_class_list/>
+            <training_set/>
+            <base_object/>
+            <childs>
+                <clsfr_id>cl3</clsfr_id>
+                <clsfr_id>cl5</clsfr_id>
+            </childs>
+        </classifier>
+        <classifier id="cl7" type="Fuzzy" level="1">
+            <classifier_title>Classifier07</classifier_title>
+            <classifier_attr_list/>
+            <classifier_class_list/>
+            <training_set/>
+            <base_object/>
+            <childs/>
+        </classifier>
+        <classifier id="cl8" type="Regressive" level="1">
+            <classifier_title>Classifier08</classifier_title>
+            <classifier_attr_list/>
+            <classifier_class_list/>
+            <training_set/>
+            <base_object/>
+            <childs/>
+        </classifier>
+        <classifier id="cl9" type="Regressive" level="1">
+            <classifier_title>Classifier09</classifier_title>
+            <classifier_attr_list/>
+            <classifier_class_list/>
+            <training_set/>
+            <base_object/>
+            <childs/>
+        </classifier>
+        <classifier id="cl10" type="Regressive" level="2">
+            <classifier_title>Classifier10</classifier_title>
+            <classifier_attr_list/>
+            <classifier_class_list/>
+            <training_set/>
+            <base_object/>
+            <childs>
+                <clsfr_id>cl8</clsfr_id>
+                <clsfr_id>cl9</clsfr_id>
+            </childs>
+        </classifier>
+        <classifier id="cl11" type="Fuzzy" level="3">
+            <classifier_title>Classifier11</classifier_title>
+            <classifier_attr_list/>
+            <classifier_class_list/>
+            <training_set/>
+            <base_object/>
+            <childs>
+                <clsfr_id>cl7</clsfr_id>
+                <clsfr_id>cl10</clsfr_id>
+            </childs>
+        </classifier>
+        <classifier id="cl12" type="Regressive" level="4">
+            <classifier_title>Classifier12</classifier_title>
+            <classifier_attr_list/>
+            <classifier_class_list/>
+            <training_set/>
+            <base_object/>
+            <childs>
+                <clsfr_id>cl6</clsfr_id>
+                <clsfr_id>cl11</clsfr_id>
+            </childs>
+        </classifier>
+    </classifiers>
+</hierarchy>

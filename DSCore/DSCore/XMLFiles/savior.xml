@@ -165,6 +165,102 @@
             </base_object>
             <childs>
                 <clsfr_id>cl1</clsfr_id>
+                <clsfr_id>cl3</clsfr_id>
+            </childs>
+        </classifier>
+        <classifier id="cl3" type="Fuzzy" level="1">
+            <classifier_title>Classifier03</classifier_title>
+            <classifier_attr_list/>
+            <classifier_class_list/>
+            <training_set/>
+            <base_object/>
+            <childs/>
+        </classifier>
+        <classifier id="cl7" type="Fuzzy" level="1">
+            <classifier_title>D</classifier_title>
+            <classifier_attr_list/>
+            <classifier_class_list/>
+            <training_set/>
+            <base_object/>
+            <childs/>
+        </classifier>
+        <classifier id="cl8" type="Fuzzy" level="2">
+            <classifier_title>C</classifier_title>
+            <classifier_attr_list/>
+            <classifier_class_list/>
+            <training_set/>
+            <base_object/>
+            <childs>
+                <clsfr_id>cl7</clsfr_id>
+                <clsfr_id>cl1</clsfr_id>
+            </childs>
+        </classifier>
+        <classifier id="cl9" type="Fuzzy" level="3">
+            <classifier_title>Alpha</classifier_title>
+            <classifier_attr_list/>
+            <classifier_class_list/>
+            <training_set/>
+            <base_object/>
+            <childs>
+                <clsfr_id>cl2</clsfr_id>
+                <clsfr_id>cl8</clsfr_id>
+            </childs>
+        </classifier>
+        <classifier id="cl10" type="Regressive" level="1">
+            <classifier_title>F</classifier_title>
+            <classifier_attr_list/>
+            <classifier_class_list/>
+            <training_set/>
+            <base_object/>
+            <childs/>
+        </classifier>
+        <classifier id="cl11" type="Regressive" level="1">
+            <classifier_title>H</classifier_title>
+            <classifier_attr_list/>
+            <classifier_class_list/>
+            <training_set/>
+            <base_object/>
+            <childs/>
+        </classifier>
+        <classifier id="cl12" type="Fuzzy" level="1">
+            <classifier_title>G</classifier_title>
+            <classifier_attr_list/>
+            <classifier_class_list/>
+            <training_set/>
+            <base_object/>
+            <childs/>
+        </classifier>
+        <classifier id="cl13" type="Fuzzy" level="2">
+            <classifier_title>Upper</classifier_title>
+            <classifier_attr_list/>
+            <classifier_class_list/>
+            <training_set/>
+            <base_object/>
+            <childs>
+                <clsfr_id>cl11</clsfr_id>
+                <clsfr_id>cl12</clsfr_id>
+            </childs>
+        </classifier>
+        <classifier id="cl14" type="Fuzzy" level="3">
+            <classifier_title>Uppest</classifier_title>
+            <classifier_attr_list/>
+            <classifier_class_list/>
+            <training_set/>
+            <base_object/>
+            <childs>
+                <clsfr_id>cl13</clsfr_id>
+                <clsfr_id>cl10</clsfr_id>
+            </childs>
+        </classifier>
+        <classifier id="cl17" type="Regressive" level="4">
+            <classifier_title>AlphaOfUppest</classifier_title>
+            <classifier_attr_list/>
+            <classifier_class_list/>
+            <training_set/>
+            <base_object/>
+            <childs>
+                <clsfr_id>cl9</clsfr_id>
+                <clsfr_id>cl14</clsfr_id>
             </childs>
         </classifier>
     </classifiers>

@@ -10,10 +10,10 @@ using namespace std;
 int main()
 {
 	DSHierarchy& hierarchy = DSHierarchy::Instance();
-	hierarchy.load("XMLFiles\\codebeautify.xml");
+	hierarchy.load("XMLFiles\\savior.xml");
 	hierarchy.setApexPoint("cl2", true);
 	hierarchy.classify();
-	hierarchy.save("XMLFiles\\savior.xml");
+	//hierarchy.save("XMLFiles\\savior.xml");
 	hierarchy.clear();
 	hierarchy.load("XMLFiles\\codebeautify.xml");
 
