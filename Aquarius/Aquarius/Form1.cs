@@ -108,8 +108,7 @@ namespace Aquarius
                         CheckIntersection(visual_table, point.Slider, end).Slider.X == -1 && CheckIntersection(visual_table, point.Slider, end).Slider.Y == -1)
                     {
                         return point.Slider;
-                    }
-                    
+                    }   
                 }
             }
             return new PointF(-1, -1);
@@ -176,7 +175,7 @@ namespace Aquarius
 
         private void visualize()
         {
-            if(hierarchy_.getAttributes().Count>0 && hierarchy_.getClassifiers().Count > 0)
+            if(hierarchy_.getAttributes().Count>0 || hierarchy_.getClassifiers().Count > 0)
             {
                 int max_count = 0;
                 List<List<VisualUnit>> visual_table = new List<List<VisualUnit>>();
@@ -317,27 +316,7 @@ namespace Aquarius
                     trackBar1.Value += 10;
             }
         }
-        private void trackBar1_Scroll(object sender, EventArgs e)
-        {
-            //if (trackBar1.Value >= 0)
-            //{
-            //    if (trackBar1.Value > value)
-            //    {
-            //        zoom(50);
-            //    }
-            //    else zoom(-50);
-            //    value = trackBar1.Value;
-            //}
-            //else if(trackBar1.Value < 0)
-            //{
-            //    if (trackBar1.Value > value)
-            //    {
-            //        zoom(50);
-            //    }
-            //    else zoom(-50);
-            //    value = trackBar1.Value;
-            //}       
-        }
+        private void trackBar1_Scroll(object sender, EventArgs e){ }
 
         private void trackBar1_ValueChanged(object sender, EventArgs e)
         {
@@ -380,34 +359,43 @@ namespace Aquarius
 
         private void открытьПроектToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            openFileDialog1.ShowDialog();
-            filePath = openFileDialog1.FileName;
-            hierarchy_.load(filePath);
-            attributes_ = hierarchy_.getAttributes();
-            visualize();
+            hierarchy_.clear();
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                filePath = openFileDialog1.FileName;
+                if (hierarchy_.load(filePath)) visualize();
+                else MessageBox.Show("Ошибка открытия файла.");
+            } 
         }
 
         private void сохранитьПроектToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (filePath == "")
             {
-                saveFileDialog1.ShowDialog();
-                filePath = saveFileDialog1.FileName;
+                if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+                {
+                    filePath = saveFileDialog1.FileName;
+                    if (!hierarchy_.save(filePath)) MessageBox.Show("Ошибка сохранения файла.");
+                }
             }
-            hierarchy_.save(filePath);
+            else hierarchy_.save(filePath);
         }
 
         private void сохранитьКакToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            saveFileDialog1.ShowDialog();
-            filePath = saveFileDialog1.FileName;
-            hierarchy_.save(filePath);
+            if(saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                saveFileDialog1.ShowDialog();
+                filePath = saveFileDialog1.FileName;
+                hierarchy_.save(filePath);
+            }
         }
 
         private void признакиToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form f = new Attributes(hierarchy_);
-            f.Show();
+            f.ShowDialog();
+            visualize();
         }
 
         private void классыToolStripMenuItem_Click(object sender, EventArgs e)
@@ -419,7 +407,8 @@ namespace Aquarius
         private void списокКомпонентовИерархииToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form f = new HierarchyComponents(hierarchy_);
-            f.Show();
+            f.ShowDialog();
+            visualize();
         }
 
         private void button1_Click(object sender, EventArgs e)

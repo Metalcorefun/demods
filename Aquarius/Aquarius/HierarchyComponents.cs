@@ -44,14 +44,28 @@ namespace Aquarius
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Form f = new Classifier(hierarchy_, classifiers_[listBox1.SelectedIndex]);
-            f.Show();
+            try
+            {
+                Form f = new Classifier(hierarchy_, classifiers_[listBox1.SelectedIndex]);
+                f.Show();
+            }
+            catch(Exception)
+            {
+                MessageBox.Show("Компонент иерархии не выбран из списка.");
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
+            try
+            { 
             hierarchy_.removeClassifier(classifiers_[listBox1.SelectedIndex].getID());
             RefreshClassifiers();
+            }
+            catch(Exception)
+            {
+                MessageBox.Show("Компонент иерархии не выбран из списка.");
+            }
         }
     }
 }

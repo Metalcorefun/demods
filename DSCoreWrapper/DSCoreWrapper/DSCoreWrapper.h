@@ -124,8 +124,8 @@ namespace DSCoreWrapper {
 	public:
 		DSHierarchyWrapper() {};
 		~DSHierarchyWrapper() {};	
-		void load(System::String^ fileName);
-		void save(System::String^ fileName);
+		bool load(System::String^ fileName);
+		bool save(System::String^ fileName);
 		void clear();
 		void addAttribute(DSAttributeWrapper^ attribute);
 		void addClass(DSClassWrapper^ Class);

@@ -1,3 +1,48 @@
-﻿  Main.cpp
+﻿  DSCore.cpp
+c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscore\dscore\dscore.cpp(138): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscore\dscore\dscore.cpp(145): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscore\dscore\dscore.cpp(159): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscore\dscore\dscore.cpp(169): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscore\dscore\dscore.cpp(297): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscore\dscore\dscore.cpp(307): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscore\dscore\dscore.cpp(311): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscore\dscore\dscore.cpp(315): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscore\dscore\dscore.cpp(328): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscore\dscore\dscore.cpp(332): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscore\dscore\dscore.cpp(342): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscore\dscore\dscore.cpp(353): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscore\dscore\dscore.cpp(355): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscore\dscore\dscore.cpp(360): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscore\dscore\dscore.cpp(371): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscore\dscore\dscore.cpp(373): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscore\dscore\dscore.cpp(378): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscore\dscore\dscore.cpp(388): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscore\dscore\dscore.cpp(390): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscore\dscore\dscore.cpp(402): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscore\dscore\dscore.cpp(541): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscore\dscore\dscore.cpp(554): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscore\dscore\dscore.cpp(565): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscore\dscore\dscore.cpp(578): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscore\dscore\dscore.cpp(583): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscore\dscore\dscore.cpp(588): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscore\dscore\dscore.cpp(591): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscore\dscore\dscore.cpp(599): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscore\dscore\dscore.cpp(608): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscore\dscore\dscore.cpp(616): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscore\dscore\dscore.cpp(650): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscore\dscore\dscore.cpp(675): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscore\dscore\dscore.cpp(679): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscore\dscore\dscore.cpp(690): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscore\dscore\dscore.cpp(694): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscore\dscore\dscore.cpp(705): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscore\dscore\dscore.cpp(709): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscore\dscore\dscore.cpp(722): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscore\dscore\dscore.cpp(732): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscore\dscore\dscore.cpp(742): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscore\dscore\dscore.cpp(751): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscore\dscore\dscore.cpp(758): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscore\dscore\dscore.cpp(727): warning C4172: возвращение адреса локальной или временной переменной : A
+c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscore\dscore\dscore.cpp(737): warning C4172: возвращение адреса локальной или временной переменной : C
+c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscore\dscore\dscore.cpp(747): warning C4172: возвращение адреса локальной или временной переменной : C
   DSCore.vcxproj -> C:\Users\Антон\Documents\Visual Studio 2017\Projects\AquariusDS\DSCore\Debug\DSCore.exe
   DSCore.vcxproj -> C:\Users\Антон\Documents\Visual Studio 2017\Projects\AquariusDS\DSCore\Debug\DSCore.pdb (Partial PDB)

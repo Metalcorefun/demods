@@ -24,8 +24,9 @@ class DSAttribute
 public:
 	static int attribCount;
 	DSAttribute() {};
-	DSAttribute(string name, string type);
+	//DSAttribute(string name, string type);
 	DSAttribute(string name, string type, string description);
+	DSAttribute(string id, string name, string type, string description);
 	~DSAttribute();
 	string getID();
 	string getName();
@@ -43,8 +44,9 @@ class DSClass
 public:
 	static int classCount;
 	DSClass() {};
-	DSClass(string name);
+	//DSClass(string name);
 	DSClass(string name, string description);
+	DSClass(string id, string name, string description);
 	~DSClass();
 	string getID();
 	string getName();
@@ -87,6 +89,7 @@ public:
 	static int classifierCount;
 	DSClassifier();
 	DSClassifier(string name);
+	DSClassifier(string id, string name);
 	~DSClassifier();
 	//add
 	void addAttribute(DSAttribute& attribute);
@@ -120,6 +123,8 @@ public:
 	void updateClassifiersReferences(vector <DSClassifier> &classifiers, int index);
 	
 	void classify();
+
+	bool operator<(const DSClassifier& cl) const { return level_ < cl.level_; }
 private:
 	string id_, name_, type_;
 	int level_;
@@ -150,8 +155,8 @@ public:
 	//
 	void clear();
 	//save/load
-	void load(string fileName);
-	void save(string fileName);
+	bool load(string fileName);
+	bool save(string fileName);
 	//add
 	void addAttribute(DSAttribute attribute);
 	void addClass(DSClass Class);
@@ -174,6 +179,7 @@ public:
 	int getApexPoint();
 	void setApexPoint(string id, bool value);
 	//classify
+	void sortClassifiers();
 	void classify();
 private:
 	DSHierarchy();

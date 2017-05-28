@@ -265,20 +265,15 @@ void DSCoreWrapper::DSClassifierWrapper::setInstance(reference_wrapper<DSClassif
 }
 
 
-void DSCoreWrapper::DSHierarchyWrapper::load(System::String^ fileName)
+bool DSCoreWrapper::DSHierarchyWrapper::load(System::String^ fileName)
 {
-	try
-	{
-		hierarchy_.load(msclr::interop::marshal_as <std::string>(fileName));
-	}
-	catch(...)
-	{
-		throw gcnew System::Exception("ERROR_OPEN_XML_FILE");
-	}
+	if (hierarchy_.load(msclr::interop::marshal_as <std::string>(fileName))) return true;
+	else return false;
 }
-void DSCoreWrapper::DSHierarchyWrapper::save(System::String^ fileName)
+bool DSCoreWrapper::DSHierarchyWrapper::save(System::String^ fileName)
 {
-	hierarchy_.save(msclr::interop::marshal_as <std::string>(fileName));
+	if (hierarchy_.save(msclr::interop::marshal_as <std::string>(fileName))) return true;
+	else return false;
 }
 void DSCoreWrapper::DSHierarchyWrapper::clear()
 {

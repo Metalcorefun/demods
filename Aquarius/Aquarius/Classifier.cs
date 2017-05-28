@@ -43,6 +43,7 @@ namespace Aquarius
         }
         private void RefreshParameters()
         {
+            textBox1.Text = classifier_.getName();
             listBox1.Items.Clear();
             listBox2.Items.Clear();
             listBox3.Items.Clear();
