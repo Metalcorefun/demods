@@ -110,6 +110,14 @@
             <base_object>
                 <attr_val>
                     <attr_id>attr1</attr_id>
+                    <attr_value> </attr_value>
+                </attr_val>
+                <attr_val>
+                    <attr_id>attr3</attr_id>
+                    <attr_value> </attr_value>
+                </attr_val>
+                <attr_val>
+                    <attr_id>attr1</attr_id>
                     <attr_value>7</attr_value>
                 </attr_val>
                 <attr_val>
@@ -168,6 +176,14 @@
                 </probe>
             </training_set>
             <base_object>
+                <attr_val>
+                    <attr_id>attr2</attr_id>
+                    <attr_value> </attr_value>
+                </attr_val>
+                <attr_val>
+                    <attr_id>attr4</attr_id>
+                    <attr_value> </attr_value>
+                </attr_val>
                 <attr_val>
                     <attr_id>attr2</attr_id>
                     <attr_value>5</attr_value>

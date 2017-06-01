@@ -3,7 +3,7 @@
 	<attributes>
 		<attribute id="attr1">
 			<attr_name>Attrib01</attr_name>
-			<attr_type>Numeric</attr_type>
+			<attr_type>NumericArrayTrend</attr_type>
 			<description>a1</description>
 		</attribute>
 		<attribute id="attr2">
@@ -13,12 +13,12 @@
 		</attribute>
 		<attribute id="attr3">
 			<attr_name>Attrib03</attr_name>
-			<attr_type>Text</attr_type>
+			<attr_type>WeightString</attr_type>
 			<description>a3</description>
 		</attribute>
 		<attribute id="attr4">
 			<attr_name>Attrib04</attr_name>
-			<attr_type>Text</attr_type>
+			<attr_type>LogicConstruction</attr_type>
 			<description>a4</description>
 		</attribute>
 	</attributes>

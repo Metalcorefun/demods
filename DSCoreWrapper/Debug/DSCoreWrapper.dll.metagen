@@ -42,17 +42,21 @@ Class DSCoreWrapper.DSClassWrapper: AutoLayout, AnsiClass, Class, Public, Before
     setInstance(DSClass*): PrivateScope, Public, HideBySig
     Dispose(): PrivateScope, Public, Final, Virtual, HideBySig
 Class DSCoreWrapper.AttribValueWrapper: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
-    Void .ctor(DSCoreWrapper.DSAttributeWrapper, Int32): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(DSAttribute*, std.basic_string<char\,std::char_traits<char>\,std::allocator<char> >*): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(DSCoreWrapper.DSAttributeWrapper, System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Interfaces:
     System.IDisposable
   Methods:
     setAttributeReference(DSAttributeWrapper): PrivateScope, Public, HideBySig
-    setValue(Int32): PrivateScope, Public, HideBySig
+    setValue(String): PrivateScope, Public, HideBySig
     getAttributeReference(): PrivateScope, Public, HideBySig
     getValue(): PrivateScope, Public, HideBySig
+    getInstance(): PrivateScope, Public, HideBySig
+    setInstance(AttribValue*): PrivateScope, Public, HideBySig
     Dispose(): PrivateScope, Public, Final, Virtual, HideBySig
 Class DSCoreWrapper.ClassMemFuncWrapper: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(DSClass*, Double): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
     Void .ctor(DSCoreWrapper.DSClassWrapper, Double): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Interfaces:
@@ -60,14 +64,21 @@ Class DSCoreWrapper.ClassMemFuncWrapper: AutoLayout, AnsiClass, Class, Public, B
   Methods:
     setClassReference(DSClassWrapper): PrivateScope, Public, HideBySig
     setMembershipFunction(Double): PrivateScope, Public, HideBySig
-    getAttributeReference(): PrivateScope, Public, HideBySig
-    getValue(): PrivateScope, Public, HideBySig
+    getClassReference(): PrivateScope, Public, HideBySig
+    getMembershipFunction(): PrivateScope, Public, HideBySig
     Dispose(): PrivateScope, Public, Final, Virtual, HideBySig
 Class DSCoreWrapper.DSProbeWrapper: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(System.Collections.Generic.List`1[DSCoreWrapper.AttribValueWrapper], System.Collections.Generic.List`1[DSCoreWrapper.ClassMemFuncWrapper]): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Interfaces:
     System.IDisposable
   Methods:
+    getAttribValues(): PrivateScope, Public, HideBySig
+    getClassMemFuncs(): PrivateScope, Public, HideBySig
+    setAttribValues(List`1): PrivateScope, Public, HideBySig
+    setClassMemFuncs(List`1): PrivateScope, Public, HideBySig
+    getInstance(): PrivateScope, Public, HideBySig
+    setInstance(DSProbe*): PrivateScope, Public, HideBySig
     Dispose(): PrivateScope, Public, Final, Virtual, HideBySig
 Class DSCoreWrapper.DSClassifierWrapper: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     Void .ctor(System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
@@ -91,6 +102,11 @@ Class DSCoreWrapper.DSClassifierWrapper: AutoLayout, AnsiClass, Class, Public, B
     removeAttribute(String): PrivateScope, Public, HideBySig
     removeClass(String): PrivateScope, Public, HideBySig
     removeChild(String): PrivateScope, Public, HideBySig
+    removeTrainingSet(): PrivateScope, Public, HideBySig
+    getTrainingSet(): PrivateScope, Public, HideBySig
+    getBaseObject(): PrivateScope, Public, HideBySig
+    toTrainingSet(DSProbeWrapper): PrivateScope, Public, HideBySig
+    setBaseObject(List`1): PrivateScope, Public, HideBySig
     getInstance(): PrivateScope, Public, HideBySig
     setInstance(reference_wrapper<DSClassifier>): PrivateScope, Public, HideBySig
     setInstance(DSClassifier*): PrivateScope, Public, HideBySig

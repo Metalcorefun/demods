@@ -14,6 +14,8 @@ namespace Aquarius
     public partial class Classifier : Form
     {
         DataTable dt_types = new DataTable();
+        DataTable dt_training_set = new DataTable();
+        DataTable dt_base_object = new DataTable();
         DSHierarchyWrapper hierarchy_ = new DSHierarchyWrapper();
         DSClassifierWrapper classifier_ = new DSClassifierWrapper("");
         List<DSAttributeWrapper> attributes_ = new List<DSAttributeWrapper>();
@@ -30,12 +32,16 @@ namespace Aquarius
             hierarchy_ = hierarchy;
             classifier_ = classifier;
         }
-        private void Classifier_Load(object sender, EventArgs e)
+        private void PopulateTypesTable(DataTable dt)
         {
             dt_types.Columns.Add("ID");
             dt_types.Columns.Add("Description");
             dt_types.Rows.Add("Fuzzy", "Базовый нечёткий классификатор");
             dt_types.Rows.Add("Regressive", "Чёткий классификатор(регрессионный анализ)");
+        }
+        private void Classifier_Load(object sender, EventArgs e)
+        {
+            
             comboBox1.DataSource = dt_types;
             comboBox1.ValueMember = "ID";
             comboBox1.DisplayMember = "Description";
@@ -43,6 +49,7 @@ namespace Aquarius
         }
         private void RefreshParameters()
         {
+            PopulateTypesTable(dt_types);
             textBox1.Text = classifier_.getName();
             listBox1.Items.Clear();
             listBox2.Items.Clear();
@@ -70,6 +77,8 @@ namespace Aquarius
                     comboBox1.SelectedValue = dr["ID"].ToString();
                 }
             }
+            BuildTrainingSetTable(dataGridView1);
+            BuildBaseObjectTable(dataGridView2);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -298,12 +307,104 @@ namespace Aquarius
         private void contextMenuStrip1_Closing(object sender, ToolStripDropDownClosingEventArgs e)
         {
             contextMenuStrip1.Items.Clear();
+        } 
+
+        //Training Set Tab
+        private void BuildTrainingSetTable(DataGridView dgw)
+        {
+            dt_training_set.Rows.Clear();
+            dt_training_set.Columns.Clear();
+            List<DSProbeWrapper> training_set = classifier_.getTrainingSet();
+            foreach(DSAttributeWrapper attribute in attributes_)
+            {
+                dt_training_set.Columns.Add(new DataColumn(attribute.getName()));
+            }
+            foreach(DSClassWrapper Class in classes_)
+            {
+                dt_training_set.Columns.Add(new DataColumn(Class.getName(), System.Type.GetType("System.Double")));
+            }
+            
+            foreach(DSProbeWrapper probe in training_set)
+            {
+                DataRow row = dt_training_set.NewRow();
+                for(int i = 0; i < probe.getAttribValues().Count; i++)
+                {
+                    row[i] = probe.getAttribValues()[i].getValue();
+                }
+                for(int i = 0; i < probe.getClassMemFuncs().Count; i++)
+                {
+                    row[i + probe.getAttribValues().Count] = probe.getClassMemFuncs()[i].getMembershipFunction();
+                }
+                dt_training_set.Rows.Add(row);
+            }
+            dgw.DataSource = dt_training_set;
         }
 
-        
+        private void UpdateTrainingSetFromTable(DataGridView dgv)
+        {
+            classifier_.removeTrainingSet();
+            foreach(DataRow dr in dt_training_set.Rows)
+            {
+                DSProbeWrapper probe = new DSProbeWrapper();
+                List<AttribValueWrapper> attribValues = new List<AttribValueWrapper>();
+                List<ClassMemFuncWrapper> classMemFuncs = new List<ClassMemFuncWrapper>();
+                for(int i = 0; i < attributes_.Count; i++)
+                {
+                    AttribValueWrapper av = new AttribValueWrapper(attributes_[i], (string)dr[attributes_[i].getName()]);
+                    attribValues.Add(av);
+                }
+                for (int i = 0; i < classes_.Count; i++)
+                {
+                    ClassMemFuncWrapper cm = new ClassMemFuncWrapper(classes_[i], Convert.ToDouble(dr[classes_[i].getName()]));
+                    classMemFuncs.Add(cm);
+                }
+                probe.setAttribValues(attribValues);
+                probe.setClassMemFuncs(classMemFuncs);
+                classifier_.toTrainingSet(probe);
+            }
+        }
+        private void button4_Click(object sender, EventArgs e)
+        {
+            UpdateTrainingSetFromTable(dataGridView1);
+            BuildTrainingSetTable(dataGridView1);
+        }
 
-        
+        //Base Object Tab
+        private void BuildBaseObjectTable(DataGridView dgv)
+        {
+            dt_base_object.Rows.Clear();
+            dt_base_object.Columns.Clear();
+            dt_base_object.Columns.Add(new DataColumn("Признак", System.Type.GetType("System.String")));
+            dt_base_object.Columns.Add(new DataColumn("Значение признака", System.Type.GetType("System.String")));
+            List<AttribValueWrapper> baseObject_ = classifier_.getBaseObject();
+            foreach(AttribValueWrapper av in baseObject_)
+            {
+                DataRow dr = dt_base_object.NewRow();
+                dr[0] = av.getAttributeReference().getName();
+                dr[1] = av.getValue();
+                dt_base_object.Rows.Add(dr);
+            }
+            dgv.DataSource = dt_base_object;
+            dgv.Columns[0].Width = 218; dgv.Columns[1].Width = 218;
+        }
 
-        
+        private void UpdateBaseObjectFromTable(DataGridView dgv)
+        {
+            List<AttribValueWrapper> baseObject_ = classifier_.getBaseObject();
+            foreach(DataRow dr in dt_base_object.Rows)
+            {
+                foreach(AttribValueWrapper av in baseObject_)
+                {
+                    if ((string)dr[0] == av.getAttributeReference().getName())
+                        av.setValue((string)dr[1]);
+                }
+            }    
+        }
+       
+        private void button5_Click(object sender, EventArgs e)
+        {
+            UpdateBaseObjectFromTable(dataGridView2);
+            BuildBaseObjectTable(dataGridView2);
+        }
     }
 }

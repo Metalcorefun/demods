@@ -172,7 +172,6 @@ namespace Aquarius
             point.Direction = "No direction";
             return point;
         }
-
         private void visualize()
         {
             if(hierarchy_.getAttributes().Count>0 || hierarchy_.getClassifiers().Count > 0)
@@ -193,7 +192,8 @@ namespace Aquarius
                     if (list.Count > max_count)
                         max_count = list.Count;
                 }
-                drawing = new Bitmap(400 * max_count, 500 * (visual_table.Count + 1));
+                if (max_count > 0) drawing = new Bitmap(400 * max_count, 500 * (visual_table.Count + 1));
+                else drawing = new Bitmap(400 * attributes.Count, 500);
                 for (int i = visual_table.Count - 1; i >= 0; i--)
                 {
                     for (int j = 0; j < visual_table[i].Count; j++)
@@ -234,13 +234,14 @@ namespace Aquarius
                                         }
                                     }
                                 }
+                                trackBar1.Value = 0;
                                 childs.Clear();
                             }
                         }
                     }
                     for (int i = 0; i < attributes.Count; i++)
                     {
-                        PointF point = new PointF((drawing.Width / (attributes.Count * 2) - 25) + (drawing.Width / attributes.Count) * i, 500 * visual_table.Count);
+                        PointF point = new PointF((drawing.Width / (attributes.Count * 2) - 25) + (drawing.Width / attributes.Count) * i, (500 * visual_table.Count)+200);
                         g.DrawEllipse(new Pen(Color.Black, 3), new RectangleF(point, new SizeF(30.0F, 30.0F)));
                         g.DrawString(attributes[i].getName(), new Font("Times New Roman", 16), new SolidBrush(Color.Black), point.X - 50, point.Y + 55);
                         foreach (List<VisualUnit> l in visual_table)
@@ -282,7 +283,6 @@ namespace Aquarius
         private int xPos;
         private int yPos;
         private void pictureBox1_MouseUp(object sender, MouseEventArgs e) { Dragging = false; }
-
         private void pictureBox1_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
@@ -302,7 +302,6 @@ namespace Aquarius
                 c.Left = e.X + c.Left - xPos;
             }
         }
-
         private void picBox1_MouseWheel(object sender, MouseEventArgs e)
         {
             if (e.Delta < 0)
@@ -317,7 +316,6 @@ namespace Aquarius
             }
         }
         private void trackBar1_Scroll(object sender, EventArgs e){ }
-
         private void trackBar1_ValueChanged(object sender, EventArgs e)
         {
             if (trackBar1.Value >= 0)
@@ -338,13 +336,6 @@ namespace Aquarius
                 else zoom(-5 * Math.Abs(value - trackBar1.Value));
                 value = trackBar1.Value;
             }
-        }
-        Image Zoom(Image img, Size size)
-        {
-            Bitmap zoomed = new Bitmap(img, img.Width + (img.Width * size.Width / 100), img.Height + (img.Height * size.Height / 100));
-            Graphics g = Graphics.FromImage(zoomed);
-            g.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic;
-            return zoomed;
         }
         private void zoom(int score)
         {
@@ -385,7 +376,6 @@ namespace Aquarius
         {
             if(saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                saveFileDialog1.ShowDialog();
                 filePath = saveFileDialog1.FileName;
                 hierarchy_.save(filePath);
             }

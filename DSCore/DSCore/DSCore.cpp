@@ -108,7 +108,6 @@ DSClass::~DSClass()
 	id_.clear();
 	name_.clear();
 };
-
 string DSClass::getID()
 {
 	return id_;
@@ -130,7 +129,12 @@ void DSClass::setDescription(string description)
 	description_ = description;
 }
 //---------------DSPROBE-------------------//
-DSProbe::DSProbe(vector <reference_wrapper<DSAttribute>> attributes, vector<reference_wrapper<DSClass>> classes, int* values_a, int* values_c)
+DSProbe::DSProbe(vector<AttribValue> attribValues, vector<ClassMemFunc> classMemFuncs)
+{
+	attribValues_ = attribValues;
+	classMemFuncs_ = classMemFuncs;
+}
+DSProbe::DSProbe(vector <reference_wrapper<DSAttribute>> attributes, vector<reference_wrapper<DSClass>> classes, string* values_a, double* values_c)
 {
 
 	AttribValue a;
@@ -174,6 +178,20 @@ void DSProbe::removeClass(DSClass& Class)
 		}
 	}
 }
+void DSProbe::addAttribute(DSAttribute& attribute)
+{
+	AttribValue a;
+	a.attribPtr = &attribute;
+	a.value = " ";
+	attribValues_.emplace_back(a);
+}
+void DSProbe::addClass(DSClass& Class)
+{
+	ClassMemFunc c;
+	c.classPtr = &Class;
+	c.mem_func = 0.0;
+	classMemFuncs_.emplace_back(c);
+}
 vector <AttribValue>& DSProbe::getAttribValues()
 {
 	return attribValues_;
@@ -181,6 +199,14 @@ vector <AttribValue>& DSProbe::getAttribValues()
 vector <ClassMemFunc>& DSProbe::getClassMemFuncs()
 {
 	return classMemFuncs_;
+}
+void DSProbe::setAttribValues(vector <AttribValue> values)
+{
+	attribValues_ = values;
+}
+void DSProbe::setClassMemFuncs(vector <ClassMemFunc> mem_funcs)
+{
+	classMemFuncs_ = mem_funcs;
 }
 
 //---------------DSCLASSIFIER-------------------//
@@ -277,29 +303,46 @@ void DSClassifier::setApex(bool value)
 void DSClassifier::addAttribute(DSAttribute& attribute)
 {
 	attributes_.push_back(attribute);
+	for (int i = 0; i < trainingSet_.size(); i++)
+	{
+		trainingSet_[i].addAttribute(attribute);
+	}
+	AttribValue av;
+	av.attribPtr = &attribute;
+	av.value = " ";
+	baseObject_.emplace_back(av);
 }
 void DSClassifier::addClass(DSClass& Class)
 {
 	classes_.push_back(Class);
+	for (int i = 0; i < trainingSet_.size(); i++)
+	{
+		trainingSet_[i].addClass(Class);
+	}
 }
 void DSClassifier::addChild(DSClassifier& classifier)
 {
 	childs_.push_back(classifier);
 }
-void DSClassifier::toTrainingSet(int* values_a, int* values_c)
+void DSClassifier::toTrainingSet(string* values_a, double* values_c)
 {
-	DSProbe p(attributes_, classes_, values_a, values_c);
-	trainingSet_.push_back(p);
+	DSProbe probe(attributes_, classes_, values_a, values_c);
+	trainingSet_.push_back(probe);
 }
-void DSClassifier::setBaseObject(int* values_a)
+void DSClassifier::toTrainingSet(DSProbe probe)
 {
-	AttribValue a;
-	for (int i = 0; i < attributes_.size(); i++) //формирование значений признаков для базового объекта
+	trainingSet_.push_back(probe);
+}
+void DSClassifier::setBaseObject(string* values_a)
+{
+	for (int i = 0; i < baseObject_.size(); i++) //формирование значений признаков для базового объекта
 	{
-		a.attribPtr = &(attributes_[i].get());
-		a.value = values_a[i];
-		baseObject_.push_back(a);
+		baseObject_[i].value = values_a[i];
 	}
+}
+void DSClassifier::setBaseObject(vector <AttribValue> base_object)
+{
+	baseObject_ = base_object;
 }
 //remove
 void DSClassifier::removeAttribute(string id)
@@ -346,6 +389,10 @@ void DSClassifier::removeChild(string id)
 			childs_.erase(childs_.begin() + i);
 		}
 	}
+}
+void DSClassifier::removeTrainingSet()
+{
+	trainingSet_.clear();
 }
 //update references
 void DSClassifier::updateAttributesReferences(vector <DSAttribute> &attributes, int index)
@@ -477,12 +524,12 @@ bool DSHierarchy::load(string fileName)
 				for (tinyxml2::XMLElement* child1 = child->FirstChildElement("training_set")->FirstChildElement("probe"); child1 != NULL; child1 = child1->NextSiblingElement())
 				{
 					int i = 0;
-					int* values_a = new int[cl.getAttributes().size()], *values_c = new int[cl.getClasses().size()];
+					string* values_a = new string[cl.getAttributes().size()];double *values_c = new double[cl.getClasses().size()];
 					for (tinyxml2::XMLElement* child2 = child1->FirstChildElement("attr_val"); child2 != NULL; child2 = child2->NextSiblingElement("attr_val"))
 					{
 						if (cl.getAttributes()[i].get().getID() == child2->FirstChildElement("attr_id")->GetText())
 						{
-							values_a[i] = stoi(child2->FirstChildElement("attr_value")->GetText());
+							values_a[i] = child2->FirstChildElement("attr_value")->GetText();
 						}
 						i++;
 					}
@@ -491,7 +538,7 @@ bool DSHierarchy::load(string fileName)
 					{
 						if (cl.getClasses()[i].get().getID() == child2->FirstChildElement("class_id")->GetText())
 						{
-							values_c[i] = stoi(child2->FirstChildElement("class_mem")->GetText());
+							values_c[i] = stod(child2->FirstChildElement("class_mem")->GetText());
 						}
 						i++;
 					}
@@ -500,12 +547,12 @@ bool DSHierarchy::load(string fileName)
 				}
 
 				int i = 0;
-				int* values_a = new int[cl.getAttributes().size()];
+				string* values_a = new string[cl.getAttributes().size()];
 				for (tinyxml2::XMLElement* child1 = child->FirstChildElement("base_object")->FirstChildElement("attr_val"); child1 != NULL; child1 = child1->NextSiblingElement())
 				{
 					if (cl.getAttributes()[i].get().getID() == child1->FirstChildElement("attr_id")->GetText())
 					{
-						values_a[i] = stoi(child1->FirstChildElement("attr_value")->GetText());
+						values_a[i] = child1->FirstChildElement("attr_value")->GetText();
 					}
 					i++;
 				}
@@ -594,7 +641,7 @@ bool DSHierarchy::save(string fileName)
 					insert->FirstChildElement("training_set")->LastChildElement("probe")->LastChildElement("attr_val")->InsertEndChild(doc->NewElement("attr_id"));
 					insert->FirstChildElement("training_set")->LastChildElement("probe")->LastChildElement("attr_val")->FirstChildElement("attr_id")->SetText(classifiers_[i].getTrainingSet()[j].getAttribValues()[k].attribPtr->getID().c_str());
 					insert->FirstChildElement("training_set")->LastChildElement("probe")->LastChildElement("attr_val")->InsertEndChild(doc->NewElement("attr_value"));
-					insert->FirstChildElement("training_set")->LastChildElement("probe")->LastChildElement("attr_val")->FirstChildElement("attr_value")->SetText(classifiers_[i].getTrainingSet()[j].getAttribValues()[k].value);
+					insert->FirstChildElement("training_set")->LastChildElement("probe")->LastChildElement("attr_val")->FirstChildElement("attr_value")->SetText(classifiers_[i].getTrainingSet()[j].getAttribValues()[k].value.c_str());
 				}
 				for (int k = 0; k < classifiers_[i].getTrainingSet()[j].getClassMemFuncs().size(); k++)
 				{
@@ -611,7 +658,7 @@ bool DSHierarchy::save(string fileName)
 				insert->FirstChildElement("base_object")->LastChildElement("attr_val")->InsertEndChild(doc->NewElement("attr_id"));
 				insert->FirstChildElement("base_object")->LastChildElement("attr_val")->InsertEndChild(doc->NewElement("attr_value"));
 				insert->FirstChildElement("base_object")->LastChildElement("attr_val")->FirstChildElement("attr_id")->SetText(classifiers_[i].getBaseObject()[j].attribPtr->getID().c_str());
-				insert->FirstChildElement("base_object")->LastChildElement("attr_val")->FirstChildElement("attr_value")->SetText(classifiers_[i].getBaseObject()[j].value);
+				insert->FirstChildElement("base_object")->LastChildElement("attr_val")->FirstChildElement("attr_value")->SetText(classifiers_[i].getBaseObject()[j].value.c_str());
 			}
 			for (int j = 0; j < classifiers_[i].getChilds().size(); j++)
 			{

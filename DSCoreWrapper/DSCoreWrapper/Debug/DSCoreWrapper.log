@@ -1,52 +1,58 @@
 ﻿  DSCoreWrapper.cpp
-C:\Users\Антон\Documents\Visual Studio 2017\Projects\AquariusDS\DSCore\DSCore\DSCore.cpp(138): warning C4018: <: несоответствие типов со знаком и без знака
-C:\Users\Антон\Documents\Visual Studio 2017\Projects\AquariusDS\DSCore\DSCore\DSCore.cpp(145): warning C4018: <: несоответствие типов со знаком и без знака
-C:\Users\Антон\Documents\Visual Studio 2017\Projects\AquariusDS\DSCore\DSCore\DSCore.cpp(159): warning C4018: <: несоответствие типов со знаком и без знака
-C:\Users\Антон\Documents\Visual Studio 2017\Projects\AquariusDS\DSCore\DSCore\DSCore.cpp(169): warning C4018: <: несоответствие типов со знаком и без знака
-C:\Users\Антон\Documents\Visual Studio 2017\Projects\AquariusDS\DSCore\DSCore\DSCore.cpp(297): warning C4018: <: несоответствие типов со знаком и без знака
-C:\Users\Антон\Documents\Visual Studio 2017\Projects\AquariusDS\DSCore\DSCore\DSCore.cpp(307): warning C4018: <: несоответствие типов со знаком и без знака
-C:\Users\Антон\Documents\Visual Studio 2017\Projects\AquariusDS\DSCore\DSCore\DSCore.cpp(311): warning C4018: <: несоответствие типов со знаком и без знака
-C:\Users\Антон\Documents\Visual Studio 2017\Projects\AquariusDS\DSCore\DSCore\DSCore.cpp(315): warning C4018: <: несоответствие типов со знаком и без знака
-C:\Users\Антон\Documents\Visual Studio 2017\Projects\AquariusDS\DSCore\DSCore\DSCore.cpp(328): warning C4018: <: несоответствие типов со знаком и без знака
-C:\Users\Антон\Documents\Visual Studio 2017\Projects\AquariusDS\DSCore\DSCore\DSCore.cpp(332): warning C4018: <: несоответствие типов со знаком и без знака
-C:\Users\Антон\Documents\Visual Studio 2017\Projects\AquariusDS\DSCore\DSCore\DSCore.cpp(342): warning C4018: <: несоответствие типов со знаком и без знака
-C:\Users\Антон\Documents\Visual Studio 2017\Projects\AquariusDS\DSCore\DSCore\DSCore.cpp(353): warning C4018: <: несоответствие типов со знаком и без знака
-C:\Users\Антон\Documents\Visual Studio 2017\Projects\AquariusDS\DSCore\DSCore\DSCore.cpp(355): warning C4018: <: несоответствие типов со знаком и без знака
-C:\Users\Антон\Documents\Visual Studio 2017\Projects\AquariusDS\DSCore\DSCore\DSCore.cpp(360): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\Антон\Documents\Visual Studio 2017\Projects\AquariusDS\DSCore\DSCore\DSCore.cpp(142): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\Антон\Documents\Visual Studio 2017\Projects\AquariusDS\DSCore\DSCore\DSCore.cpp(149): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\Антон\Documents\Visual Studio 2017\Projects\AquariusDS\DSCore\DSCore\DSCore.cpp(163): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\Антон\Documents\Visual Studio 2017\Projects\AquariusDS\DSCore\DSCore\DSCore.cpp(173): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\Антон\Documents\Visual Studio 2017\Projects\AquariusDS\DSCore\DSCore\DSCore.cpp(306): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\Антон\Documents\Visual Studio 2017\Projects\AquariusDS\DSCore\DSCore\DSCore.cpp(318): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\Антон\Documents\Visual Studio 2017\Projects\AquariusDS\DSCore\DSCore\DSCore.cpp(338): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\Антон\Documents\Visual Studio 2017\Projects\AquariusDS\DSCore\DSCore\DSCore.cpp(350): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\Антон\Documents\Visual Studio 2017\Projects\AquariusDS\DSCore\DSCore\DSCore.cpp(354): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\Антон\Documents\Visual Studio 2017\Projects\AquariusDS\DSCore\DSCore\DSCore.cpp(358): warning C4018: <: несоответствие типов со знаком и без знака
 C:\Users\Антон\Documents\Visual Studio 2017\Projects\AquariusDS\DSCore\DSCore\DSCore.cpp(371): warning C4018: <: несоответствие типов со знаком и без знака
-C:\Users\Антон\Documents\Visual Studio 2017\Projects\AquariusDS\DSCore\DSCore\DSCore.cpp(373): warning C4018: <: несоответствие типов со знаком и без знака
-C:\Users\Антон\Documents\Visual Studio 2017\Projects\AquariusDS\DSCore\DSCore\DSCore.cpp(378): warning C4018: <: несоответствие типов со знаком и без знака
-C:\Users\Антон\Documents\Visual Studio 2017\Projects\AquariusDS\DSCore\DSCore\DSCore.cpp(388): warning C4018: <: несоответствие типов со знаком и без знака
-C:\Users\Антон\Documents\Visual Studio 2017\Projects\AquariusDS\DSCore\DSCore\DSCore.cpp(390): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\Антон\Documents\Visual Studio 2017\Projects\AquariusDS\DSCore\DSCore\DSCore.cpp(375): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\Антон\Documents\Visual Studio 2017\Projects\AquariusDS\DSCore\DSCore\DSCore.cpp(385): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\Антон\Documents\Visual Studio 2017\Projects\AquariusDS\DSCore\DSCore\DSCore.cpp(400): warning C4018: <: несоответствие типов со знаком и без знака
 C:\Users\Антон\Documents\Visual Studio 2017\Projects\AquariusDS\DSCore\DSCore\DSCore.cpp(402): warning C4018: <: несоответствие типов со знаком и без знака
-C:\Users\Антон\Documents\Visual Studio 2017\Projects\AquariusDS\DSCore\DSCore\DSCore.cpp(541): warning C4018: <: несоответствие типов со знаком и без знака
-C:\Users\Антон\Documents\Visual Studio 2017\Projects\AquariusDS\DSCore\DSCore\DSCore.cpp(554): warning C4018: <: несоответствие типов со знаком и без знака
-C:\Users\Антон\Documents\Visual Studio 2017\Projects\AquariusDS\DSCore\DSCore\DSCore.cpp(565): warning C4018: <: несоответствие типов со знаком и без знака
-C:\Users\Антон\Documents\Visual Studio 2017\Projects\AquariusDS\DSCore\DSCore\DSCore.cpp(578): warning C4018: <: несоответствие типов со знаком и без знака
-C:\Users\Антон\Documents\Visual Studio 2017\Projects\AquariusDS\DSCore\DSCore\DSCore.cpp(583): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\Антон\Documents\Visual Studio 2017\Projects\AquariusDS\DSCore\DSCore\DSCore.cpp(407): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\Антон\Documents\Visual Studio 2017\Projects\AquariusDS\DSCore\DSCore\DSCore.cpp(418): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\Антон\Documents\Visual Studio 2017\Projects\AquariusDS\DSCore\DSCore\DSCore.cpp(420): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\Антон\Documents\Visual Studio 2017\Projects\AquariusDS\DSCore\DSCore\DSCore.cpp(425): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\Антон\Documents\Visual Studio 2017\Projects\AquariusDS\DSCore\DSCore\DSCore.cpp(435): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\Антон\Documents\Visual Studio 2017\Projects\AquariusDS\DSCore\DSCore\DSCore.cpp(437): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\Антон\Documents\Visual Studio 2017\Projects\AquariusDS\DSCore\DSCore\DSCore.cpp(449): warning C4018: <: несоответствие типов со знаком и без знака
 C:\Users\Антон\Documents\Visual Studio 2017\Projects\AquariusDS\DSCore\DSCore\DSCore.cpp(588): warning C4018: <: несоответствие типов со знаком и без знака
-C:\Users\Антон\Documents\Visual Studio 2017\Projects\AquariusDS\DSCore\DSCore\DSCore.cpp(591): warning C4018: <: несоответствие типов со знаком и без знака
-C:\Users\Антон\Documents\Visual Studio 2017\Projects\AquariusDS\DSCore\DSCore\DSCore.cpp(599): warning C4018: <: несоответствие типов со знаком и без знака
-C:\Users\Антон\Documents\Visual Studio 2017\Projects\AquariusDS\DSCore\DSCore\DSCore.cpp(608): warning C4018: <: несоответствие типов со знаком и без знака
-C:\Users\Антон\Documents\Visual Studio 2017\Projects\AquariusDS\DSCore\DSCore\DSCore.cpp(616): warning C4018: <: несоответствие типов со знаком и без знака
-C:\Users\Антон\Documents\Visual Studio 2017\Projects\AquariusDS\DSCore\DSCore\DSCore.cpp(650): warning C4018: <: несоответствие типов со знаком и без знака
-C:\Users\Антон\Documents\Visual Studio 2017\Projects\AquariusDS\DSCore\DSCore\DSCore.cpp(675): warning C4018: <: несоответствие типов со знаком и без знака
-C:\Users\Антон\Documents\Visual Studio 2017\Projects\AquariusDS\DSCore\DSCore\DSCore.cpp(679): warning C4018: <: несоответствие типов со знаком и без знака
-C:\Users\Антон\Documents\Visual Studio 2017\Projects\AquariusDS\DSCore\DSCore\DSCore.cpp(690): warning C4018: <: несоответствие типов со знаком и без знака
-C:\Users\Антон\Documents\Visual Studio 2017\Projects\AquariusDS\DSCore\DSCore\DSCore.cpp(694): warning C4018: <: несоответствие типов со знаком и без знака
-C:\Users\Антон\Documents\Visual Studio 2017\Projects\AquariusDS\DSCore\DSCore\DSCore.cpp(705): warning C4018: <: несоответствие типов со знаком и без знака
-C:\Users\Антон\Documents\Visual Studio 2017\Projects\AquariusDS\DSCore\DSCore\DSCore.cpp(709): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\Антон\Documents\Visual Studio 2017\Projects\AquariusDS\DSCore\DSCore\DSCore.cpp(601): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\Антон\Documents\Visual Studio 2017\Projects\AquariusDS\DSCore\DSCore\DSCore.cpp(612): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\Антон\Documents\Visual Studio 2017\Projects\AquariusDS\DSCore\DSCore\DSCore.cpp(625): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\Антон\Documents\Visual Studio 2017\Projects\AquariusDS\DSCore\DSCore\DSCore.cpp(630): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\Антон\Documents\Visual Studio 2017\Projects\AquariusDS\DSCore\DSCore\DSCore.cpp(635): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\Антон\Documents\Visual Studio 2017\Projects\AquariusDS\DSCore\DSCore\DSCore.cpp(638): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\Антон\Documents\Visual Studio 2017\Projects\AquariusDS\DSCore\DSCore\DSCore.cpp(646): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\Антон\Documents\Visual Studio 2017\Projects\AquariusDS\DSCore\DSCore\DSCore.cpp(655): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\Антон\Documents\Visual Studio 2017\Projects\AquariusDS\DSCore\DSCore\DSCore.cpp(663): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\Антон\Documents\Visual Studio 2017\Projects\AquariusDS\DSCore\DSCore\DSCore.cpp(697): warning C4018: <: несоответствие типов со знаком и без знака
 C:\Users\Антон\Documents\Visual Studio 2017\Projects\AquariusDS\DSCore\DSCore\DSCore.cpp(722): warning C4018: <: несоответствие типов со знаком и без знака
-C:\Users\Антон\Documents\Visual Studio 2017\Projects\AquariusDS\DSCore\DSCore\DSCore.cpp(732): warning C4018: <: несоответствие типов со знаком и без знака
-C:\Users\Антон\Documents\Visual Studio 2017\Projects\AquariusDS\DSCore\DSCore\DSCore.cpp(742): warning C4018: <: несоответствие типов со знаком и без знака
-C:\Users\Антон\Documents\Visual Studio 2017\Projects\AquariusDS\DSCore\DSCore\DSCore.cpp(751): warning C4018: <: несоответствие типов со знаком и без знака
-C:\Users\Антон\Documents\Visual Studio 2017\Projects\AquariusDS\DSCore\DSCore\DSCore.cpp(758): warning C4018: <: несоответствие типов со знаком и без знака
-DSCoreWrapper.cpp(184): warning C4018: <: несоответствие типов со знаком и без знака
-DSCoreWrapper.cpp(197): warning C4018: <: несоответствие типов со знаком и без знака
-DSCoreWrapper.cpp(210): warning C4018: <: несоответствие типов со знаком и без знака
-DSCoreWrapper.cpp(311): warning C4018: <: несоответствие типов со знаком и без знака
-DSCoreWrapper.cpp(324): warning C4018: <: несоответствие типов со знаком и без знака
-DSCoreWrapper.cpp(337): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\Антон\Documents\Visual Studio 2017\Projects\AquariusDS\DSCore\DSCore\DSCore.cpp(726): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\Антон\Documents\Visual Studio 2017\Projects\AquariusDS\DSCore\DSCore\DSCore.cpp(737): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\Антон\Documents\Visual Studio 2017\Projects\AquariusDS\DSCore\DSCore\DSCore.cpp(741): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\Антон\Documents\Visual Studio 2017\Projects\AquariusDS\DSCore\DSCore\DSCore.cpp(752): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\Антон\Documents\Visual Studio 2017\Projects\AquariusDS\DSCore\DSCore\DSCore.cpp(756): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\Антон\Documents\Visual Studio 2017\Projects\AquariusDS\DSCore\DSCore\DSCore.cpp(769): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\Антон\Documents\Visual Studio 2017\Projects\AquariusDS\DSCore\DSCore\DSCore.cpp(779): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\Антон\Documents\Visual Studio 2017\Projects\AquariusDS\DSCore\DSCore\DSCore.cpp(789): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\Антон\Documents\Visual Studio 2017\Projects\AquariusDS\DSCore\DSCore\DSCore.cpp(798): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\Антон\Documents\Visual Studio 2017\Projects\AquariusDS\DSCore\DSCore\DSCore.cpp(805): warning C4018: <: несоответствие типов со знаком и без знака
+DSCoreWrapper.cpp(223): warning C4018: <: несоответствие типов со знаком и без знака
+DSCoreWrapper.cpp(234): warning C4018: <: несоответствие типов со знаком и без знака
+DSCoreWrapper.cpp(307): warning C4018: <: несоответствие типов со знаком и без знака
+DSCoreWrapper.cpp(320): warning C4018: <: несоответствие типов со знаком и без знака
+DSCoreWrapper.cpp(333): warning C4018: <: несоответствие типов со знаком и без знака
+DSCoreWrapper.cpp(385): warning C4018: <: несоответствие типов со знаком и без знака
+DSCoreWrapper.cpp(397): warning C4018: <: несоответствие типов со знаком и без знака
+DSCoreWrapper.cpp(478): warning C4018: <: несоответствие типов со знаком и без знака
+DSCoreWrapper.cpp(491): warning C4018: <: несоответствие типов со знаком и без знака
+DSCoreWrapper.cpp(504): warning C4018: <: несоответствие типов со знаком и без знака
 c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscore\dscore\resources\tinyxml2\tinyxml2.cpp(2326): warning C4793: tinyxml2::XMLPrinter::Print: функция скомпилирована как машинная:
   	varargs не поддерживаются в /clr
 c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscore\dscore\resources\tinyxml2\tinyxml2.cpp(2328): warning C4793: tinyxml2::XMLPrinter::Print: функция скомпилирована как машинная:
@@ -57,9 +63,9 @@ c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscore\dsco
   	Обнаружена встроенная функция, которая не поддерживается в управляемом коде
 c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscore\dscore\resources\tinyxml2\tinyxml2.cpp(2343): warning C4793: tinyxml2::XMLPrinter::Print: функция скомпилирована как машинная:
   	Обнаружена встроенная функция, которая не поддерживается в управляемом коде
-c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscore\dscore\dscore.cpp(727): warning C4172: возвращение адреса локальной или временной переменной : A
-c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscore\dscore\dscore.cpp(737): warning C4172: возвращение адреса локальной или временной переменной : C
-c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscore\dscore\dscore.cpp(747): warning C4172: возвращение адреса локальной или временной переменной : C
+c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscore\dscore\dscore.cpp(774): warning C4172: возвращение адреса локальной или временной переменной : A
+c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscore\dscore\dscore.cpp(784): warning C4172: возвращение адреса локальной или временной переменной : C
+c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscore\dscore\dscore.cpp(794): warning C4172: возвращение адреса локальной или временной переменной : C
 c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscore\dscore\resources\tinyxml2\tinyxml2.cpp(45): warning C4793: `anonymous namespace'::TIXML_SNPRINTF: функция скомпилирована как машинная:
   	varargs не поддерживаются в /clr
 c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscore\dscore\resources\tinyxml2\tinyxml2.cpp(47): warning C4793: `anonymous namespace'::TIXML_SNPRINTF: функция скомпилирована как машинная:

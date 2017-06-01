@@ -21,13 +21,26 @@ namespace Aquarius
             InitializeComponent();
             hierarchy_ = hierarchy;  
         }
+        private void PopulateTypesTable(DataTable dt)
+        {
+            dt.Columns.Add("ID");
+            dt.Columns.Add("Description");
+            dt.Columns.Add("Example");
+            dt.Rows.Add("Numeric", "Цифровой", "Пример значения: { 1.0 }");
+            dt.Rows.Add("NumArrayT", "Последовательность чисел (Расстояние по тенденции)", "Пример значения: { 1 2 3 4 }");
+            dt.Rows.Add("NumArrayS", "Последовательность чисел (Расстояние по площади)", "Пример значения: { 1 2 3 4 }");
+            dt.Rows.Add("FuzSetsO", "Нечёткие множества (коэфф.-т Охиаи)", "Пример значения: { 1(1.0) 2(1.0) 3(1.0) }");
+            dt.Rows.Add("FuzSetsSC", "Нечёткие множества (коэфф.-т Серенсена-Чекановского)", "Пример значения: { 1(1.0) 2(1.0) 3(1.0) }");
+            dt.Rows.Add("FuzzDistr", "Нечёткое распределение", "Пример значения: { 1(0.9) 2(0.8) 3(0.2) }");
+            dt.Rows.Add("StatDistr", "Статистическое распределение", "Пример значения: { 1(0.2) 2(0.2) 3(0.2) 4(0.2) }");
+            dt.Rows.Add("WeightStr", "Строка с весами каждой из букв", "Пример значения: { А(0.7) B(0.9) C(0.3) D(0.2) }");
+            dt.Rows.Add("LogicUnit", "Логическая конструкция", "Пример значения: { A & B ! C }");
+            dt.Rows.Add("FuzzyUnit", "Нечёткая логическая конструкция", "Пример значения: { A & B ! C }");
+        }
         private void Attributes_Load(object sender, EventArgs e)
         {
             RefreshAttributes();
-            dt_types.Columns.Add("ID");
-            dt_types.Columns.Add("Description");
-            dt_types.Rows.Add("Numeric", "Числовой");
-            dt_types.Rows.Add("Text", "Текстовый");
+            PopulateTypesTable(dt_types);
             comboBox1.DataSource = dt_types;
             comboBox1.ValueMember = "ID";
             comboBox1.DisplayMember = "Description";
@@ -129,6 +142,9 @@ namespace Aquarius
             TurnLeft();
         }
 
-        
+        private void comboBox1_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            label4.Text = dt_types.Rows[comboBox1.SelectedIndex]["Example"].ToString();
+        }
     }
 }

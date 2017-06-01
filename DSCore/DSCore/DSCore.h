@@ -60,7 +60,7 @@ private:
 struct AttribValue
 {
 	DSAttribute* attribPtr;
-	int value;
+	string value;
 };
 
 struct ClassMemFunc
@@ -72,12 +72,18 @@ struct ClassMemFunc
 class DSProbe //один опыт из обучающей выборки
 {
 public:
-	DSProbe(vector<reference_wrapper<DSAttribute>> attributes, vector<reference_wrapper<DSClass>> classes, int* attribValues, int* classValues);
+	DSProbe() {};
+	DSProbe(vector<AttribValue> attribValues, vector<ClassMemFunc> classMemFuncs);
+	DSProbe(vector<reference_wrapper<DSAttribute>> attributes, vector<reference_wrapper<DSClass>> classes, string* attribValues, double* classValues);
 	~DSProbe();
 	void removeAttribute(DSAttribute& attribute);
 	void removeClass(DSClass& Class);
+	void addAttribute(DSAttribute& attribute);
+	void addClass(DSClass& Class);
 	vector <AttribValue>& getAttribValues();
 	vector <ClassMemFunc>& getClassMemFuncs();
+	void setAttribValues(vector <AttribValue> values);
+	void setClassMemFuncs(vector <ClassMemFunc> mem_funcs);
 private:
 	vector <AttribValue> attribValues_;
 	vector <ClassMemFunc> classMemFuncs_;
@@ -95,12 +101,15 @@ public:
 	void addAttribute(DSAttribute& attribute);
 	void addClass(DSClass& Class);
 	void addChild(DSClassifier& classifier);
-	void setBaseObject(int* values_a);
-	void toTrainingSet(int* values_a, int* values_c);
+	void setBaseObject(string* values_a);
+	void setBaseObject(vector <AttribValue> base_object);
+	void toTrainingSet(string* values_a, double* values_c);
+	void toTrainingSet(DSProbe probe);
 	//remove
 	void removeAttribute(string id);
 	void removeClass(string id);
 	void removeChild(string id);
+	void removeTrainingSet();
 	//get
 	int getLevel();
 	string getID();
@@ -121,9 +130,7 @@ public:
 	void updateAttributesReferences(vector <DSAttribute> &attributes, int index);
 	void updateClassesReferences(vector <DSClass> &classes, int index);
 	void updateClassifiersReferences(vector <DSClassifier> &classifiers, int index);
-	
 	void classify();
-
 	bool operator<(const DSClassifier& cl) const { return level_ < cl.level_; }
 private:
 	string id_, name_, type_;
@@ -170,6 +177,7 @@ public:
 	void removeAttribute(string id);
 	void removeClass(string id);
 	void removeClassifier(string id);
+	
 	//find
 	DSAttribute& findAttribute(string id);
 	DSClass& findClass(string id);

@@ -106,10 +106,16 @@ DSCoreWrapper::AttribValueWrapper::AttribValueWrapper()
 {
 	attribValue_ = new AttribValue;
 }
-DSCoreWrapper::AttribValueWrapper::AttribValueWrapper(DSAttributeWrapper^ attribute, int value)
+DSCoreWrapper::AttribValueWrapper::AttribValueWrapper(DSAttributeWrapper^ attribute, System::String^ value)
 {
 	attribValue_ = new AttribValue;
 	attribValue_->attribPtr = attribute->getInstance();
+	attribValue_->value = msclr::interop::marshal_as<std::string>(value);
+}
+DSCoreWrapper::AttribValueWrapper::AttribValueWrapper(DSAttribute* attribute, string value)
+{
+	attribValue_ = new AttribValue;
+	attribValue_->attribPtr = attribute;
 	attribValue_->value = value;
 }
 DSCoreWrapper::AttribValueWrapper::~AttribValueWrapper()
@@ -120,9 +126,27 @@ void DSCoreWrapper::AttribValueWrapper::setAttributeReference(DSAttributeWrapper
 {
 	attribValue_->attribPtr = attribute->getInstance();
 }
-void DSCoreWrapper::AttribValueWrapper::setValue(int value)
+void DSCoreWrapper::AttribValueWrapper::setValue(System::String^ value)
 {
-	attribValue_->value = value;
+	attribValue_->value = msclr::interop::marshal_as <std::string> (value);
+}
+DSCoreWrapper::DSAttributeWrapper^ DSCoreWrapper::AttribValueWrapper::getAttributeReference()
+{
+	DSAttributeWrapper^ a = gcnew DSAttributeWrapper();
+	a->setInstance(attribValue_->attribPtr);
+	return a;
+}
+System::String^ DSCoreWrapper::AttribValueWrapper::getValue()
+{
+	return msclr::interop::marshal_as <System::String^>(attribValue_->value);
+}
+AttribValue* DSCoreWrapper::AttribValueWrapper::getInstance()
+{
+	return attribValue_;
+}
+void DSCoreWrapper::AttribValueWrapper::setInstance(AttribValue* av)
+{
+	attribValue_ = av;
 }
 
 DSCoreWrapper::ClassMemFuncWrapper::ClassMemFuncWrapper()
@@ -133,6 +157,12 @@ DSCoreWrapper::ClassMemFuncWrapper::ClassMemFuncWrapper(DSClassWrapper^ Class, d
 {
 	classMemFunc_ = new ClassMemFunc;
 	classMemFunc_->classPtr = Class->getInstance();
+	classMemFunc_->mem_func = value;
+}
+DSCoreWrapper::ClassMemFuncWrapper::ClassMemFuncWrapper(DSClass* Class, double value)
+{
+	classMemFunc_ = new ClassMemFunc;
+	classMemFunc_->classPtr = Class;
 	classMemFunc_->mem_func = value;
 }
 DSCoreWrapper::ClassMemFuncWrapper::~ClassMemFuncWrapper()
@@ -146,6 +176,99 @@ void DSCoreWrapper::ClassMemFuncWrapper::setClassReference(DSClassWrapper^ Class
 void DSCoreWrapper::ClassMemFuncWrapper::setMembershipFunction(double value)
 {
 	classMemFunc_->mem_func = value;
+}
+DSCoreWrapper::DSClassWrapper^ DSCoreWrapper::ClassMemFuncWrapper::getClassReference()
+{
+	DSClassWrapper^ c = gcnew DSClassWrapper();
+	c->setInstance(classMemFunc_->classPtr);
+	return c;
+}
+double DSCoreWrapper::ClassMemFuncWrapper::getMembershipFunction()
+{
+	return classMemFunc_->mem_func;
+}
+
+DSCoreWrapper::DSProbeWrapper::DSProbeWrapper()
+{
+	probe_ = new DSProbe();
+}
+DSCoreWrapper::DSProbeWrapper::DSProbeWrapper(List<AttribValueWrapper^>^ attributes, List <ClassMemFuncWrapper^>^ classes)
+{
+	vector<AttribValue> attribValues;
+	vector<ClassMemFunc> classMemFuncs;
+	for each (AttribValueWrapper^ av in attributes)
+	{
+		AttribValue a;
+		a.attribPtr = av->getAttributeReference()->getInstance();
+		a.value = msclr::interop::marshal_as<std::string>(av->getValue());
+		attribValues.emplace_back(a);
+	}
+	for each(ClassMemFuncWrapper^ cm in classes)
+	{
+		ClassMemFunc c;
+		c.classPtr = cm->getClassReference()->getInstance();
+		c.mem_func = cm->getMembershipFunction();
+		classMemFuncs.emplace_back(c);
+	}
+	probe_ = new DSProbe(attribValues, classMemFuncs);
+}
+DSCoreWrapper::DSProbeWrapper::~DSProbeWrapper()
+{
+	delete probe_;
+}
+List <DSCoreWrapper::AttribValueWrapper^>^ DSCoreWrapper::DSProbeWrapper::getAttribValues()
+{
+	vector <AttribValue>& av = probe_->getAttribValues();
+	List <AttribValueWrapper^>^ al = gcnew List <AttribValueWrapper^>;
+	for (int i = 0; i < av.size(); i++)
+	{
+		AttribValueWrapper^ a = gcnew AttribValueWrapper(av[i].attribPtr, av[i].value);
+		al->Add(a);
+	}
+	return al;
+}
+List <DSCoreWrapper::ClassMemFuncWrapper^>^ DSCoreWrapper::DSProbeWrapper::getClassMemFuncs()
+{
+	vector <ClassMemFunc>& cv = probe_->getClassMemFuncs();
+	List <ClassMemFuncWrapper^>^ cl = gcnew List <ClassMemFuncWrapper^>;
+	for (int i = 0; i < cv.size(); i++)
+	{
+		ClassMemFuncWrapper^ c = gcnew ClassMemFuncWrapper(cv[i].classPtr, cv[i].mem_func);
+		cl->Add(c);
+	}
+	return cl;
+}
+void DSCoreWrapper::DSProbeWrapper::setAttribValues(List <DSCoreWrapper::AttribValueWrapper^>^ attributes)
+{
+	vector<AttribValue> attribValues;
+	for each (AttribValueWrapper^ av in attributes)
+	{
+		AttribValue a;
+		a.attribPtr = av->getAttributeReference()->getInstance();
+		a.value = msclr::interop::marshal_as<std::string>(av->getValue());
+		attribValues.emplace_back(a);
+	}
+	probe_->setAttribValues(attribValues);
+}
+void DSCoreWrapper::DSProbeWrapper::setClassMemFuncs(List <DSCoreWrapper::ClassMemFuncWrapper^>^ classes)
+{
+	vector<ClassMemFunc> classMemFuncs;
+	for each(ClassMemFuncWrapper^ cm in classes)
+	{
+		ClassMemFunc c;
+		c.classPtr = cm->getClassReference()->getInstance();
+		c.mem_func = cm->getMembershipFunction();
+		classMemFuncs.emplace_back(c);
+	}
+	probe_->setClassMemFuncs(classMemFuncs);
+}
+DSProbe* DSCoreWrapper::DSProbeWrapper::getInstance()
+{
+	return probe_;
+}
+void DSCoreWrapper::DSProbeWrapper::setInstance(DSProbe* probe)
+{
+	probe_ = probe;
 }
 
 DSCoreWrapper::DSClassifierWrapper::DSClassifierWrapper()
@@ -250,6 +373,50 @@ void DSCoreWrapper::DSClassifierWrapper::removeClass(System::String^ id)
 void DSCoreWrapper::DSClassifierWrapper::removeChild(System::String^ id)
 {
 	classifier_->removeChild(msclr::interop::marshal_as <std::string>(id));
+}
+void DSCoreWrapper::DSClassifierWrapper::removeTrainingSet()
+{
+	classifier_->removeTrainingSet();
+}
+List <DSCoreWrapper::DSProbeWrapper^>^ DSCoreWrapper::DSClassifierWrapper::getTrainingSet()
+{
+	vector<DSProbe>& training_set = classifier_->getTrainingSet();
+	List<DSProbeWrapper^>^ ts = gcnew List<DSProbeWrapper^>;
+	for (int i = 0; i < training_set.size(); i++)
+	{
+		DSProbeWrapper^ probe = gcnew DSProbeWrapper();
+		probe->setInstance(&training_set[i]);
+		ts->Add(probe);
+	}
+	return ts;
+}
+List <DSCoreWrapper::AttribValueWrapper^>^ DSCoreWrapper::DSClassifierWrapper::getBaseObject()
+{
+	vector <AttribValue>& base_object = classifier_->getBaseObject();
+	List <AttribValueWrapper^>^ bo = gcnew List<AttribValueWrapper^>;
+	for (int i = 0; i < base_object.size(); i++)
+	{
+		AttribValueWrapper^ av = gcnew AttribValueWrapper();
+		av->setInstance(&base_object[i]);
+		bo->Add(av);
+	}
+	return bo;
+}
+void DSCoreWrapper::DSClassifierWrapper::toTrainingSet(DSProbeWrapper^ probe)
+{
+	classifier_->toTrainingSet(*(probe->getInstance()));
+}
+void DSCoreWrapper::DSClassifierWrapper::setBaseObject(List <AttribValueWrapper^>^ base_object)
+{
+	vector <AttribValue> baseObject_;
+	for each(AttribValueWrapper^ av in base_object)
+	{
+		AttribValue a;
+		a.attribPtr = av->getAttributeReference()->getInstance();
+		a.value = msclr::interop::marshal_as<std::string>(av->getValue());
+		baseObject_.emplace_back(a);
+	}
+	classifier_->setBaseObject(baseObject_);
 }
 DSClassifier* DSCoreWrapper::DSClassifierWrapper::getInstance()
 {

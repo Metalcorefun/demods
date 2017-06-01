@@ -56,11 +56,14 @@ namespace DSCoreWrapper {
 	{
 	public:
 		AttribValueWrapper();
-		AttribValueWrapper(DSAttributeWrapper^ attribute, int value);
+		AttribValueWrapper(DSAttributeWrapper^ attribute, System::String^ value);
+		AttribValueWrapper(DSAttribute* attribute, string value);
 		void setAttributeReference(DSAttributeWrapper^ attribute);
-		void setValue(int value);
-		void getAttributeReference() {};
-		void getValue() {};
+		void setValue(System::String^ value);
+		DSAttributeWrapper^ getAttributeReference();
+		System::String^ getValue();
+		AttribValue* getInstance();
+		void setInstance(AttribValue* av);
 		~AttribValueWrapper();
 		
 	private:
@@ -72,11 +75,12 @@ namespace DSCoreWrapper {
 	public:
 		ClassMemFuncWrapper();
 		ClassMemFuncWrapper(DSClassWrapper^ Class, double value);
+		ClassMemFuncWrapper(DSClass* Class, double value);
 		~ClassMemFuncWrapper();
 		void setClassReference(DSClassWrapper^ Class);
 		void setMembershipFunction(double value);
-		void getAttributeReference() {};
-		void getValue() {};
+		DSClassWrapper^ getClassReference();
+		double getMembershipFunction();
 	private:
 		ClassMemFunc* classMemFunc_;
 	};
@@ -84,10 +88,17 @@ namespace DSCoreWrapper {
 	public ref class DSProbeWrapper
 	{
 	public:
-		DSProbeWrapper() {};
-		~DSProbeWrapper() {};
+		DSProbeWrapper();
+		DSProbeWrapper(List<AttribValueWrapper^>^ attributes, List<ClassMemFuncWrapper^>^ classes);
+		~DSProbeWrapper();
+		List<AttribValueWrapper^>^ getAttribValues();
+		List<ClassMemFuncWrapper^>^ getClassMemFuncs();
+		void setAttribValues(List <AttribValueWrapper^>^ attributes);
+		void setClassMemFuncs(List<ClassMemFuncWrapper^>^ classes);
+		DSProbe* getInstance();
+		void setInstance(DSProbe* probe);
 	private:
-		DSProbe *probe_;
+		DSProbe* probe_;
 	};
 
 	public ref class DSClassifierWrapper
@@ -112,6 +123,11 @@ namespace DSCoreWrapper {
 		void removeAttribute(System::String^ id);
 		void removeClass(System::String^ id);
 		void removeChild(System::String^ id);
+		void removeTrainingSet();
+		List <DSProbeWrapper^>^ getTrainingSet();
+		List <AttribValueWrapper^>^ getBaseObject();
+		void toTrainingSet(DSProbeWrapper^ probe);
+		void setBaseObject(List <AttribValueWrapper^>^ base_object);
 		DSClassifier* getInstance();
 		void setInstance(DSClassifier* classifier);
 		void setInstance(reference_wrapper<DSClassifier> classifier);
