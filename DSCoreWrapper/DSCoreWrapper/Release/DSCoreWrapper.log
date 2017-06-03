@@ -1,0 +1,79 @@
+﻿  DSCoreWrapper.cpp
+c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscorewrapper\dscorewrapper\SourceCode\Probe.cpp(21): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscorewrapper\dscorewrapper\SourceCode\Probe.cpp(28): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscorewrapper\dscorewrapper\SourceCode\Probe.cpp(42): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscorewrapper\dscorewrapper\SourceCode\Probe.cpp(52): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscorewrapper\dscorewrapper\SourceCode\Classifier.cpp(106): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscorewrapper\dscorewrapper\SourceCode\Classifier.cpp(118): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscorewrapper\dscorewrapper\SourceCode\Classifier.cpp(138): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscorewrapper\dscorewrapper\SourceCode\Classifier.cpp(150): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscorewrapper\dscorewrapper\SourceCode\Classifier.cpp(154): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscorewrapper\dscorewrapper\SourceCode\Classifier.cpp(158): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscorewrapper\dscorewrapper\SourceCode\Classifier.cpp(171): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscorewrapper\dscorewrapper\SourceCode\Classifier.cpp(175): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscorewrapper\dscorewrapper\SourceCode\Classifier.cpp(185): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscorewrapper\dscorewrapper\SourceCode\Classifier.cpp(200): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscorewrapper\dscorewrapper\SourceCode\Classifier.cpp(202): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscorewrapper\dscorewrapper\SourceCode\Classifier.cpp(207): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscorewrapper\dscorewrapper\SourceCode\Classifier.cpp(218): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscorewrapper\dscorewrapper\SourceCode\Classifier.cpp(220): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscorewrapper\dscorewrapper\SourceCode\Classifier.cpp(225): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscorewrapper\dscorewrapper\SourceCode\Classifier.cpp(235): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscorewrapper\dscorewrapper\SourceCode\Classifier.cpp(237): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscorewrapper\dscorewrapper\SourceCode\Classifier.cpp(249): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscorewrapper\dscorewrapper\SourceCode\Hierarchy.cpp(146): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscorewrapper\dscorewrapper\SourceCode\Hierarchy.cpp(159): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscorewrapper\dscorewrapper\SourceCode\Hierarchy.cpp(170): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscorewrapper\dscorewrapper\SourceCode\Hierarchy.cpp(183): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscorewrapper\dscorewrapper\SourceCode\Hierarchy.cpp(188): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscorewrapper\dscorewrapper\SourceCode\Hierarchy.cpp(193): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscorewrapper\dscorewrapper\SourceCode\Hierarchy.cpp(196): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscorewrapper\dscorewrapper\SourceCode\Hierarchy.cpp(204): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscorewrapper\dscorewrapper\SourceCode\Hierarchy.cpp(213): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscorewrapper\dscorewrapper\SourceCode\Hierarchy.cpp(221): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscorewrapper\dscorewrapper\SourceCode\Hierarchy.cpp(266): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscorewrapper\dscorewrapper\SourceCode\Hierarchy.cpp(270): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscorewrapper\dscorewrapper\SourceCode\Hierarchy.cpp(281): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscorewrapper\dscorewrapper\SourceCode\Hierarchy.cpp(285): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscorewrapper\dscorewrapper\SourceCode\Hierarchy.cpp(296): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscorewrapper\dscorewrapper\SourceCode\Hierarchy.cpp(300): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscorewrapper\dscorewrapper\SourceCode\Hierarchy.cpp(313): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscorewrapper\dscorewrapper\SourceCode\Hierarchy.cpp(323): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscorewrapper\dscorewrapper\SourceCode\Hierarchy.cpp(333): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscorewrapper\dscorewrapper\SourceCode\Hierarchy.cpp(342): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscorewrapper\dscorewrapper\SourceCode\Hierarchy.cpp(349): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscorewrapper\dscorewrapper\sourcecode\Switch.h(49): warning C4267: аргумент: преобразование из "size_t" в "const s_s::uchar"; возможна потеря данных
+c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscorewrapper\dscorewrapper\SourceCode\COMExecutor.cpp(141): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscorewrapper\dscorewrapper\SourceCode\COMExecutor.cpp(145): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscorewrapper\dscorewrapper\SourceCode\COMExecutor.cpp(149): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscorewrapper\dscorewrapper\SourceCode\COMExecutor.cpp(153): warning C4018: <: несоответствие типов со знаком и без знака
+DSCoreWrapper.cpp(240): warning C4018: <: несоответствие типов со знаком и без знака
+DSCoreWrapper.cpp(251): warning C4018: <: несоответствие типов со знаком и без знака
+DSCoreWrapper.cpp(324): warning C4018: <: несоответствие типов со знаком и без знака
+DSCoreWrapper.cpp(337): warning C4018: <: несоответствие типов со знаком и без знака
+DSCoreWrapper.cpp(350): warning C4018: <: несоответствие типов со знаком и без знака
+DSCoreWrapper.cpp(402): warning C4018: <: несоответствие типов со знаком и без знака
+DSCoreWrapper.cpp(414): warning C4018: <: несоответствие типов со знаком и без знака
+DSCoreWrapper.cpp(495): warning C4018: <: несоответствие типов со знаком и без знака
+DSCoreWrapper.cpp(508): warning C4018: <: несоответствие типов со знаком и без знака
+DSCoreWrapper.cpp(521): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscorewrapper\dscorewrapper\sourcecode\resources\tinyxml2\tinyxml2.cpp(2326): warning C4793: tinyxml2::XMLPrinter::Print: функция скомпилирована как машинная:
+  	varargs не поддерживаются в /clr
+c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscorewrapper\dscorewrapper\sourcecode\resources\tinyxml2\tinyxml2.cpp(2328): warning C4793: tinyxml2::XMLPrinter::Print: функция скомпилирована как машинная:
+  	Обнаружена встроенная функция, которая не поддерживается в управляемом коде
+c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscorewrapper\dscorewrapper\sourcecode\resources\tinyxml2\tinyxml2.cpp(2336): warning C4793: tinyxml2::XMLPrinter::Print: функция скомпилирована как машинная:
+  	Обнаружена встроенная функция, которая не поддерживается в управляемом коде
+c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscorewrapper\dscorewrapper\sourcecode\resources\tinyxml2\tinyxml2.cpp(2338): warning C4793: tinyxml2::XMLPrinter::Print: функция скомпилирована как машинная:
+  	Обнаружена встроенная функция, которая не поддерживается в управляемом коде
+c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscorewrapper\dscorewrapper\sourcecode\resources\tinyxml2\tinyxml2.cpp(2343): warning C4793: tinyxml2::XMLPrinter::Print: функция скомпилирована как машинная:
+  	Обнаружена встроенная функция, которая не поддерживается в управляемом коде
+c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscorewrapper\dscorewrapper\sourcecode\hierarchy.cpp(318): warning C4172: возвращение адреса локальной или временной переменной : A
+c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscorewrapper\dscorewrapper\sourcecode\hierarchy.cpp(328): warning C4172: возвращение адреса локальной или временной переменной : C
+c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscorewrapper\dscorewrapper\sourcecode\hierarchy.cpp(338): warning C4172: возвращение адреса локальной или временной переменной : C
+c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscorewrapper\dscorewrapper\sourcecode\resources\tinyxml2\tinyxml2.cpp(45): warning C4793: `anonymous namespace'::TIXML_SNPRINTF: функция скомпилирована как машинная:
+  	varargs не поддерживаются в /clr
+c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscorewrapper\dscorewrapper\sourcecode\resources\tinyxml2\tinyxml2.cpp(47): warning C4793: `anonymous namespace'::TIXML_SNPRINTF: функция скомпилирована как машинная:
+  	Обнаружена встроенная функция, которая не поддерживается в управляемом коде
+c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscorewrapper\dscorewrapper\sourcecode\resources\tinyxml2\tinyxml2.cpp(49): warning C4793: `anonymous namespace'::TIXML_SNPRINTF: функция скомпилирована как машинная:
+  	Обнаружена встроенная функция, которая не поддерживается в управляемом коде
+  DSCoreWrapper.vcxproj -> C:\Users\Антон\Documents\Visual Studio 2017\Projects\AquariusDS\DSCoreWrapper\Release\DSCoreWrapper.dll

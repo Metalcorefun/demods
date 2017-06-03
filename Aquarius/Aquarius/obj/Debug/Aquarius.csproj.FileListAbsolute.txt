@@ -26,3 +26,4 @@ C:\Users\Антон\Documents\Visual Studio 2017\Projects\AquariusDS\Aquarius\Aq
 C:\Users\Антон\Documents\Visual Studio 2017\Projects\AquariusDS\Aquarius\Aquarius\bin\Debug\DSCoreWrapper.dll
 C:\Users\Антон\Documents\Visual Studio 2017\Projects\AquariusDS\Aquarius\Aquarius\obj\Debug\Aquarius.HierarchyComponents.resources
 C:\Users\Антон\Documents\Visual Studio 2017\Projects\AquariusDS\Aquarius\Aquarius\obj\Debug\Aquarius.Classifier.resources
+C:\Users\Антон\Documents\Visual Studio 2017\Projects\AquariusDS\Aquarius\Aquarius\obj\Debug\Aquarius.About.resources

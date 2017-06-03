@@ -1,0 +1,443 @@
+﻿// Created by Microsoft (R) C/C++ Compiler Version 14.10.25019.0 (62b6b8d2).
+//
+// c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscorewrapper\dscorewrapper\debug\pressure.tli
+//
+// Wrapper implementations for Win32 type library Resources\\COM\\Pressure.exe
+// compiler-generated file created 06/02/17 at 20:48:31 - DO NOT EDIT!
+
+#pragma once
+
+//
+// interface IALON_Teacher wrapper method implementations
+//
+
+inline VARIANT_BOOL IALON_Teacher::All_Init ( ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_All_Init(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline VARIANT_BOOL IALON_Teacher::All_Destroy ( ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_All_Destroy(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline _bstr_t IALON_Teacher::All_Execute ( ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_All_Execute(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline VARIANT_BOOL IALON_Teacher::All_Store ( _bstr_t FileName ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_All_Store(FileName, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline VARIANT_BOOL IALON_Teacher::All_StoreScale ( _bstr_t FileName ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_All_StoreScale(FileName, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline VARIANT_BOOL IALON_Teacher::All_Load ( _bstr_t FileName ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_All_Load(FileName, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline VARIANT_BOOL IALON_Teacher::Dictionary_SetElement ( _bstr_t Name, enum constDictionaryElements NewType, enum constScaleTypes NewScaleType ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_Dictionary_SetElement(Name, NewType, NewScaleType, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline long IALON_Teacher::GetDictionary_Count ( ) {
+    long _result = 0;
+    HRESULT _hr = get_Dictionary_Count(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline long IALON_Teacher::GetDictionary_Count_Pr ( ) {
+    long _result = 0;
+    HRESULT _hr = get_Dictionary_Count_Pr(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline long IALON_Teacher::GetDictionary_Count_Cl ( ) {
+    long _result = 0;
+    HRESULT _hr = get_Dictionary_Count_Cl(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline long IALON_Teacher::GetDictionary_Count_Virtual ( ) {
+    long _result = 0;
+    HRESULT _hr = get_Dictionary_Count_Virtual(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline VARIANT_BOOL IALON_Teacher::Dictionary_DeleteElement ( _bstr_t Name_Of_Element ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_Dictionary_DeleteElement(Name_Of_Element, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline _bstr_t IALON_Teacher::GetDictionary_GetName_By_Number ( long Number_Of_Element ) {
+    BSTR _result = 0;
+    HRESULT _hr = get_Dictionary_GetName_By_Number(Number_Of_Element, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline enum constDictionaryElements IALON_Teacher::GetDictionary_TypeOfElement ( _bstr_t Name_Of_Element ) {
+    enum constDictionaryElements _result;
+    HRESULT _hr = get_Dictionary_TypeOfElement(Name_Of_Element, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum constScaleTypes IALON_Teacher::GetDictionary_ScaleTypeOfElement ( _bstr_t Name_Of_Element ) {
+    enum constScaleTypes _result;
+    HRESULT _hr = get_Dictionary_ScaleTypeOfElement(Name_Of_Element, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline VARIANT_BOOL IALON_Teacher::Hierar_CreateComponent ( _bstr_t NewComponentName, enum constComponentTypes NewComponentType ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_Hierar_CreateComponent(NewComponentName, NewComponentType, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline long IALON_Teacher::GetHierar_Count ( ) {
+    long _result = 0;
+    HRESULT _hr = get_Hierar_Count(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline VARIANT_BOOL IALON_Teacher::Hierar_DeleteComponent ( _bstr_t Name_Of_Component ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_Hierar_DeleteComponent(Name_Of_Component, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline VARIANT_BOOL IALON_Teacher::Hierar_CopyComponent ( _bstr_t ScrComponentName, _bstr_t DstComponentName ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_Hierar_CopyComponent(ScrComponentName, DstComponentName, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline _bstr_t IALON_Teacher::GetHierar_GetComponentName_By_Number ( long Number_Of_Component ) {
+    BSTR _result = 0;
+    HRESULT _hr = get_Hierar_GetComponentName_By_Number(Number_Of_Component, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline enum constLevelsOfHierar IALON_Teacher::Getc_Level ( _bstr_t Name_Of_Component ) {
+    enum constLevelsOfHierar _result;
+    HRESULT _hr = get_c_Level(Name_Of_Component, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void IALON_Teacher::Putc_Level ( _bstr_t Name_Of_Component, enum constLevelsOfHierar Value ) {
+    HRESULT _hr = put_c_Level(Name_Of_Component, Value);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline VARIANT_BOOL IALON_Teacher::Getc_Active ( _bstr_t Name_Of_Component ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = get_c_Active(Name_Of_Component, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void IALON_Teacher::Putc_Active ( _bstr_t Name_Of_Component, VARIANT_BOOL Value ) {
+    HRESULT _hr = put_c_Active(Name_Of_Component, Value);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline enum constComponentSubTypes IALON_Teacher::Getc_ComponentSubType ( _bstr_t Name_Of_Component ) {
+    enum constComponentSubTypes _result;
+    HRESULT _hr = get_c_ComponentSubType(Name_Of_Component, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void IALON_Teacher::Putc_ComponentSubType ( _bstr_t Name_Of_Component, enum constComponentSubTypes Value ) {
+    HRESULT _hr = put_c_ComponentSubType(Name_Of_Component, Value);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline long IALON_Teacher::Getc_Nob ( _bstr_t Name_Of_Component ) {
+    long _result = 0;
+    HRESULT _hr = get_c_Nob(Name_Of_Component, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void IALON_Teacher::Putc_Nob ( _bstr_t Name_Of_Component, long Value ) {
+    HRESULT _hr = put_c_Nob(Name_Of_Component, Value);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline long IALON_Teacher::Getc_Ncl ( _bstr_t Name_Of_Component ) {
+    long _result = 0;
+    HRESULT _hr = get_c_Ncl(Name_Of_Component, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void IALON_Teacher::Putc_Ncl ( _bstr_t Name_Of_Component, long Value ) {
+    HRESULT _hr = put_c_Ncl(Name_Of_Component, Value);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline long IALON_Teacher::Getc_Npr ( _bstr_t Name_Of_Component ) {
+    long _result = 0;
+    HRESULT _hr = get_c_Npr(Name_Of_Component, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void IALON_Teacher::Putc_Npr ( _bstr_t Name_Of_Component, long Value ) {
+    HRESULT _hr = put_c_Npr(Name_Of_Component, Value);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline _bstr_t IALON_Teacher::Getc_PrCl_Value_By_Name ( _bstr_t Name_Of_Component, long Number_Of_Object, _bstr_t Name_Of_PrCl ) {
+    BSTR _result = 0;
+    HRESULT _hr = get_c_PrCl_Value_By_Name(Name_Of_Component, Number_Of_Object, Name_Of_PrCl, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline void IALON_Teacher::Putc_PrCl_Value_By_Name ( _bstr_t Name_Of_Component, long Number_Of_Object, _bstr_t Name_Of_PrCl, _bstr_t Value ) {
+    HRESULT _hr = put_c_PrCl_Value_By_Name(Name_Of_Component, Number_Of_Object, Name_Of_PrCl, Value);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline _bstr_t IALON_Teacher::Getc_Pr_DispositionByNumber_inOV ( _bstr_t Name_Of_Component, long Number_Of_Pr_inOV ) {
+    BSTR _result = 0;
+    HRESULT _hr = get_c_Pr_DispositionByNumber_inOV(Name_Of_Component, Number_Of_Pr_inOV, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline void IALON_Teacher::Putc_Pr_DispositionByNumber_inOV ( _bstr_t Name_Of_Component, long Number_Of_Pr_inOV, _bstr_t Value ) {
+    HRESULT _hr = put_c_Pr_DispositionByNumber_inOV(Name_Of_Component, Number_Of_Pr_inOV, Value);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline enum constComponentTypes IALON_Teacher::Getc_ComponentType ( _bstr_t Name_Of_Component ) {
+    enum constComponentTypes _result;
+    HRESULT _hr = get_c_ComponentType(Name_Of_Component, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline long IALON_Teacher::Getc_Pr_IsThatName_inOV ( _bstr_t Name_Of_Component, _bstr_t Name_Of_Pr_inOV ) {
+    long _result = 0;
+    HRESULT _hr = get_c_Pr_IsThatName_inOV(Name_Of_Component, Name_Of_Pr_inOV, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline _bstr_t IALON_Teacher::Getc_Cl_DispositionByNumber_inOV ( _bstr_t Name_Of_Component, long Number_Of_Cl_inOV ) {
+    BSTR _result = 0;
+    HRESULT _hr = get_c_Cl_DispositionByNumber_inOV(Name_Of_Component, Number_Of_Cl_inOV, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline void IALON_Teacher::Putc_Cl_DispositionByNumber_inOV ( _bstr_t Name_Of_Component, long Number_Of_Cl_inOV, _bstr_t Value ) {
+    HRESULT _hr = put_c_Cl_DispositionByNumber_inOV(Name_Of_Component, Number_Of_Cl_inOV, Value);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline long IALON_Teacher::Getc_Cl_IsThatName_inOV ( _bstr_t Name_Of_Component, _bstr_t Name_Of_Cl_inOV ) {
+    long _result = 0;
+    HRESULT _hr = get_c_Cl_IsThatName_inOV(Name_Of_Component, Name_Of_Cl_inOV, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline _bstr_t IALON_Teacher::Getc_RS_BaseObject ( _bstr_t Name_Of_Component, _bstr_t Name_Of_PrCl_inOV ) {
+    BSTR _result = 0;
+    HRESULT _hr = get_c_RS_BaseObject(Name_Of_Component, Name_Of_PrCl_inOV, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline void IALON_Teacher::Putc_RS_BaseObject ( _bstr_t Name_Of_Component, _bstr_t Name_Of_PrCl_inOV, _bstr_t Value ) {
+    HRESULT _hr = put_c_RS_BaseObject(Name_Of_Component, Name_Of_PrCl_inOV, Value);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline float IALON_Teacher::Getc_RS_ParametersWeights ( _bstr_t Name_Of_Component, _bstr_t Name_Of_Pr_inOV, enum constAlfa Alfa ) {
+    float _result = 0;
+    HRESULT _hr = get_c_RS_ParametersWeights(Name_Of_Component, Name_Of_Pr_inOV, Alfa, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void IALON_Teacher::Putc_RS_ParametersWeights ( _bstr_t Name_Of_Component, _bstr_t Name_Of_Pr_inOV, enum constAlfa Alfa, float Value ) {
+    HRESULT _hr = put_c_RS_ParametersWeights(Name_Of_Component, Name_Of_Pr_inOV, Alfa, Value);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline float IALON_Teacher::Getc_RS_ClassesCenters ( _bstr_t Name_Of_Component, _bstr_t Name_Of_Cl_inOV, enum constAlfa Alfa ) {
+    float _result = 0;
+    HRESULT _hr = get_c_RS_ClassesCenters(Name_Of_Component, Name_Of_Cl_inOV, Alfa, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void IALON_Teacher::Putc_RS_ClassesCenters ( _bstr_t Name_Of_Component, _bstr_t Name_Of_Cl_inOV, enum constAlfa Alfa, float Value ) {
+    HRESULT _hr = put_c_RS_ClassesCenters(Name_Of_Component, Name_Of_Cl_inOV, Alfa, Value);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline VARIANT_BOOL IALON_Teacher::Getc_Rs_Reliable ( _bstr_t Name_Of_Component ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = get_c_Rs_Reliable(Name_Of_Component, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline float IALON_Teacher::Getc_Rs_TCriterion ( _bstr_t Name_Of_Component ) {
+    float _result = 0;
+    HRESULT _hr = get_c_Rs_TCriterion(Name_Of_Component, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline float IALON_Teacher::Getc_Rs_TCriterionTable ( _bstr_t Name_Of_Component ) {
+    float _result = 0;
+    HRESULT _hr = get_c_Rs_TCriterionTable(Name_Of_Component, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+//
+// interface IALON_Student wrapper method implementations
+//
+
+inline VARIANT_BOOL IALON_Student::All_Init ( ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_All_Init(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline VARIANT_BOOL IALON_Student::All_Destroy ( ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_All_Destroy(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline _bstr_t IALON_Student::All_Execute ( ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_All_Execute(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline VARIANT_BOOL IALON_Student::All_Load ( _bstr_t FileName ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_All_Load(FileName, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline VARIANT_BOOL IALON_Student::All_Store ( _bstr_t FileName ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_All_Store(FileName, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline long IALON_Student::GetDictionary_Count ( ) {
+    long _result = 0;
+    HRESULT _hr = get_Dictionary_Count(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline long IALON_Student::GetDictionary_Count_Pr ( ) {
+    long _result = 0;
+    HRESULT _hr = get_Dictionary_Count_Pr(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline long IALON_Student::GetDictionary_Count_Cl ( ) {
+    long _result = 0;
+    HRESULT _hr = get_Dictionary_Count_Cl(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline _bstr_t IALON_Student::GetDictionary_GetName_By_Number ( long Number_Of_Element ) {
+    BSTR _result = 0;
+    HRESULT _hr = get_Dictionary_GetName_By_Number(Number_Of_Element, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline enum constDictionaryElements IALON_Student::GetDictionary_TypeOfElement ( _bstr_t Name_Of_Element ) {
+    enum constDictionaryElements _result;
+    HRESULT _hr = get_Dictionary_TypeOfElement(Name_Of_Element, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum constScaleTypes IALON_Student::GetDictionary_ScaleTypeOfElement ( _bstr_t Name_Of_Element ) {
+    enum constScaleTypes _result;
+    HRESULT _hr = get_Dictionary_ScaleTypeOfElement(Name_Of_Element, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline long IALON_Student::GetAll_Nob ( ) {
+    long _result = 0;
+    HRESULT _hr = get_All_Nob(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void IALON_Student::PutAll_Nob ( long Value ) {
+    HRESULT _hr = put_All_Nob(Value);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline _bstr_t IALON_Student::GetAll_PrCl_Value_By_Name ( long Number_Of_Object, _bstr_t Name_Of_PrCl ) {
+    BSTR _result = 0;
+    HRESULT _hr = get_All_PrCl_Value_By_Name(Number_Of_Object, Name_Of_PrCl, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline void IALON_Student::PutAll_PrCl_Value_By_Name ( long Number_Of_Object, _bstr_t Name_Of_PrCl, _bstr_t Value ) {
+    HRESULT _hr = put_All_PrCl_Value_By_Name(Number_Of_Object, Name_Of_PrCl, Value);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}

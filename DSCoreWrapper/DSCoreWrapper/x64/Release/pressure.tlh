@@ -1,0 +1,622 @@
+﻿// Created by Microsoft (R) C/C++ Compiler Version 14.10.25019.0 (78839dc5).
+//
+// c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscorewrapper\dscorewrapper\x64\release\pressure.tlh
+//
+// C++ source equivalent of Win32 type library Resources\\COM\\Pressure.exe
+// compiler-generated file created 06/03/17 at 04:09:29 - DO NOT EDIT!
+
+#pragma once
+#pragma pack(push, 8)
+
+#include <comdef.h>
+
+namespace Pressure {
+
+//
+// Forward references and typedefs
+//
+
+struct __declspec(uuid("684eb560-b46d-11d3-89a3-b2c9229728e3"))
+/* LIBID */ __Pressure;
+enum constComponentTypes;
+enum constDictionaryElements;
+enum constMaximums;
+enum constScaleTypes;
+struct __declspec(uuid("ff32c7c1-e18e-11d3-922c-444553540000"))
+/* dual interface */ IALON_Teacher;
+struct __declspec(uuid("ff32c7c3-e18e-11d3-922c-444553540000"))
+/* dispinterface */ IALON_TeacherEvents;
+struct /* coclass */ ALON_Teacher;
+enum constOther;
+enum constLevelsOfHierar;
+enum constComponentSubTypes;
+enum constAlfa;
+struct __declspec(uuid("270c4d60-eb13-11d3-922c-444553540000"))
+/* dual interface */ IALON_Student;
+struct __declspec(uuid("270c4d62-eb13-11d3-922c-444553540000"))
+/* dispinterface */ IALON_StudentEvents;
+struct /* coclass */ ALON_Student;
+
+//
+// Smart pointer typedef declarations
+//
+
+_COM_SMARTPTR_TYPEDEF(IALON_TeacherEvents, __uuidof(IALON_TeacherEvents));
+_COM_SMARTPTR_TYPEDEF(IALON_Teacher, __uuidof(IALON_Teacher));
+_COM_SMARTPTR_TYPEDEF(IALON_Student, __uuidof(IALON_Student));
+_COM_SMARTPTR_TYPEDEF(IALON_StudentEvents, __uuidof(IALON_StudentEvents));
+
+//
+// Type library items
+//
+
+enum __declspec(uuid("684eb569-b46d-11d3-89a3-b2c9229728e3"))
+constComponentTypes
+{
+    ctListX = 22212,
+    ctClr = 22211
+};
+
+enum __declspec(uuid("684eb56a-b46d-11d3-89a3-b2c9229728e3"))
+constDictionaryElements
+{
+    tPr = 22201,
+    tCl = 22202,
+    tVirtual = 22203,
+    tNo = 22200
+};
+
+enum __declspec(uuid("c61c4961-e167-11d3-922c-444553540000"))
+constMaximums
+{
+    Max_ob = 250,
+    Max_cl = 10,
+    Max_pr = 25
+};
+
+enum __declspec(uuid("c61c4962-e167-11d3-922c-444553540000"))
+constScaleTypes
+{
+    stNoType = 2000,
+    stFuzzyDistr = 2007,
+    stListOfNumber_Yak = 2004,
+    stListOfNumber_Bag = 2003,
+    stNumber = 2002
+};
+
+struct __declspec(uuid("ff32c7c3-e18e-11d3-922c-444553540000"))
+IALON_TeacherEvents : IDispatch
+{};
+
+struct __declspec(uuid("ff32c7c5-e18e-11d3-922c-444553540000"))
+ALON_Teacher;
+    // [ default ] interface IALON_Teacher
+    // [ default, source ] dispinterface IALON_TeacherEvents
+
+enum __declspec(uuid("2fb5e2e0-e3a3-11d3-922c-444553540000"))
+constOther
+{
+    No = 22200
+};
+
+enum __declspec(uuid("21119920-e3ba-11d3-922c-444553540000"))
+constLevelsOfHierar
+{
+    Level_1 = 1,
+    Level_2 = 2,
+    Level_3 = 3,
+    Level_4 = 4,
+    Level_5 = 5,
+    Level_6 = 6,
+    Level_7 = 7
+};
+
+enum __declspec(uuid("21119921-e3ba-11d3-922c-444553540000"))
+constComponentSubTypes
+{
+    ctClr_Bag = 22231,
+    ctClr_Yak = 22232,
+    ctListX_Bag = 22241,
+    ctListX_Yak = 22242
+};
+
+enum __declspec(uuid("e30676c0-eadd-11d3-922c-444553540000"))
+constAlfa
+{
+    Alfa_0_0 = 0,
+    Alfa_0_1 = 1,
+    Alfa_0_2 = 2,
+    Alfa_0_3 = 3,
+    Alfa_0_4 = 4,
+    Alfa_0_5 = 5,
+    Alfa_0_6 = 6,
+    Alfa_0_7 = 7,
+    Alfa_0_8 = 8,
+    Alfa_0_9 = 9
+};
+
+struct __declspec(uuid("ff32c7c1-e18e-11d3-922c-444553540000"))
+IALON_Teacher : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=Getc_Rs_Reliable))
+    VARIANT_BOOL c_Rs_Reliable[];
+    __declspec(property(get=Getc_Rs_TCriterion))
+    float c_Rs_TCriterion[];
+    __declspec(property(get=GetDictionary_Count_Pr))
+    long Dictionary_Count_Pr;
+    __declspec(property(get=Getc_Rs_TCriterionTable))
+    float c_Rs_TCriterionTable[];
+    __declspec(property(get=GetDictionary_Count_Cl))
+    long Dictionary_Count_Cl;
+    __declspec(property(get=GetDictionary_Count_Virtual))
+    long Dictionary_Count_Virtual;
+    __declspec(property(get=GetDictionary_GetName_By_Number))
+    _bstr_t Dictionary_GetName_By_Number[];
+    __declspec(property(get=GetDictionary_TypeOfElement))
+    enum constDictionaryElements Dictionary_TypeOfElement[];
+    __declspec(property(get=GetDictionary_ScaleTypeOfElement))
+    enum constScaleTypes Dictionary_ScaleTypeOfElement[];
+    __declspec(property(get=GetDictionary_Count))
+    long Dictionary_Count;
+    __declspec(property(get=GetHierar_Count))
+    long Hierar_Count;
+    __declspec(property(get=GetHierar_GetComponentName_By_Number))
+    _bstr_t Hierar_GetComponentName_By_Number[];
+    __declspec(property(get=Getc_Level,put=Putc_Level))
+    enum constLevelsOfHierar c_Level[];
+    __declspec(property(get=Getc_Cl_DispositionByNumber_inOV,put=Putc_Cl_DispositionByNumber_inOV))
+    _bstr_t c_Cl_DispositionByNumber_inOV[][];
+    __declspec(property(get=Getc_Active,put=Putc_Active))
+    VARIANT_BOOL c_Active[];
+    __declspec(property(get=Getc_Cl_IsThatName_inOV))
+    long c_Cl_IsThatName_inOV[][];
+    __declspec(property(get=Getc_ComponentSubType,put=Putc_ComponentSubType))
+    enum constComponentSubTypes c_ComponentSubType[];
+    __declspec(property(get=Getc_Nob,put=Putc_Nob))
+    long c_Nob[];
+    __declspec(property(get=Getc_Ncl,put=Putc_Ncl))
+    long c_Ncl[];
+    __declspec(property(get=Getc_RS_BaseObject,put=Putc_RS_BaseObject))
+    _bstr_t c_RS_BaseObject[][];
+    __declspec(property(get=Getc_RS_ParametersWeights,put=Putc_RS_ParametersWeights))
+    float c_RS_ParametersWeights[][][];
+    __declspec(property(get=Getc_RS_ClassesCenters,put=Putc_RS_ClassesCenters))
+    float c_RS_ClassesCenters[][][];
+    __declspec(property(get=Getc_PrCl_Value_By_Name,put=Putc_PrCl_Value_By_Name))
+    _bstr_t c_PrCl_Value_By_Name[][][];
+    __declspec(property(get=Getc_Npr,put=Putc_Npr))
+    long c_Npr[];
+    __declspec(property(get=Getc_Pr_DispositionByNumber_inOV,put=Putc_Pr_DispositionByNumber_inOV))
+    _bstr_t c_Pr_DispositionByNumber_inOV[][];
+    __declspec(property(get=Getc_ComponentType))
+    enum constComponentTypes c_ComponentType[];
+    __declspec(property(get=Getc_Pr_IsThatName_inOV))
+    long c_Pr_IsThatName_inOV[][];
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    VARIANT_BOOL All_Init ( );
+    VARIANT_BOOL All_Destroy ( );
+    _bstr_t All_Execute ( );
+    VARIANT_BOOL All_Store (
+        _bstr_t FileName );
+    VARIANT_BOOL All_StoreScale (
+        _bstr_t FileName );
+    VARIANT_BOOL All_Load (
+        _bstr_t FileName );
+    VARIANT_BOOL Dictionary_SetElement (
+        _bstr_t Name,
+        enum constDictionaryElements NewType,
+        enum constScaleTypes NewScaleType );
+    long GetDictionary_Count ( );
+    long GetDictionary_Count_Pr ( );
+    long GetDictionary_Count_Cl ( );
+    long GetDictionary_Count_Virtual ( );
+    VARIANT_BOOL Dictionary_DeleteElement (
+        _bstr_t Name_Of_Element );
+    _bstr_t GetDictionary_GetName_By_Number (
+        long Number_Of_Element );
+    enum constDictionaryElements GetDictionary_TypeOfElement (
+        _bstr_t Name_Of_Element );
+    enum constScaleTypes GetDictionary_ScaleTypeOfElement (
+        _bstr_t Name_Of_Element );
+    VARIANT_BOOL Hierar_CreateComponent (
+        _bstr_t NewComponentName,
+        enum constComponentTypes NewComponentType );
+    long GetHierar_Count ( );
+    VARIANT_BOOL Hierar_DeleteComponent (
+        _bstr_t Name_Of_Component );
+    VARIANT_BOOL Hierar_CopyComponent (
+        _bstr_t ScrComponentName,
+        _bstr_t DstComponentName );
+    _bstr_t GetHierar_GetComponentName_By_Number (
+        long Number_Of_Component );
+    enum constLevelsOfHierar Getc_Level (
+        _bstr_t Name_Of_Component );
+    void Putc_Level (
+        _bstr_t Name_Of_Component,
+        enum constLevelsOfHierar Value );
+    VARIANT_BOOL Getc_Active (
+        _bstr_t Name_Of_Component );
+    void Putc_Active (
+        _bstr_t Name_Of_Component,
+        VARIANT_BOOL Value );
+    enum constComponentSubTypes Getc_ComponentSubType (
+        _bstr_t Name_Of_Component );
+    void Putc_ComponentSubType (
+        _bstr_t Name_Of_Component,
+        enum constComponentSubTypes Value );
+    long Getc_Nob (
+        _bstr_t Name_Of_Component );
+    void Putc_Nob (
+        _bstr_t Name_Of_Component,
+        long Value );
+    long Getc_Ncl (
+        _bstr_t Name_Of_Component );
+    void Putc_Ncl (
+        _bstr_t Name_Of_Component,
+        long Value );
+    long Getc_Npr (
+        _bstr_t Name_Of_Component );
+    void Putc_Npr (
+        _bstr_t Name_Of_Component,
+        long Value );
+    _bstr_t Getc_PrCl_Value_By_Name (
+        _bstr_t Name_Of_Component,
+        long Number_Of_Object,
+        _bstr_t Name_Of_PrCl );
+    void Putc_PrCl_Value_By_Name (
+        _bstr_t Name_Of_Component,
+        long Number_Of_Object,
+        _bstr_t Name_Of_PrCl,
+        _bstr_t Value );
+    _bstr_t Getc_Pr_DispositionByNumber_inOV (
+        _bstr_t Name_Of_Component,
+        long Number_Of_Pr_inOV );
+    void Putc_Pr_DispositionByNumber_inOV (
+        _bstr_t Name_Of_Component,
+        long Number_Of_Pr_inOV,
+        _bstr_t Value );
+    enum constComponentTypes Getc_ComponentType (
+        _bstr_t Name_Of_Component );
+    long Getc_Pr_IsThatName_inOV (
+        _bstr_t Name_Of_Component,
+        _bstr_t Name_Of_Pr_inOV );
+    _bstr_t Getc_Cl_DispositionByNumber_inOV (
+        _bstr_t Name_Of_Component,
+        long Number_Of_Cl_inOV );
+    void Putc_Cl_DispositionByNumber_inOV (
+        _bstr_t Name_Of_Component,
+        long Number_Of_Cl_inOV,
+        _bstr_t Value );
+    long Getc_Cl_IsThatName_inOV (
+        _bstr_t Name_Of_Component,
+        _bstr_t Name_Of_Cl_inOV );
+    _bstr_t Getc_RS_BaseObject (
+        _bstr_t Name_Of_Component,
+        _bstr_t Name_Of_PrCl_inOV );
+    void Putc_RS_BaseObject (
+        _bstr_t Name_Of_Component,
+        _bstr_t Name_Of_PrCl_inOV,
+        _bstr_t Value );
+    float Getc_RS_ParametersWeights (
+        _bstr_t Name_Of_Component,
+        _bstr_t Name_Of_Pr_inOV,
+        enum constAlfa Alfa );
+    void Putc_RS_ParametersWeights (
+        _bstr_t Name_Of_Component,
+        _bstr_t Name_Of_Pr_inOV,
+        enum constAlfa Alfa,
+        float Value );
+    float Getc_RS_ClassesCenters (
+        _bstr_t Name_Of_Component,
+        _bstr_t Name_Of_Cl_inOV,
+        enum constAlfa Alfa );
+    void Putc_RS_ClassesCenters (
+        _bstr_t Name_Of_Component,
+        _bstr_t Name_Of_Cl_inOV,
+        enum constAlfa Alfa,
+        float Value );
+    VARIANT_BOOL Getc_Rs_Reliable (
+        _bstr_t Name_Of_Component );
+    float Getc_Rs_TCriterion (
+        _bstr_t Name_Of_Component );
+    float Getc_Rs_TCriterionTable (
+        _bstr_t Name_Of_Component );
+
+    //
+    // Raw methods provided by interface
+    //
+
+      virtual HRESULT __stdcall raw_All_Init (
+        /*[out,retval]*/ VARIANT_BOOL * Value ) = 0;
+      virtual HRESULT __stdcall raw_All_Destroy (
+        /*[out,retval]*/ VARIANT_BOOL * Value ) = 0;
+      virtual HRESULT __stdcall raw_All_Execute (
+        /*[out,retval]*/ BSTR * Value ) = 0;
+      virtual HRESULT __stdcall raw_All_Store (
+        /*[in]*/ BSTR FileName,
+        /*[out,retval]*/ VARIANT_BOOL * Value ) = 0;
+      virtual HRESULT __stdcall raw_All_StoreScale (
+        /*[in]*/ BSTR FileName,
+        /*[out,retval]*/ VARIANT_BOOL * Value ) = 0;
+      virtual HRESULT __stdcall raw_All_Load (
+        /*[in]*/ BSTR FileName,
+        /*[out,retval]*/ VARIANT_BOOL * Value ) = 0;
+      virtual HRESULT __stdcall raw_Dictionary_SetElement (
+        /*[in]*/ BSTR Name,
+        /*[in]*/ enum constDictionaryElements NewType,
+        /*[in]*/ enum constScaleTypes NewScaleType,
+        /*[out,retval]*/ VARIANT_BOOL * Value ) = 0;
+      virtual HRESULT __stdcall get_Dictionary_Count (
+        /*[out,retval]*/ long * Value ) = 0;
+      virtual HRESULT __stdcall get_Dictionary_Count_Pr (
+        /*[out,retval]*/ long * Value ) = 0;
+      virtual HRESULT __stdcall get_Dictionary_Count_Cl (
+        /*[out,retval]*/ long * Value ) = 0;
+      virtual HRESULT __stdcall get_Dictionary_Count_Virtual (
+        /*[out,retval]*/ long * Value ) = 0;
+      virtual HRESULT __stdcall raw_Dictionary_DeleteElement (
+        /*[in]*/ BSTR Name_Of_Element,
+        /*[out,retval]*/ VARIANT_BOOL * Value ) = 0;
+      virtual HRESULT __stdcall get_Dictionary_GetName_By_Number (
+        /*[in]*/ long Number_Of_Element,
+        /*[out,retval]*/ BSTR * Value ) = 0;
+      virtual HRESULT __stdcall get_Dictionary_TypeOfElement (
+        /*[in]*/ BSTR Name_Of_Element,
+        /*[out,retval]*/ enum constDictionaryElements * Value ) = 0;
+      virtual HRESULT __stdcall get_Dictionary_ScaleTypeOfElement (
+        /*[in]*/ BSTR Name_Of_Element,
+        /*[out,retval]*/ enum constScaleTypes * Value ) = 0;
+      virtual HRESULT __stdcall raw_Hierar_CreateComponent (
+        /*[in]*/ BSTR NewComponentName,
+        /*[in]*/ enum constComponentTypes NewComponentType,
+        /*[out,retval]*/ VARIANT_BOOL * Value ) = 0;
+      virtual HRESULT __stdcall get_Hierar_Count (
+        /*[out,retval]*/ long * Value ) = 0;
+      virtual HRESULT __stdcall raw_Hierar_DeleteComponent (
+        /*[in]*/ BSTR Name_Of_Component,
+        /*[out,retval]*/ VARIANT_BOOL * Value ) = 0;
+      virtual HRESULT __stdcall raw_Hierar_CopyComponent (
+        /*[in]*/ BSTR ScrComponentName,
+        /*[in]*/ BSTR DstComponentName,
+        /*[out,retval]*/ VARIANT_BOOL * Value ) = 0;
+      virtual HRESULT __stdcall get_Hierar_GetComponentName_By_Number (
+        /*[in]*/ long Number_Of_Component,
+        /*[out,retval]*/ BSTR * Value ) = 0;
+      virtual HRESULT __stdcall get_c_Level (
+        /*[in]*/ BSTR Name_Of_Component,
+        /*[out,retval]*/ enum constLevelsOfHierar * Value ) = 0;
+      virtual HRESULT __stdcall put_c_Level (
+        /*[in]*/ BSTR Name_Of_Component,
+        /*[in]*/ enum constLevelsOfHierar Value ) = 0;
+      virtual HRESULT __stdcall get_c_Active (
+        /*[in]*/ BSTR Name_Of_Component,
+        /*[out,retval]*/ VARIANT_BOOL * Value ) = 0;
+      virtual HRESULT __stdcall put_c_Active (
+        /*[in]*/ BSTR Name_Of_Component,
+        /*[in]*/ VARIANT_BOOL Value ) = 0;
+      virtual HRESULT __stdcall get_c_ComponentSubType (
+        /*[in]*/ BSTR Name_Of_Component,
+        /*[out,retval]*/ enum constComponentSubTypes * Value ) = 0;
+      virtual HRESULT __stdcall put_c_ComponentSubType (
+        /*[in]*/ BSTR Name_Of_Component,
+        /*[in]*/ enum constComponentSubTypes Value ) = 0;
+      virtual HRESULT __stdcall get_c_Nob (
+        /*[in]*/ BSTR Name_Of_Component,
+        /*[out,retval]*/ long * Value ) = 0;
+      virtual HRESULT __stdcall put_c_Nob (
+        /*[in]*/ BSTR Name_Of_Component,
+        /*[in]*/ long Value ) = 0;
+      virtual HRESULT __stdcall get_c_Ncl (
+        /*[in]*/ BSTR Name_Of_Component,
+        /*[out,retval]*/ long * Value ) = 0;
+      virtual HRESULT __stdcall put_c_Ncl (
+        /*[in]*/ BSTR Name_Of_Component,
+        /*[in]*/ long Value ) = 0;
+      virtual HRESULT __stdcall get_c_Npr (
+        /*[in]*/ BSTR Name_Of_Component,
+        /*[out,retval]*/ long * Value ) = 0;
+      virtual HRESULT __stdcall put_c_Npr (
+        /*[in]*/ BSTR Name_Of_Component,
+        /*[in]*/ long Value ) = 0;
+      virtual HRESULT __stdcall get_c_PrCl_Value_By_Name (
+        /*[in]*/ BSTR Name_Of_Component,
+        /*[in]*/ long Number_Of_Object,
+        /*[in]*/ BSTR Name_Of_PrCl,
+        /*[out,retval]*/ BSTR * Value ) = 0;
+      virtual HRESULT __stdcall put_c_PrCl_Value_By_Name (
+        /*[in]*/ BSTR Name_Of_Component,
+        /*[in]*/ long Number_Of_Object,
+        /*[in]*/ BSTR Name_Of_PrCl,
+        /*[in]*/ BSTR Value ) = 0;
+      virtual HRESULT __stdcall get_c_Pr_DispositionByNumber_inOV (
+        /*[in]*/ BSTR Name_Of_Component,
+        /*[in]*/ long Number_Of_Pr_inOV,
+        /*[out,retval]*/ BSTR * Value ) = 0;
+      virtual HRESULT __stdcall put_c_Pr_DispositionByNumber_inOV (
+        /*[in]*/ BSTR Name_Of_Component,
+        /*[in]*/ long Number_Of_Pr_inOV,
+        /*[in]*/ BSTR Value ) = 0;
+      virtual HRESULT __stdcall get_c_ComponentType (
+        /*[in]*/ BSTR Name_Of_Component,
+        /*[out,retval]*/ enum constComponentTypes * Value ) = 0;
+      virtual HRESULT __stdcall get_c_Pr_IsThatName_inOV (
+        /*[in]*/ BSTR Name_Of_Component,
+        /*[in]*/ BSTR Name_Of_Pr_inOV,
+        /*[out,retval]*/ long * Value ) = 0;
+      virtual HRESULT __stdcall get_c_Cl_DispositionByNumber_inOV (
+        /*[in]*/ BSTR Name_Of_Component,
+        /*[in]*/ long Number_Of_Cl_inOV,
+        /*[out,retval]*/ BSTR * Value ) = 0;
+      virtual HRESULT __stdcall put_c_Cl_DispositionByNumber_inOV (
+        /*[in]*/ BSTR Name_Of_Component,
+        /*[in]*/ long Number_Of_Cl_inOV,
+        /*[in]*/ BSTR Value ) = 0;
+      virtual HRESULT __stdcall get_c_Cl_IsThatName_inOV (
+        /*[in]*/ BSTR Name_Of_Component,
+        /*[in]*/ BSTR Name_Of_Cl_inOV,
+        /*[out,retval]*/ long * Value ) = 0;
+      virtual HRESULT __stdcall get_c_RS_BaseObject (
+        /*[in]*/ BSTR Name_Of_Component,
+        /*[in]*/ BSTR Name_Of_PrCl_inOV,
+        /*[out,retval]*/ BSTR * Value ) = 0;
+      virtual HRESULT __stdcall put_c_RS_BaseObject (
+        /*[in]*/ BSTR Name_Of_Component,
+        /*[in]*/ BSTR Name_Of_PrCl_inOV,
+        /*[in]*/ BSTR Value ) = 0;
+      virtual HRESULT __stdcall get_c_RS_ParametersWeights (
+        /*[in]*/ BSTR Name_Of_Component,
+        /*[in]*/ BSTR Name_Of_Pr_inOV,
+        /*[in]*/ enum constAlfa Alfa,
+        /*[out,retval]*/ float * Value ) = 0;
+      virtual HRESULT __stdcall put_c_RS_ParametersWeights (
+        /*[in]*/ BSTR Name_Of_Component,
+        /*[in]*/ BSTR Name_Of_Pr_inOV,
+        /*[in]*/ enum constAlfa Alfa,
+        /*[in]*/ float Value ) = 0;
+      virtual HRESULT __stdcall get_c_RS_ClassesCenters (
+        /*[in]*/ BSTR Name_Of_Component,
+        /*[in]*/ BSTR Name_Of_Cl_inOV,
+        /*[in]*/ enum constAlfa Alfa,
+        /*[out,retval]*/ float * Value ) = 0;
+      virtual HRESULT __stdcall put_c_RS_ClassesCenters (
+        /*[in]*/ BSTR Name_Of_Component,
+        /*[in]*/ BSTR Name_Of_Cl_inOV,
+        /*[in]*/ enum constAlfa Alfa,
+        /*[in]*/ float Value ) = 0;
+      virtual HRESULT __stdcall get_c_Rs_Reliable (
+        /*[in]*/ BSTR Name_Of_Component,
+        /*[out,retval]*/ VARIANT_BOOL * Value ) = 0;
+      virtual HRESULT __stdcall get_c_Rs_TCriterion (
+        /*[in]*/ BSTR Name_Of_Component,
+        /*[out,retval]*/ float * Value ) = 0;
+      virtual HRESULT __stdcall get_c_Rs_TCriterionTable (
+        /*[in]*/ BSTR Name_Of_Component,
+        /*[out,retval]*/ float * Value ) = 0;
+};
+
+struct __declspec(uuid("270c4d60-eb13-11d3-922c-444553540000"))
+IALON_Student : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetDictionary_Count))
+    long Dictionary_Count;
+    __declspec(property(get=GetDictionary_Count_Pr))
+    long Dictionary_Count_Pr;
+    __declspec(property(get=GetDictionary_Count_Cl))
+    long Dictionary_Count_Cl;
+    __declspec(property(get=GetDictionary_GetName_By_Number))
+    _bstr_t Dictionary_GetName_By_Number[];
+    __declspec(property(get=GetDictionary_TypeOfElement))
+    enum constDictionaryElements Dictionary_TypeOfElement[];
+    __declspec(property(get=GetDictionary_ScaleTypeOfElement))
+    enum constScaleTypes Dictionary_ScaleTypeOfElement[];
+    __declspec(property(get=GetAll_Nob,put=PutAll_Nob))
+    long All_Nob;
+    __declspec(property(get=GetAll_PrCl_Value_By_Name,put=PutAll_PrCl_Value_By_Name))
+    _bstr_t All_PrCl_Value_By_Name[][];
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    VARIANT_BOOL All_Init ( );
+    VARIANT_BOOL All_Destroy ( );
+    _bstr_t All_Execute ( );
+    VARIANT_BOOL All_Load (
+        _bstr_t FileName );
+    VARIANT_BOOL All_Store (
+        _bstr_t FileName );
+    long GetDictionary_Count ( );
+    long GetDictionary_Count_Pr ( );
+    long GetDictionary_Count_Cl ( );
+    _bstr_t GetDictionary_GetName_By_Number (
+        long Number_Of_Element );
+    enum constDictionaryElements GetDictionary_TypeOfElement (
+        _bstr_t Name_Of_Element );
+    enum constScaleTypes GetDictionary_ScaleTypeOfElement (
+        _bstr_t Name_Of_Element );
+    long GetAll_Nob ( );
+    void PutAll_Nob (
+        long Value );
+    _bstr_t GetAll_PrCl_Value_By_Name (
+        long Number_Of_Object,
+        _bstr_t Name_Of_PrCl );
+    void PutAll_PrCl_Value_By_Name (
+        long Number_Of_Object,
+        _bstr_t Name_Of_PrCl,
+        _bstr_t Value );
+
+    //
+    // Raw methods provided by interface
+    //
+
+      virtual HRESULT __stdcall raw_All_Init (
+        /*[out,retval]*/ VARIANT_BOOL * Value ) = 0;
+      virtual HRESULT __stdcall raw_All_Destroy (
+        /*[out,retval]*/ VARIANT_BOOL * Value ) = 0;
+      virtual HRESULT __stdcall raw_All_Execute (
+        /*[out,retval]*/ BSTR * Value ) = 0;
+      virtual HRESULT __stdcall raw_All_Load (
+        /*[in]*/ BSTR FileName,
+        /*[out,retval]*/ VARIANT_BOOL * Value ) = 0;
+      virtual HRESULT __stdcall raw_All_Store (
+        /*[in]*/ BSTR FileName,
+        /*[out,retval]*/ VARIANT_BOOL * Value ) = 0;
+      virtual HRESULT __stdcall get_Dictionary_Count (
+        /*[out,retval]*/ long * Value ) = 0;
+      virtual HRESULT __stdcall get_Dictionary_Count_Pr (
+        /*[out,retval]*/ long * Value ) = 0;
+      virtual HRESULT __stdcall get_Dictionary_Count_Cl (
+        /*[out,retval]*/ long * Value ) = 0;
+      virtual HRESULT __stdcall get_Dictionary_GetName_By_Number (
+        /*[in]*/ long Number_Of_Element,
+        /*[out,retval]*/ BSTR * Value ) = 0;
+      virtual HRESULT __stdcall get_Dictionary_TypeOfElement (
+        /*[in]*/ BSTR Name_Of_Element,
+        /*[out,retval]*/ enum constDictionaryElements * Value ) = 0;
+      virtual HRESULT __stdcall get_Dictionary_ScaleTypeOfElement (
+        /*[in]*/ BSTR Name_Of_Element,
+        /*[out,retval]*/ enum constScaleTypes * Value ) = 0;
+      virtual HRESULT __stdcall get_All_Nob (
+        /*[out,retval]*/ long * Value ) = 0;
+      virtual HRESULT __stdcall put_All_Nob (
+        /*[in]*/ long Value ) = 0;
+      virtual HRESULT __stdcall get_All_PrCl_Value_By_Name (
+        /*[in]*/ long Number_Of_Object,
+        /*[in]*/ BSTR Name_Of_PrCl,
+        /*[out,retval]*/ BSTR * Value ) = 0;
+      virtual HRESULT __stdcall put_All_PrCl_Value_By_Name (
+        /*[in]*/ long Number_Of_Object,
+        /*[in]*/ BSTR Name_Of_PrCl,
+        /*[in]*/ BSTR Value ) = 0;
+};
+
+struct __declspec(uuid("270c4d62-eb13-11d3-922c-444553540000"))
+IALON_StudentEvents : IDispatch
+{};
+
+struct __declspec(uuid("270c4d64-eb13-11d3-922c-444553540000"))
+ALON_Student;
+    // [ default ] interface IALON_Student
+    // [ default, source ] dispinterface IALON_StudentEvents
+
+//
+// Wrapper method implementations
+//
+
+#include "c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscorewrapper\dscorewrapper\x64\release\pressure.tli"
+
+} // namespace Pressure
+
+#pragma pack(pop)

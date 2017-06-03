@@ -51,7 +51,7 @@ namespace Aquarius
             }
             catch(Exception)
             {
-                MessageBox.Show("Компонент иерархии не выбран из списка.");
+                MessageBox.Show("Компонент иерархии не выбран из списка.", "Ошибка");
             }
         }
 
@@ -64,7 +64,7 @@ namespace Aquarius
             }
             catch(Exception)
             {
-                MessageBox.Show("Компонент иерархии не выбран из списка.");
+                MessageBox.Show("Компонент иерархии не выбран из списка.", "Ошибка");
             }
         }
     }

@@ -3,10 +3,27 @@
 #include "stdafx.h"
 #include "DSCoreWrapper.h"
 #include <msclr/marshal_cppstd.h>
-#include "C:\Users\理蝾韁Documents\Visual Studio 2017\Projects\AquariusDS\DSCore\DSCore\DSCore.h"
-#include "C:\Users\理蝾韁Documents\Visual Studio 2017\Projects\AquariusDS\DSCore\DSCore\DSCore.cpp"
-#include "C:\Users\理蝾韁Documents\Visual Studio 2017\Projects\AquariusDS\DSCore\DSCore\Resources\TinyXML2\tinyxml2.h"
-#include "C:\Users\理蝾韁Documents\Visual Studio 2017\Projects\AquariusDS\DSCore\DSCore\Resources\TinyXML2\tinyxml2.cpp"
+
+#include "SourceCode\Attribute.h"
+#include "SourceCode\Attribute.cpp"
+#include "SourceCode\Class.h"
+#include "SourceCode\Class.cpp"
+#include "SourceCode\Probe.h"
+#include "SourceCode\Probe.cpp"
+#include "SourceCode\Classifier.h"
+#include "SourceCode\Classifier.cpp"
+#include "SourceCode\Hierarchy.h"
+#include "SourceCode\Hierarchy.cpp"
+#include "SourceCode\COMExecutor.h"
+#include "SourceCode\COMExecutor.cpp"
+#include "SourceCode\Resources\TinyXML2\tinyxml2.h"
+#include "SourceCode\Resources\TinyXML2\tinyxml2.cpp"
+#include "SourceCode\Switch.h"
+
+//#include "C:\Users\理蝾韁Documents\Visual Studio 2017\Projects\AquariusDS\DSCore\DSCore\DSCore.h"
+//#include "C:\Users\理蝾韁Documents\Visual Studio 2017\Projects\AquariusDS\DSCore\DSCore\DSCore.cpp"
+//#include "C:\Users\理蝾韁Documents\Visual Studio 2017\Projects\AquariusDS\DSCore\DSCore\Resources\TinyXML2\tinyxml2.h"
+//#include "C:\Users\理蝾韁Documents\Visual Studio 2017\Projects\AquariusDS\DSCore\DSCore\Resources\TinyXML2\tinyxml2.cpp"
 
 DSCoreWrapper::DSAttributeWrapper::DSAttributeWrapper()
 {
@@ -508,4 +525,21 @@ List <DSCoreWrapper::DSClassifierWrapper^>^ DSCoreWrapper::DSHierarchyWrapper::g
 		classifiers->Add(c);
 	}
 	return classifiers;
+}
+void DSCoreWrapper::DSHierarchyWrapper::COM_sendData()
+{
+	hierarchy_.com_sendData();
+}
+bool DSCoreWrapper::DSHierarchyWrapper::COM_learn()
+{
+	if (hierarchy_.com_learn()) return true;
+	else return false;
+}
+void DSCoreWrapper::DSHierarchyWrapper::COM_saveFOV(System::String^ filePath)
+{
+	hierarchy_.com_saveFOV(msclr::interop::marshal_as <std::string>(filePath));
+}
+void DSCoreWrapper::DSHierarchyWrapper::COM_saveFSC(System::String^ filePath)
+{
+	hierarchy_.com_saveFSC(msclr::interop::marshal_as <std::string>(filePath));
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.новыйПроектToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -39,24 +40,33 @@
             this.классыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.иерархияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.списокКомпонентовИерархииToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.подсистемаLinxToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.загрузитьТекущуюИерархиюВСистемуLinxToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.сохранитьФайлПодсистемыОбученияLinxToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.сохранитьФайлПараметровШкалыКлассификацииLinxToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.справкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.справкаToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.trackBar1 = new System.Windows.Forms.TrackBar();
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.button1 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.saveFileDialog2 = new System.Windows.Forms.SaveFileDialog();
+            this.saveFileDialog3 = new System.Windows.Forms.SaveFileDialog();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -65,9 +75,9 @@
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -75,7 +85,9 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.файлToolStripMenuItem,
             this.словарьToolStripMenuItem,
-            this.иерархияToolStripMenuItem});
+            this.иерархияToolStripMenuItem,
+            this.подсистемаLinxToolStripMenuItem,
+            this.справкаToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1008, 24);
@@ -159,6 +171,61 @@
             this.списокКомпонентовИерархииToolStripMenuItem.Text = "Список компонентов иерархии";
             this.списокКомпонентовИерархииToolStripMenuItem.Click += new System.EventHandler(this.списокКомпонентовИерархииToolStripMenuItem_Click);
             // 
+            // подсистемаLinxToolStripMenuItem
+            // 
+            this.подсистемаLinxToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.загрузитьТекущуюИерархиюВСистемуLinxToolStripMenuItem,
+            this.сохранитьФайлПодсистемыОбученияLinxToolStripMenuItem,
+            this.сохранитьФайлПараметровШкалыКлассификацииLinxToolStripMenuItem});
+            this.подсистемаLinxToolStripMenuItem.Name = "подсистемаLinxToolStripMenuItem";
+            this.подсистемаLinxToolStripMenuItem.Size = new System.Drawing.Size(90, 20);
+            this.подсистемаLinxToolStripMenuItem.Text = "Система Linx";
+            // 
+            // загрузитьТекущуюИерархиюВСистемуLinxToolStripMenuItem
+            // 
+            this.загрузитьТекущуюИерархиюВСистемуLinxToolStripMenuItem.Name = "загрузитьТекущуюИерархиюВСистемуLinxToolStripMenuItem";
+            this.загрузитьТекущуюИерархиюВСистемуLinxToolStripMenuItem.Size = new System.Drawing.Size(389, 22);
+            this.загрузитьТекущуюИерархиюВСистемуLinxToolStripMenuItem.Text = "Загрузить текущую иерархию в систему Linx";
+            this.загрузитьТекущуюИерархиюВСистемуLinxToolStripMenuItem.Click += new System.EventHandler(this.загрузитьТекущуюИерархиюВСистемуLinxToolStripMenuItem_Click);
+            // 
+            // сохранитьФайлПодсистемыОбученияLinxToolStripMenuItem
+            // 
+            this.сохранитьФайлПодсистемыОбученияLinxToolStripMenuItem.Enabled = false;
+            this.сохранитьФайлПодсистемыОбученияLinxToolStripMenuItem.Name = "сохранитьФайлПодсистемыОбученияLinxToolStripMenuItem";
+            this.сохранитьФайлПодсистемыОбученияLinxToolStripMenuItem.Size = new System.Drawing.Size(389, 22);
+            this.сохранитьФайлПодсистемыОбученияLinxToolStripMenuItem.Text = "Сохранить файл подсистемы обучения Linx ";
+            this.сохранитьФайлПодсистемыОбученияLinxToolStripMenuItem.Click += new System.EventHandler(this.сохранитьФайлПодсистемыОбученияLinxToolStripMenuItem_Click);
+            // 
+            // сохранитьФайлПараметровШкалыКлассификацииLinxToolStripMenuItem
+            // 
+            this.сохранитьФайлПараметровШкалыКлассификацииLinxToolStripMenuItem.Enabled = false;
+            this.сохранитьФайлПараметровШкалыКлассификацииLinxToolStripMenuItem.Name = "сохранитьФайлПараметровШкалыКлассификацииLinxToolStripMenuItem";
+            this.сохранитьФайлПараметровШкалыКлассификацииLinxToolStripMenuItem.Size = new System.Drawing.Size(389, 22);
+            this.сохранитьФайлПараметровШкалыКлассификацииLinxToolStripMenuItem.Text = "Сохранить файл параметров шкалы классификации Linx";
+            this.сохранитьФайлПараметровШкалыКлассификацииLinxToolStripMenuItem.Click += new System.EventHandler(this.сохранитьФайлПараметровШкалыКлассификацииLinxToolStripMenuItem_Click);
+            // 
+            // справкаToolStripMenuItem
+            // 
+            this.справкаToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.справкаToolStripMenuItem1,
+            this.оПрограммеToolStripMenuItem});
+            this.справкаToolStripMenuItem.Name = "справкаToolStripMenuItem";
+            this.справкаToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
+            this.справкаToolStripMenuItem.Text = "Справка";
+            // 
+            // справкаToolStripMenuItem1
+            // 
+            this.справкаToolStripMenuItem1.Name = "справкаToolStripMenuItem1";
+            this.справкаToolStripMenuItem1.Size = new System.Drawing.Size(158, 22);
+            this.справкаToolStripMenuItem1.Text = "Справка";
+            // 
+            // оПрограммеToolStripMenuItem
+            // 
+            this.оПрограммеToolStripMenuItem.Name = "оПрограммеToolStripMenuItem";
+            this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
+            this.оПрограммеToolStripMenuItem.Text = "О программе...";
+            this.оПрограммеToolStripMenuItem.Click += new System.EventHandler(this.оПрограммеToolStripMenuItem_Click);
+            // 
             // openFileDialog1
             // 
             this.openFileDialog1.Filter = "XML files (*.xml) | *.xml";
@@ -176,6 +243,12 @@
             this.statusStrip1.Size = new System.Drawing.Size(1008, 22);
             this.statusStrip1.TabIndex = 1;
             this.statusStrip1.Text = "statusStrip1";
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(146, 17);
+            this.toolStripStatusLabel1.Text = "Система готова к работе.";
             // 
             // pictureBox1
             // 
@@ -250,12 +323,6 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Масштаб схемы";
             // 
-            // toolStripStatusLabel1
-            // 
-            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(146, 17);
-            this.toolStripStatusLabel1.Text = "Система готова к работе.";
-            // 
             // button1
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -283,48 +350,14 @@
             this.panel2.Size = new System.Drawing.Size(275, 159);
             this.panel2.TabIndex = 5;
             // 
-            // pictureBox2
+            // label4
             // 
-            this.pictureBox2.Location = new System.Drawing.Point(4, 4);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(47, 46);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Location = new System.Drawing.Point(4, 56);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(47, 46);
-            this.pictureBox3.TabIndex = 1;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Location = new System.Drawing.Point(4, 109);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(47, 45);
-            this.pictureBox4.TabIndex = 2;
-            this.pictureBox4.TabStop = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(58, 18);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(192, 13);
-            this.label1.TabIndex = 3;
-            this.label1.Text = " - Базовый нечёткий классификатор";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(58, 65);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(132, 13);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "- Чёткий классификатор";
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(61, 124);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(60, 13);
+            this.label4.TabIndex = 6;
+            this.label4.Text = " - Признак";
             // 
             // label3
             // 
@@ -335,14 +368,56 @@
             this.label3.TabIndex = 5;
             this.label3.Text = "(Регрессионный анализ)";
             // 
-            // label4
+            // label2
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(61, 124);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(60, 13);
-            this.label4.TabIndex = 6;
-            this.label4.Text = " - Признак";
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(58, 65);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(132, 13);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "- Чёткий классификатор";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(58, 18);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(192, 13);
+            this.label1.TabIndex = 3;
+            this.label1.Text = " - Базовый нечёткий классификатор";
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Location = new System.Drawing.Point(4, 109);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(47, 45);
+            this.pictureBox4.TabIndex = 2;
+            this.pictureBox4.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Location = new System.Drawing.Point(4, 56);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(47, 46);
+            this.pictureBox3.TabIndex = 1;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Location = new System.Drawing.Point(4, 4);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(47, 46);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
+            // 
+            // saveFileDialog2
+            // 
+            this.saveFileDialog2.Filter = "Иерархии системы Linx (*.fov) | *.fov";
+            // 
+            // saveFileDialog3
+            // 
+            this.saveFileDialog3.Filter = "Параметры шкал классификации системы Linx системы Linx (*.fsc) | *.fsc";
             // 
             // Form1
             // 
@@ -355,6 +430,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "Aquarius";
@@ -371,9 +447,9 @@
             this.groupBox2.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -410,6 +486,15 @@
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.ToolStripMenuItem подсистемаLinxToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem загрузитьТекущуюИерархиюВСистемуLinxToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem сохранитьФайлПодсистемыОбученияLinxToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem сохранитьФайлПараметровШкалыКлассификацииLinxToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem справкаToolStripMenuItem;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog2;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog3;
+        private System.Windows.Forms.ToolStripMenuItem справкаToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem оПрограммеToolStripMenuItem;
     }
 }
 

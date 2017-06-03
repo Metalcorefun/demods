@@ -1,8 +1,15 @@
 // DSCoreWrapper.h
 
 #pragma once
-#include "C:\Users\理蝾韁Documents\Visual Studio 2017\Projects\AquariusDS\DSCore\DSCore\DSCore.h"
-#include "C:\Users\理蝾韁Documents\Visual Studio 2017\Projects\AquariusDS\DSCore\DSCore\DSCore.cpp"
+
+#include "SourceCode\Attribute.h"
+#include "SourceCode\Class.h"
+#include "SourceCode\Probe.h"
+#include "SourceCode\Classifier.h"
+#include "SourceCode\Hierarchy.h"
+#include "SourceCode\COMExecutor.h"
+//#include "C:\Users\理蝾韁Documents\Visual Studio 2017\Projects\AquariusDS\DSCore\DSCore\DSCore.h"
+//#include "C:\Users\理蝾韁Documents\Visual Studio 2017\Projects\AquariusDS\DSCore\DSCore\DSCore.cpp"
 
 #include <msclr/marshal.h>
 using namespace System;
@@ -152,6 +159,12 @@ namespace DSCoreWrapper {
 		List <DSAttributeWrapper^>^ getAttributes();
 		List <DSClassWrapper^>^ getClasses();
 		List <DSClassifierWrapper^>^ getClassifiers();
+		//COM
+		void COM_sendData();
+		bool COM_learn();
+		void COM_saveFOV(System::String^ filePath);
+		void COM_saveFSC(System::String^ filePath);
+		
 	private:
 		DSHierarchy& hierarchy_ = DSHierarchy::Instance();
 	};

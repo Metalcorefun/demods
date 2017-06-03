@@ -1,0 +1,182 @@
+<?xml version=1.0 encoding="UTF-8"?>
+<hierarchy>
+	<attributes>
+		<attribute id="attr1">
+			<attr_name>Attrib01</attr_name>
+			<attr_type>Numeric</attr_type>
+			<description>a1</description>
+		</attribute>
+		<attribute id="attr2">
+			<attr_name>Attrib02</attr_name>
+			<attr_type>Numeric</attr_type>
+			<description>a2</description>
+		</attribute>
+		<attribute id="attr3">
+			<attr_name>Attrib03</attr_name>
+			<attr_type>Numeric</attr_type>
+			<description>a3</description>
+		</attribute>
+		<attribute id="attr4">
+			<attr_name>Attrib04</attr_name>
+			<attr_type>Numeric</attr_type>
+			<description>a4</description>
+		</attribute>
+	</attributes>
+	<classes>
+		<class id="c1">
+			<class_title>Class01</class_title>
+			<description>c1</description>
+		</class>
+		<class id="c2">
+			<class_title>class02</class_title>
+			<description>c2</description>
+		</class>
+		<class id="c3">
+			<class_title>Class03</class_title>
+			<description>c3</description>
+		</class>
+		<class id="c4">
+			<class_title>Class04</class_title>
+			<description>c4</description>
+		</class>
+		<class id="c5">
+			<class_title>Class05</class_title>
+			<description>c5</description>
+		</class>
+	</classes>
+	<classifiers>
+		<classifier id="cl1" level="1" type="Fuzzy">
+			<classifier_title>Classifier01</classifier_title>
+			<classifier_attr_list>
+				<attr_id>attr1</attr_id>
+				<attr_id>attr3</attr_id>
+			</classifier_attr_list>
+			<classifier_class_list>
+				<class_id>c1</class_id>
+				<class_id>c3</class_id>
+				<class_id>c5</class_id>
+			</classifier_class_list>
+			<training_set>
+				<probe id="pr1">
+					<attr_val>
+						<attr_id>attr1</attr_id>
+						<attr_value>60</attr_value>
+					</attr_val>
+					<attr_val>
+						<attr_id>attr3</attr_id>
+						<attr_value>225</attr_value>
+					</attr_val>
+					<cls_pr>
+						<class_id>c1</class_id>
+						<class_mem>65</class_mem>
+					</cls_pr>
+					<cls_pr>
+						<class_id>c3</class_id>
+						<class_mem>80</class_mem>
+					</cls_pr>
+					<cls_pr>
+						<class_id>c5</class_id>
+						<class_mem>40</class_mem>
+					</cls_pr>
+				</probe>
+				<probe id="pr2">
+					<attr_val>
+						<attr_id>attr1</attr_id>
+						<attr_value>35</attr_value>
+					</attr_val>
+					<attr_val>
+						<attr_id>attr3</attr_id>
+						<attr_value>45</attr_value>
+					</attr_val>
+					<cls_pr>
+						<class_id>c1</class_id>
+						<class_mem>86</class_mem>
+					</cls_pr>
+					<cls_pr>
+						<class_id>c3</class_id>
+						<class_mem>46</class_mem>
+					</cls_pr>
+					<cls_pr>
+						<class_id>c5</class_id>
+						<class_mem>15</class_mem>
+					</cls_pr>
+				</probe>
+			</training_set>
+			<base_object>
+				<attr_val>
+					<attr_id>attr1</attr_id>
+					<attr_value>7</attr_value>
+				</attr_val>
+				<attr_val>
+					<attr_id>attr3</attr_id>
+					<attr_value>7</attr_value>
+				</attr_val>
+			</base_object>
+			<childs></childs>
+			<type>Fuzzy</type>
+			<level>1</level>
+		</classifier>
+		<classifier id="cl2" level="2" type="Regressive">
+			<classifier_title>Classifier02</classifier_title>
+			<classifier_attr_list>
+				<attr_id>attr2</attr_id>
+				<attr_id>attr4</attr_id>
+			</classifier_attr_list>
+			<classifier_class_list>
+				<class_id>c2</class_id>
+				<class_id>c4</class_id>
+			</classifier_class_list>
+			<training_set>
+				<probe id="pr1">
+					<attr_val>
+						<attr_id>attr2</attr_id>
+						<attr_value>46</attr_value>
+					</attr_val>
+					<attr_val>
+						<attr_id>attr4</attr_id>
+						<attr_value>156</attr_value>
+					</attr_val>
+					<cls_pr>
+						<class_id>c2</class_id>
+						<class_mem>70</class_mem>
+					</cls_pr>
+					<cls_pr>
+						<class_id>c4</class_id>
+						<class_mem>80</class_mem>
+					</cls_pr>
+				</probe>
+				<probe id="pr2">
+					<attr_val>
+						<attr_id>attr2</attr_id>
+						<attr_value>50</attr_value>
+					</attr_val>
+					<attr_val>
+						<attr_id>attr4</attr_id>
+						<attr_value>60</attr_value>
+					</attr_val>
+					<cls_pr>
+						<class_id>c2</class_id>
+						<class_mem>15</class_mem>
+					</cls_pr>
+					<cls_pr>
+						<class_id>c4</class_id>
+						<class_mem>95</class_mem>
+					</cls_pr>
+				</probe>
+			</training_set>
+			<base_object>
+				<attr_val>
+					<attr_id>attr2</attr_id>
+					<attr_value>5</attr_value>
+				</attr_val>
+				<attr_val>
+					<attr_id>attr4</attr_id>
+					<attr_value>5</attr_value>
+				</attr_val>
+			</base_object>
+			<childs>
+				<clsfr_id>cl1</clsfr_id>
+			</childs>
+		</classifier>
+	</classifiers>
+</hierarchy>

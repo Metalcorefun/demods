@@ -76,7 +76,7 @@ namespace Aquarius
             }
             catch (Exception)
             {
-                MessageBox.Show("Класс не выбран из списка.");
+                MessageBox.Show("Класс не выбран из списка.", "Ошибка");
                 TurnLeft();
             }
         }
@@ -90,7 +90,7 @@ namespace Aquarius
             }
             catch (Exception)
             {
-                MessageBox.Show("Класс не выбран из списка");
+                MessageBox.Show("Класс не выбран из списка", "Ошибка");
             }
         }
 

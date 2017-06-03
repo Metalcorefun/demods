@@ -103,7 +103,7 @@ namespace Aquarius
             }
             catch(Exception)
             {
-                MessageBox.Show("Признак не выбран из списка.");
+                MessageBox.Show("Признак не выбран из списка.", "Ошибка");
                 TurnLeft();
             }
         }
@@ -117,7 +117,7 @@ namespace Aquarius
             }
             catch(Exception)
             {
-                MessageBox.Show("Признак не выбран из списка");
+                MessageBox.Show("Признак не выбран из списка", "Ошибка");
             }
         }
 

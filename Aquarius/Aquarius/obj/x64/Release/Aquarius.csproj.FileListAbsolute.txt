@@ -1,0 +1,16 @@
+C:\Users\Антон\Documents\Visual Studio 2017\Projects\AquariusDS\Aquarius\Aquarius\bin\x64\Release\Aquarius.exe.config
+C:\Users\Антон\Documents\Visual Studio 2017\Projects\AquariusDS\Aquarius\Aquarius\bin\x64\Release\Aquarius.exe
+C:\Users\Антон\Documents\Visual Studio 2017\Projects\AquariusDS\Aquarius\Aquarius\bin\x64\Release\Aquarius.pdb
+C:\Users\Антон\Documents\Visual Studio 2017\Projects\AquariusDS\Aquarius\Aquarius\bin\x64\Release\DSCoreWrapper.dll
+C:\Users\Антон\Documents\Visual Studio 2017\Projects\AquariusDS\Aquarius\Aquarius\bin\x64\Release\DSCoreWrapper.pdb
+C:\Users\Антон\Documents\Visual Studio 2017\Projects\AquariusDS\Aquarius\Aquarius\obj\x64\Release\Aquarius.About.resources
+C:\Users\Антон\Documents\Visual Studio 2017\Projects\AquariusDS\Aquarius\Aquarius\obj\x64\Release\Aquarius.Attributes.resources
+C:\Users\Антон\Documents\Visual Studio 2017\Projects\AquariusDS\Aquarius\Aquarius\obj\x64\Release\Aquarius.Classes.resources
+C:\Users\Антон\Documents\Visual Studio 2017\Projects\AquariusDS\Aquarius\Aquarius\obj\x64\Release\Aquarius.Classifier.resources
+C:\Users\Антон\Documents\Visual Studio 2017\Projects\AquariusDS\Aquarius\Aquarius\obj\x64\Release\Aquarius.Form1.resources
+C:\Users\Антон\Documents\Visual Studio 2017\Projects\AquariusDS\Aquarius\Aquarius\obj\x64\Release\Aquarius.HierarchyComponents.resources
+C:\Users\Антон\Documents\Visual Studio 2017\Projects\AquariusDS\Aquarius\Aquarius\obj\x64\Release\Aquarius.Properties.Resources.resources
+C:\Users\Антон\Documents\Visual Studio 2017\Projects\AquariusDS\Aquarius\Aquarius\obj\x64\Release\Aquarius.csproj.GenerateResource.Cache
+C:\Users\Антон\Documents\Visual Studio 2017\Projects\AquariusDS\Aquarius\Aquarius\obj\x64\Release\Aquarius.exe
+C:\Users\Антон\Documents\Visual Studio 2017\Projects\AquariusDS\Aquarius\Aquarius\obj\x64\Release\Aquarius.pdb
+C:\Users\Антон\Documents\Visual Studio 2017\Projects\AquariusDS\Aquarius\Aquarius\obj\x64\Release\Aquarius.csprojResolveAssemblyReference.cache
