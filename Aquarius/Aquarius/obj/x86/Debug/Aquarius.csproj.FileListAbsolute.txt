@@ -13,3 +13,4 @@ C:\Users\Антон\Documents\Visual Studio 2017\Projects\AquariusDS\Aquarius\Aq
 C:\Users\Антон\Documents\Visual Studio 2017\Projects\AquariusDS\Aquarius\Aquarius\obj\x86\Debug\Aquarius.csproj.GenerateResource.Cache
 C:\Users\Антон\Documents\Visual Studio 2017\Projects\AquariusDS\Aquarius\Aquarius\obj\x86\Debug\Aquarius.exe
 C:\Users\Антон\Documents\Visual Studio 2017\Projects\AquariusDS\Aquarius\Aquarius\obj\x86\Debug\Aquarius.pdb
+C:\Users\Антон\Documents\Visual Studio 2017\Projects\AquariusDS\Aquarius\Aquarius\obj\x86\Debug\Aquarius.csprojResolveAssemblyReference.cache

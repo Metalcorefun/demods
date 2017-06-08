@@ -147,7 +147,11 @@ namespace Aquarius
                     if (list.Count > max_count)
                         max_count = list.Count;
                 }
-                if (max_count > 0) drawing = new Bitmap(400 * max_count, 500 * (visual_table.Count + 1));
+                if(max_count > 0)
+                {
+                    if (max_count > attributes.Count) drawing = new Bitmap(400 * max_count, 500 * (visual_table.Count + 1));
+                    else drawing = new Bitmap(300 * attributes.Count, 500 * (visual_table.Count + 1));
+                }
                 else drawing = new Bitmap(400 * attributes.Count, 500);
                 for (int i = visual_table.Count - 1; i >= 0; i--)
                 {

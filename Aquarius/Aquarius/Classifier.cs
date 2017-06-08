@@ -41,7 +41,8 @@ namespace Aquarius
         }
         private void Classifier_Load(object sender, EventArgs e)
         {
-            
+            PopulateTypesTable(dt_types);
+            RefreshParameters();
             comboBox1.DataSource = dt_types;
             comboBox1.ValueMember = "ID";
             comboBox1.DisplayMember = "Description";
@@ -49,7 +50,7 @@ namespace Aquarius
         }
         private void RefreshParameters()
         {
-            PopulateTypesTable(dt_types);
+            
             textBox1.Text = classifier_.getName();
             listBox1.Items.Clear();
             listBox2.Items.Clear();
