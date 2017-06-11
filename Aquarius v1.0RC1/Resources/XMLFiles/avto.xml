@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding = "UTF-8"?>
+<hierarchy>
+    <attributes>
+        <attribute id="attr1">
+            <attr_name>Количество пассажирских мест</attr_name>
+            <attr_type>Numeric</attr_type>
+            <description>a</description>
+        </attribute>
+        <attribute id="attr2">
+            <attr_name>Масса (кг)</attr_name>
+            <attr_type>Numeric</attr_type>
+            <description>a</description>
+        </attribute>
+        <attribute id="attr3">
+            <attr_name>Длина (см)</attr_name>
+            <attr_type>Numeric</attr_type>
+            <description>a</description>
+        </attribute>
+        <attribute id="attr4">
+            <attr_name>Ширина (см)</attr_name>
+            <attr_type>Numeric</attr_type>
+            <description>a</description>
+        </attribute>
+        <attribute id="attr5">
+            <attr_name>Наличие встроенного прицепа</attr_name>
+            <attr_type>Numeric</attr_type>
+            <description>a</description>
+        </attribute>
+        <attribute id="attr6">
+            <attr_name>Объем двигателя (л.с.)</attr_name>
+            <attr_type>Numeric</attr_type>
+            <description>a</description>
+        </attribute>
+        <attribute id="attr7">
+            <attr_name>Количество колес </attr_name>
+            <attr_type>Numeric</attr_type>
+            <description>a</description>
+        </attribute>
+        <attribute id="attr8">
+            <attr_name>Наличие багажника</attr_name>
+            <attr_type>Numeric</attr_type>
+            <description>a</description>
+        </attribute>
+    </attributes>
+    <classes>
+        <class id="c1">
+            <class_title>Легковой автомобиль</class_title>
+            <description>c </description>
+        </class>
+        <class id="c2">
+            <class_title>Грузовой автомобиль</class_title>
+            <description> c</description>
+        </class>
+        <class id="c3">
+            <class_title>Автобус</class_title>
+            <description> c</description>
+        </class>
+        <class id="c4">
+            <class_title>Мотоцикл</class_title>
+            <description> c</description>
+        </class>
+        <class id="c5">
+            <class_title>Малый кузов</class_title>
+            <description> c</description>
+        </class>
+        <class id="c6">
+            <class_title>Средний кузов</class_title>
+            <description> c</description>
+        </class>
+        <class id="c7">
+            <class_title>Большой кузов</class_title>
+            <description> c</description>
+        </class>
+        <class id="c8">
+            <class_title>Многоместный</class_title>
+            <description> c</description>
+        </class>
+        <class id="c9">
+            <class_title>Маломестный</class_title>
+            <description>c </description>
+        </class>
+        <class id="c10">
+            <class_title>Мощный автомобиль</class_title>
+            <description>c </description>
+        </class>
+        <class id="c11">
+            <class_title>Слабый автомобиль</class_title>
+            <description>c </description>
+        </class>
+    </classes>
+    <classifiers>
+        <classifier id="cl5" type="Fuzzy" level="1">
+            <classifier_title>Размеры автомобиля</classifier_title>
+            <classifier_attr_list>
+                <attr_id>attr3</attr_id>
+                <attr_id>attr4</attr_id>
+                <attr_id>attr5</attr_id>
+                <attr_id>attr8</attr_id>
+            </classifier_attr_list>
+            <classifier_class_list>
+                <class_id>c5</class_id>
+                <class_id>c6</class_id>
+                <class_id>c7</class_id>
+            </classifier_class_list>
+            <training_set/>
+            <base_object>
+                <attr_val>
+                    <attr_id>attr3</attr_id>
+                    <attr_value>value</attr_value>
+                </attr_val>
+                <attr_val>
+                    <attr_id>attr4</attr_id>
+                    <attr_value>value</attr_value>
+                </attr_val>
+                <attr_val>
+                    <attr_id>attr5</attr_id>
+                    <attr_value>value</attr_value>
+                </attr_val>
+                <attr_val>
+                    <attr_id>attr8</attr_id>
+                    <attr_value>value</attr_value>
+                </attr_val>
+            </base_object>
+            <childs/>
+        </classifier>
+        <classifier id="cl5" type="Fuzzy" level="1">
+            <classifier_title>Технические характеристики</classifier_title>
+            <classifier_attr_list>
+                <attr_id>attr2</attr_id>
+                <attr_id>attr6</attr_id>
+                <attr_id>attr7</attr_id>
+            </classifier_attr_list>
+            <classifier_class_list>
+                <class_id>c10</class_id>
+                <class_id>c11</class_id>
+            </classifier_class_list>
+            <training_set/>
+            <base_object>
+                <attr_val>
+                    <attr_id>attr2</attr_id>
+                    <attr_value>value</attr_value>
+                </attr_val>
+                <attr_val>
+                    <attr_id>attr6</attr_id>
+                    <attr_value>value</attr_value>
+                </attr_val>
+                <attr_val>
+                    <attr_id>attr7</attr_id>
+                    <attr_value>value</attr_value>
+                </attr_val>
+            </base_object>
+            <childs/>
+        </classifier>
+        <classifier id="cl17" type="Fuzzy" level="2">
+            <classifier_title>Вместимость</classifier_title>
+            <classifier_attr_list>
+                <attr_id>attr1</attr_id>
+            </classifier_attr_list>
+            <classifier_class_list>
+                <class_id>c8</class_id>
+                <class_id>c9</class_id>
+            </classifier_class_list>
+            <training_set/>
+            <base_object>
+                <attr_val>
+                    <attr_id>attr1</attr_id>
+                    <attr_value>value</attr_value>
+                </attr_val>
+            </base_object>
+            <childs>
+                <clsfr_id>cl5</clsfr_id>
+            </childs>
+        </classifier>
+        <classifier id="cl31" type="Fuzzy" level="3">
+            <classifier_title>Автомобиль</classifier_title>
+            <classifier_attr_list/>
+            <classifier_class_list>
+                <class_id>c1</class_id>
+                <class_id>c2</class_id>
+                <class_id>c3</class_id>
+                <class_id>c4</class_id>
+            </classifier_class_list>
+            <training_set/>
+            <base_object/>
+            <childs>
+                <clsfr_id>cl17</clsfr_id>
+                <clsfr_id>cl5</clsfr_id>
+            </childs>
+        </classifier>
+    </classifiers>
+</hierarchy>

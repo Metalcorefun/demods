@@ -1,0 +1,139 @@
+ImageRuntimeVersion: v4.0.30319
+Assembly DSCoreWrapper, Version=1.0.*, Culture=Инвариантный язык (Инвариантная страна): 
+	hash=SHA1, flags=PublicKey
+Assembly mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Class DSCoreWrapper.DSAttributeWrapper: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(System.String, System.String, System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    System.IDisposable
+  Methods:
+    getID(): PrivateScope, Public, HideBySig
+    getName(): PrivateScope, Public, HideBySig
+    getType(): PrivateScope, Public, HideBySig
+    getDescription(): PrivateScope, Public, HideBySig
+    setName(String): PrivateScope, Public, HideBySig
+    setType(String): PrivateScope, Public, HideBySig
+    setDescription(String): PrivateScope, Public, HideBySig
+    getInstance(): PrivateScope, Public, HideBySig
+    setInstance(reference_wrapper<DSAttribute>): PrivateScope, Public, HideBySig
+    setInstance(DSAttribute*): PrivateScope, Public, HideBySig
+    Dispose(): PrivateScope, Public, Final, Virtual, HideBySig
+Class DSCoreWrapper.DSClassWrapper: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(System.String, System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    System.IDisposable
+  Methods:
+    getID(): PrivateScope, Public, HideBySig
+    getName(): PrivateScope, Public, HideBySig
+    getDescription(): PrivateScope, Public, HideBySig
+    setName(String): PrivateScope, Public, HideBySig
+    setDescription(String): PrivateScope, Public, HideBySig
+    getInstance(): PrivateScope, Public, HideBySig
+    setInstance(reference_wrapper<DSClass>): PrivateScope, Public, HideBySig
+    setInstance(DSClass*): PrivateScope, Public, HideBySig
+    Dispose(): PrivateScope, Public, Final, Virtual, HideBySig
+Class DSCoreWrapper.AttribValueWrapper: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(DSAttribute*, std.basic_string<char\,std::char_traits<char>\,std::allocator<char> >*): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(DSCoreWrapper.DSAttributeWrapper, System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    System.IDisposable
+  Methods:
+    setAttributeReference(DSAttributeWrapper): PrivateScope, Public, HideBySig
+    setValue(String): PrivateScope, Public, HideBySig
+    getAttributeReference(): PrivateScope, Public, HideBySig
+    getValue(): PrivateScope, Public, HideBySig
+    getInstance(): PrivateScope, Public, HideBySig
+    setInstance(AttribValue*): PrivateScope, Public, HideBySig
+    Dispose(): PrivateScope, Public, Final, Virtual, HideBySig
+Class DSCoreWrapper.ClassMemFuncWrapper: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(DSClass*, Double): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(DSCoreWrapper.DSClassWrapper, Double): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    System.IDisposable
+  Methods:
+    setClassReference(DSClassWrapper): PrivateScope, Public, HideBySig
+    setMembershipFunction(Double): PrivateScope, Public, HideBySig
+    getClassReference(): PrivateScope, Public, HideBySig
+    getMembershipFunction(): PrivateScope, Public, HideBySig
+    Dispose(): PrivateScope, Public, Final, Virtual, HideBySig
+Class DSCoreWrapper.DSProbeWrapper: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(System.Collections.Generic.List`1[DSCoreWrapper.AttribValueWrapper], System.Collections.Generic.List`1[DSCoreWrapper.ClassMemFuncWrapper]): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    System.IDisposable
+  Methods:
+    getAttribValues(): PrivateScope, Public, HideBySig
+    getClassMemFuncs(): PrivateScope, Public, HideBySig
+    setAttribValues(List`1): PrivateScope, Public, HideBySig
+    setClassMemFuncs(List`1): PrivateScope, Public, HideBySig
+    getInstance(): PrivateScope, Public, HideBySig
+    setInstance(DSProbe*): PrivateScope, Public, HideBySig
+    Dispose(): PrivateScope, Public, Final, Virtual, HideBySig
+Class DSCoreWrapper.DSClassifierWrapper: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    System.IDisposable
+  Methods:
+    getID(): PrivateScope, Public, HideBySig
+    getName(): PrivateScope, Public, HideBySig
+    getType(): PrivateScope, Public, HideBySig
+    getLevel(): PrivateScope, Public, HideBySig
+    getAttributes(): PrivateScope, Public, HideBySig
+    getClasses(): PrivateScope, Public, HideBySig
+    getChilds(): PrivateScope, Public, HideBySig
+    setName(String): PrivateScope, Public, HideBySig
+    setType(String): PrivateScope, Public, HideBySig
+    setLevel(Int32): PrivateScope, Public, HideBySig
+    addAttribute(DSAttributeWrapper): PrivateScope, Public, HideBySig
+    addClass(DSClassWrapper): PrivateScope, Public, HideBySig
+    addChild(DSClassifierWrapper): PrivateScope, Public, HideBySig
+    removeAttribute(String): PrivateScope, Public, HideBySig
+    removeClass(String): PrivateScope, Public, HideBySig
+    removeChild(String): PrivateScope, Public, HideBySig
+    removeTrainingSet(): PrivateScope, Public, HideBySig
+    getTrainingSet(): PrivateScope, Public, HideBySig
+    getBaseObject(): PrivateScope, Public, HideBySig
+    toTrainingSet(DSProbeWrapper): PrivateScope, Public, HideBySig
+    setBaseObject(List`1): PrivateScope, Public, HideBySig
+    getInstance(): PrivateScope, Public, HideBySig
+    setInstance(reference_wrapper<DSClassifier>): PrivateScope, Public, HideBySig
+    setInstance(DSClassifier*): PrivateScope, Public, HideBySig
+    isSent(): PrivateScope, Public, HideBySig
+    Dispose(): PrivateScope, Public, Final, Virtual, HideBySig
+Class DSCoreWrapper.DSHierarchyWrapper: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    System.IDisposable
+  Methods:
+    load(String): PrivateScope, Public, HideBySig
+    save(String): PrivateScope, Public, HideBySig
+    clear(): PrivateScope, Public, HideBySig
+    addAttribute(DSAttributeWrapper): PrivateScope, Public, HideBySig
+    addClass(DSClassWrapper): PrivateScope, Public, HideBySig
+    addClassifier(DSClassifierWrapper): PrivateScope, Public, HideBySig
+    removeAttribute(String): PrivateScope, Public, HideBySig
+    removeClass(String): PrivateScope, Public, HideBySig
+    removeClassifier(String): PrivateScope, Public, HideBySig
+    getAttributes(): PrivateScope, Public, HideBySig
+    getClasses(): PrivateScope, Public, HideBySig
+    getClassifiers(): PrivateScope, Public, HideBySig
+    COM_sendData(): PrivateScope, Public, HideBySig
+    COM_learn(): PrivateScope, Public, HideBySig
+    COM_saveFOV(String): PrivateScope, Public, HideBySig
+    COM_saveFSC(String): PrivateScope, Public, HideBySig
+    COM_IsReliable(DSClassifierWrapper): PrivateScope, Public, HideBySig
+    COM_TCriterion(DSClassifierWrapper): PrivateScope, Public, HideBySig
+    COM_TCriterionTable(DSClassifierWrapper): PrivateScope, Public, HideBySig
+    Dispose(): PrivateScope, Public, Final, Virtual, HideBySig

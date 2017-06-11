@@ -1,0 +1,26 @@
+﻿  DSCoreWrapper.cpp
+c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscorewrapper\dscorewrapper\sourcecode\Switch.h(49): warning C4267: аргумент: преобразование из "size_t" в "const s_s::uchar"; возможна потеря данных
+c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscorewrapper\dscorewrapper\SourceCode\COMExecutor.cpp(137): warning C4267: аргумент: преобразование из "size_t" в "long"; возможна потеря данных
+c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscorewrapper\dscorewrapper\SourceCode\COMExecutor.cpp(138): warning C4267: аргумент: преобразование из "size_t" в "long"; возможна потеря данных
+c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscorewrapper\dscorewrapper\SourceCode\COMExecutor.cpp(139): warning C4267: аргумент: преобразование из "size_t" в "long"; возможна потеря данных
+c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscorewrapper\dscorewrapper\SourceCode\COMExecutor.cpp(148): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscorewrapper\dscorewrapper\sourcecode\resources\tinyxml2\tinyxml2.cpp(2326): warning C4793: tinyxml2::XMLPrinter::Print: функция скомпилирована как машинная:
+  	varargs не поддерживаются в /clr
+c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscorewrapper\dscorewrapper\sourcecode\resources\tinyxml2\tinyxml2.cpp(2328): warning C4793: tinyxml2::XMLPrinter::Print: функция скомпилирована как машинная:
+  	Обнаружена встроенная функция, которая не поддерживается в управляемом коде
+c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscorewrapper\dscorewrapper\sourcecode\resources\tinyxml2\tinyxml2.cpp(2336): warning C4793: tinyxml2::XMLPrinter::Print: функция скомпилирована как машинная:
+  	Обнаружена встроенная функция, которая не поддерживается в управляемом коде
+c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscorewrapper\dscorewrapper\sourcecode\resources\tinyxml2\tinyxml2.cpp(2338): warning C4793: tinyxml2::XMLPrinter::Print: функция скомпилирована как машинная:
+  	Обнаружена встроенная функция, которая не поддерживается в управляемом коде
+c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscorewrapper\dscorewrapper\sourcecode\resources\tinyxml2\tinyxml2.cpp(2343): warning C4793: tinyxml2::XMLPrinter::Print: функция скомпилирована как машинная:
+  	Обнаружена встроенная функция, которая не поддерживается в управляемом коде
+c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscorewrapper\dscorewrapper\sourcecode\hierarchy.cpp(347): warning C4172: возвращение адреса локальной или временной переменной : A
+c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscorewrapper\dscorewrapper\sourcecode\hierarchy.cpp(357): warning C4172: возвращение адреса локальной или временной переменной : C
+c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscorewrapper\dscorewrapper\sourcecode\hierarchy.cpp(367): warning C4172: возвращение адреса локальной или временной переменной : C
+c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscorewrapper\dscorewrapper\sourcecode\resources\tinyxml2\tinyxml2.cpp(45): warning C4793: `anonymous namespace'::TIXML_SNPRINTF: функция скомпилирована как машинная:
+  	varargs не поддерживаются в /clr
+c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscorewrapper\dscorewrapper\sourcecode\resources\tinyxml2\tinyxml2.cpp(47): warning C4793: `anonymous namespace'::TIXML_SNPRINTF: функция скомпилирована как машинная:
+  	Обнаружена встроенная функция, которая не поддерживается в управляемом коде
+c:\users\антон\documents\visual studio 2017\projects\aquariusds\dscorewrapper\dscorewrapper\sourcecode\resources\tinyxml2\tinyxml2.cpp(49): warning C4793: `anonymous namespace'::TIXML_SNPRINTF: функция скомпилирована как машинная:
+  	Обнаружена встроенная функция, которая не поддерживается в управляемом коде
+  DSCoreWrapper.vcxproj -> C:\Users\Антон\Documents\Visual Studio 2017\Projects\AquariusDS\DSCoreWrapper\x64\Release\DSCoreWrapper.dll
